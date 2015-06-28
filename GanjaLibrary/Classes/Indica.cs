@@ -9,6 +9,7 @@ namespace GanjaLibrary.Classes
             CBD = 0.25;
             THC = 0.20;
 
+            // Create a dict for changing water need per stage.
             WaterNeed = new Dictionary<Stage, Water>()
             {
                 { Stage.Seed, Water.Low },
@@ -18,6 +19,7 @@ namespace GanjaLibrary.Classes
                 { Stage.Dead, Water.Nothing },
             };
 
+            // Create a dict for changing light need per stage.
             LightNeed = new Dictionary<Stage, Light>()
             {
                 { Stage.Seed, Light.Off },
