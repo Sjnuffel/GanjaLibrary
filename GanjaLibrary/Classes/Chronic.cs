@@ -51,6 +51,7 @@ namespace GanjaLibrary.Classes
             Food = Food.None;
             Light = Light.Off;
 
+            // Create a dict for changing water need per stage.
             WaterNeed = new Dictionary<Stage, Water>()
             {
                 { Stage.Seed, Water.Low },
@@ -60,6 +61,7 @@ namespace GanjaLibrary.Classes
                 { Stage.Dead, Water.Nothing },
             };
 
+            // Create a dict for changing light need per stage.
             LightNeed = new Dictionary<Stage, Light>()
             {
                 { Stage.Seed, Light.Off },
@@ -84,6 +86,7 @@ namespace GanjaLibrary.Classes
 
         public event EventHandler Died;
 
+        // What to do when plant grows.
         public IChronic Grow(Water water, Light light, Food food)
         {
             Age++;
@@ -94,6 +97,7 @@ namespace GanjaLibrary.Classes
             return this;
         }
 
+        // Adjust plant health if watered and lighted correctly.
         private void AdjustHealth(Water water, Light light, Food food)
         {
             if (water == Water)
@@ -112,6 +116,7 @@ namespace GanjaLibrary.Classes
                 Health *= 0.99;
         }
 
+        // Quality improvement algorithm.
         private void AdjustQuality()
         {
             Quality *= Health;
@@ -122,6 +127,7 @@ namespace GanjaLibrary.Classes
             return this;
         }
 
+        // How the plant enhances through growth stages.
         public bool AdvanceStage(Light light)
         {
             var hasAdvanced = false;
@@ -163,6 +169,7 @@ namespace GanjaLibrary.Classes
             return hasAdvanced;
         }
 
+        // Printing out all the changing variables so we can track progress.
         public virtual void Print()
         {
             Console.WriteLine(string.Format("Name: {0}", Name));
