@@ -12,7 +12,7 @@ namespace GanjaLibrary.Interfaces
         event EventHandler Died;
 
         /// <summary>
-        /// Height category in the plant
+        /// Height category of the plant
         /// </summary>
         Height Height { get; }
         /// <summary>
