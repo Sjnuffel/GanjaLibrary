@@ -8,6 +8,7 @@ namespace GanjaLibrary.Classes
         public Indica() : base("Indica", Water.Low, Light.Spring, Food.None) {
             CBD = 0.25;
             THC = 0.20;
+            SeedingAge = 5;
 
             // Create a dict for changing water need per stage.
             WaterNeed = new Dictionary<Stage, Water>()

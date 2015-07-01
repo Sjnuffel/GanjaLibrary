@@ -6,9 +6,13 @@ namespace GanjaLibrary.Classes
     public class Sativa : Chronic
     {
         public Sativa() : base("Sativa", Water.Low, Light.Spring, Food.None) {
+
+            // Overwriting the base variables.
+            SeedingAge = 6;
+
             CBD = 0.05;
             THC = 0.25;
-
+            
             // Create a dict for changing water need per stage.
             WaterNeed = new Dictionary<Stage, Water>()
             {

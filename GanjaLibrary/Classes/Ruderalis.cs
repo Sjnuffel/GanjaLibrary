@@ -8,6 +8,7 @@ namespace GanjaLibrary.Classes
         public Ruderalis() : base("Ruderalis", Water.Low, Light.Yolo, Food.None) {
             CBD = 0.30;
             THC = 0.05;
+            SeedingAge = 3;
 
             // Create a dict for changing water need per stage.
             WaterNeed = new Dictionary<Stage, Water>()

@@ -12,6 +12,7 @@ namespace GanjaLibrary.Classes
 
         public int Age { get; internal set; }
         public int FloweringAge { get; private set; }
+        public int SeedingAge { get; internal set; }
 
         public double CBD { get; internal set; }
         public double THC { get; internal set; }
@@ -36,6 +37,7 @@ namespace GanjaLibrary.Classes
             Name = "Chronic";
             Age = 0;
             FloweringAge = 90;
+            SeedingAge = 1;
 
             CBD = 0.15;
             THC = 0.10;
@@ -144,7 +146,7 @@ namespace GanjaLibrary.Classes
             }
 
             // Advance from seed to vegetative
-            if (Age == 7)
+            if (Age == SeedingAge)
             {
                 Stage = Stage.Vegetative;
                 hasAdvanced = true;
@@ -173,7 +175,7 @@ namespace GanjaLibrary.Classes
         public virtual void Print()
         {
             Console.WriteLine(string.Format("Name: {0}", Name));
-            Console.WriteLine(string.Format("Age: {0}; Flowering age: {1}", Age, FloweringAge));
+            Console.WriteLine(string.Format("Age: {0}; Flowering age: {1}; Seeding Age: {2};", Age, FloweringAge, SeedingAge));
             Console.WriteLine(string.Format("Stage: {0}, Water: {1}, Food: {2}; Light: {3}", Stage, Water, Food, Light));
             Console.WriteLine(string.Format("Quality: {0}, Health: {1}", Quality, Health));
 
