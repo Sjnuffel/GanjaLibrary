@@ -9,31 +9,31 @@ namespace GanjaTestApplication
     {
         static void Main(string[] args)
         {
-            IChronic GanjaGame = new Sativa();
-            GanjaGame.Print();
+            IChronic GanjaTest = new SilverHaze();
+            GanjaTest.Print();
             Console.WriteLine();
             for (int i = 0; i < 7; i++)
             {
-                GanjaGame.Grow(Water.Low, Light.Off, Food.None);
-                GanjaGame.Print();
+                GanjaTest.Grow(Water.Low, Light.Off, Food.None);
+                GanjaTest.Print();
                 Console.WriteLine();
             }
 
             for (int i = 0; i < 16; i++)
             {
-                GanjaGame.Grow(Water.Low, Light.Spring, Food.None);
-                GanjaGame.Print();
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                GanjaTest.Print();
                 Console.WriteLine();
             }
 
             for (int i = 0; i < 4; i++)
             {
-                GanjaGame.Grow(Water.Low, Light.Summer, Food.None);
-                GanjaGame.Print();
+                GanjaTest.Grow(Water.Low, Light.Summer, Food.None);
+                GanjaTest.Print();
                 Console.WriteLine();
             }
 
-            GanjaGame.Print();
+            GanjaTest.Print();
             Console.WriteLine();
             Console.ReadLine();
         }
