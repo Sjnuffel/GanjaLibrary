@@ -72,8 +72,19 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         double ActualHeight { get; }
 
+        /// <summary>
+        /// Dictionary containing water requirements.
+        /// </summary>
         Dictionary<Stage, Water> WaterNeed { get; }
+        /// <summary>
+        /// Dictionary containing plants light requirements.
+        /// </summary>
         Dictionary<Stage, Light> LightNeed { get; }
+        /// <summary>
+        /// Day the seed is expected to flower.
+        /// </summary>
+        int SeedingAge { get; }
+
 
         /// <summary>
         /// Grow the plant.
