@@ -93,29 +93,57 @@ namespace GanjaLibrary.Classes
         {
             Age++;
             AdjustHealth(water, light, food);
+            AdjustHeight(water, light, food, Stage);
             AdjustQuality();
             var isAdvanced = AdvanceStage(light);
 
             return this;
         }
 
-        // Adjust plant health if watered and lighted correctly.
+        // Adjust plant health if watered and lighted.
         private void AdjustHealth(Water water, Light light, Food food)
         {
             if (water == Water)
-                Health *= 1.01;
+                Health *= 1.05;
             else
-                Health *= 0.99;
+                Health *= 0.95;
 
             if (light == Light)
-                Health *= 1.01;
+                Health *= 1.05;
             else
-                Health *= 0.99;
+                Health *= 0.95;
 
             if (food == Food)
-                Health *= 1.01;
+                Health *= 1.05;
             else
-                Health *= 0.99;
+                Health *= 0.95;
+        }
+
+        // Adjust plant height if watered and lighted.
+        private void AdjustHeight(Water water, Light light, Food food, Stage stage)
+        {
+            // Check if plant is alive and no longer a seed.
+            if (stage == Stage.Vegetative || stage == Stage.Clone || stage == Stage.Flowering)
+            {
+                if (water == Water)
+                    ActualHeight++;
+                else
+                    ActualHeight--;
+
+                if (light == Light)
+                    ActualHeight++;
+                else
+                    ActualHeight--;
+
+                if (food == Food.Low || food == Food.Medium || food == Food.High)
+                    ActualHeight++;
+            }
+
+            else if (stage == Stage.Dead)
+                ActualHeight--;
+
+            else if (stage == Stage.Seed)
+                ActualHeight = 0;
         }
 
         // Quality improvement algorithm.
@@ -178,6 +206,7 @@ namespace GanjaLibrary.Classes
             Console.WriteLine(string.Format("Age: {0}; Flowering age: {1}; Seeding Age: {2};", Age, FloweringAge, SeedingAge));
             Console.WriteLine(string.Format("Stage: {0}, Water: {1}, Food: {2}; Light: {3}", Stage, Water, Food, Light));
             Console.WriteLine(string.Format("Quality: {0}, Health: {1}", Quality, Health));
+            Console.WriteLine(string.Format("ActualHeight: {0}", ActualHeight));
 
             if (Globals.Debug)
             {

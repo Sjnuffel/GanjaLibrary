@@ -21,7 +21,7 @@ namespace GanjaTestApplication
 
             for (int i = 0; i < 16; i++)
             {
-                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.None);
                 GanjaTest.Print();
                 Console.WriteLine();
             }

@@ -19,8 +19,8 @@ namespace GanjaLibrary.Classes
             {
                 { Stage.Seed, Water.Low },
                 { Stage.Clone, Water.Low },
-                { Stage.Vegetative, Water.Low },
-                { Stage.Flowering, Water.Medium },
+                { Stage.Vegetative, Water.Medium },
+                { Stage.Flowering, Water.High},
                 { Stage.Dead, Water.Nothing },
             };
 

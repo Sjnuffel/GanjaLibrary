@@ -1,43 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GanjaLibrary.Classes.Indica">
-    <Position X="7.5" Y="3.75" Width="1.5" />
+    <Position X="6.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Indica.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Sativa">
-    <Position X="7.5" Y="5" Width="1.5" />
+    <Position X="6.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Sativa.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Chronic">
-    <Position X="4" Y="1" Width="1.5" />
+    <Position X="2.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACCABBAAAAAJAAEwEAhQAAQAgAAAAABgAAwIFgAE=</HashCode>
+      <HashCode>AAgACCABBAAAAAJAAEwEAhQAAQIgAAAAABgAAwIFgAE=</HashCode>
       <FileName>Classes\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Ruderalis">
-    <Position X="7.5" Y="2.5" Width="1.5" />
+    <Position X="6.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Ruderalis.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.MasterKush">
-    <Position X="9.75" Y="3.75" Width="1.5" />
+    <Position X="8.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\MasterKush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.SilverHaze">
-    <Position X="9.75" Y="5.25" Width="1.5" />
+    <Position X="8.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\SilverHaze.cs</FileName>
