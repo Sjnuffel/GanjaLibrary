@@ -135,6 +135,7 @@ namespace GanjaLibrary.Classes
                 else
                     ActualHeight--;
 
+                // No penalty for lack of food, just bonus growth.
                 if (food == Food.Low || food == Food.Medium || food == Food.High)
                     ActualHeight++;
             }

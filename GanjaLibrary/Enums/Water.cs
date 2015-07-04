@@ -8,10 +8,6 @@ namespace GanjaLibrary.Enums
     public enum Water
     {
         /// <summary>
-        /// Open water tap.
-        /// </summary>
-        Full,
-        /// <summary>
         /// Close water tap.
         /// </summary>
         Nothing,
@@ -20,12 +16,19 @@ namespace GanjaLibrary.Enums
         /// </summary>
         Low,
         /// <summary>
+        /// Halfway open water tap.
+        /// </summary>
+        Medium,
+        /// <summary>
         /// Almost fully open water tap.
         /// </summary>
         High,
         /// <summary>
-        /// Halfway open water tap.
+        /// Open water tap.
         /// </summary>
-        Medium
+        Full,
+        /// <summary>
+        /// Slightly open water tap.
+        /// </summary>
     }
 }
