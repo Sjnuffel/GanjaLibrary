@@ -10,6 +10,7 @@ namespace GanjaLibrary.Classes
         {
             Name = "Silver Haze";
             SeedingAge = 6;
+            FloweringAge = 70;
 
             CBD = 0.05;
             THC = 0.35;

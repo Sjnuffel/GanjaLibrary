@@ -12,7 +12,7 @@ namespace GanjaTestApplication
             IChronic GanjaTest = new SilverHaze();
             GanjaTest.Print();
             Console.WriteLine();
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 GanjaTest.Grow(Water.Low, Light.Off, Food.None);
                 GanjaTest.Print();
@@ -26,9 +26,9 @@ namespace GanjaTestApplication
                 Console.WriteLine();
             }
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 50; i++)
             {
-                GanjaTest.Grow(Water.Low, Light.Summer, Food.None);
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
                 GanjaTest.Print();
                 Console.WriteLine();
             }

@@ -11,7 +11,7 @@ namespace GanjaLibrary.Classes
         public string Name { get; internal set; }
 
         public int Age { get; internal set; }
-        public int FloweringAge { get; private set; }
+        public int FloweringAge { get; internal set; }
         public int SeedingAge { get; internal set; }
 
         public double CBD { get; internal set; }
@@ -95,6 +95,7 @@ namespace GanjaLibrary.Classes
             AdjustHealth(water, light, food);
             AdjustHeight(water, light, food, Stage);
             AdjustQuality();
+            AdjustYield(water, light, food, Stage);
             var isAdvanced = AdvanceStage(light);
 
             return this;
@@ -126,14 +127,14 @@ namespace GanjaLibrary.Classes
             if (stage == Stage.Vegetative || stage == Stage.Clone || stage == Stage.Flowering)
             {
                 if (water == Water)
-                    ActualHeight++;
+                    ActualHeight += 0.75;
                 else
-                    ActualHeight--;
+                    ActualHeight -= 0.75;
 
                 if (light == Light)
-                    ActualHeight++;
+                    ActualHeight += 0.75;
                 else
-                    ActualHeight--;
+                    ActualHeight -= 0.75;
 
                 // No penalty for lack of food, just bonus growth.
                 if (food == Food.Low || food == Food.Medium || food == Food.High)
@@ -141,7 +142,7 @@ namespace GanjaLibrary.Classes
             }
 
             else if (stage == Stage.Dead)
-                ActualHeight--;
+                ActualHeight += 0.75;
 
             else if (stage == Stage.Seed)
                 ActualHeight = 0;
@@ -200,6 +201,41 @@ namespace GanjaLibrary.Classes
             return hasAdvanced;
         }
 
+
+        // Adjust the actual yield of the plant.
+        public virtual void AdjustYield(Water water, Light light, Food food, Stage stage)
+        {
+            // If plant is flowering and has not reached flowering age, increase yield.
+            if (stage == Stage.Flowering && Age <= FloweringAge)
+            {
+                if (water == Water)
+                    Yield++;
+                if (light == Light)
+                    Yield++;
+                if (food == Food)
+                    Yield += 2;
+                if (ActualHeight >= 0 || ActualHeight <= 50)
+                    Yield += 0.25;
+                if (ActualHeight >= 51 || ActualHeight <= 100)
+                    Yield += 0.5;
+                if (ActualHeight >= 101 || ActualHeight <= 150)
+                    Yield += 0.75;
+                if (ActualHeight >= 151 || ActualHeight <= 200)
+                    Yield += 1;
+            }
+
+            // If flowering age has gone by, decrease yield.
+            else if (stage == Stage.Flowering && Age > FloweringAge)
+            {
+                if (water == Water)
+                    Yield -= 2;
+                if (light == Light)
+                    Yield -= 2;
+            }
+
+            else return;
+        }
+
         // Printing out all the changing variables so we can track progress.
         public virtual void Print()
         {
@@ -207,13 +243,13 @@ namespace GanjaLibrary.Classes
             Console.WriteLine(string.Format("Age: {0}; Flowering age: {1}; Seeding Age: {2};", Age, FloweringAge, SeedingAge));
             Console.WriteLine(string.Format("Stage: {0}, Water: {1}, Food: {2}; Light: {3}", Stage, Water, Food, Light));
             Console.WriteLine(string.Format("Quality: {0}, Health: {1}", Quality, Health));
-            Console.WriteLine(string.Format("ActualHeight: {0}", ActualHeight));
+            Console.WriteLine(string.Format("ActualHeight: {0} centimeters" , ActualHeight));
+            Console.WriteLine(string.Format("Actual Yield: {0} grams", Yield));
 
             if (Globals.Debug)
             {
                 Console.WriteLine(string.Format("CBD content: {0}%; THC: {1}%", CBD * 100, THC * 100));
                 Console.WriteLine(string.Format("Expected Yield: {0}", MaxYield));
-                Console.WriteLine(string.Format("Actual Yield: {0}", Yield));
                 Console.WriteLine(string.Format("Height: {0}", Height));
             }
         }
