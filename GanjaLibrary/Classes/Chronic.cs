@@ -19,7 +19,7 @@ namespace GanjaLibrary.Classes
         public double MaxYield { get; private set; }
         public double Quality { get; private set; }
         public double Yield { get; private set; }
-        public double Health { get; private set; }
+        public double Health { get; internal set; }
         public double ActualHeight { get; private set; }
 
         public Height Height { get; internal set; }
@@ -33,7 +33,7 @@ namespace GanjaLibrary.Classes
 
         public Chronic()
         {
-            // Set base variables
+            // Set base variables.
             Name = "Chronic";
             Age = 0;
             FloweringAge = 90;
@@ -94,8 +94,10 @@ namespace GanjaLibrary.Classes
             Age++;
             AdjustHealth(water, light, food);
             AdjustHeight(water, light, food, Stage);
-            AdjustQuality();
+            AdjustQuality(food);
             AdjustYield(water, light, food, Stage);
+            AdjustTHC(Stage);
+            AdjustCBD(Stage);
             var isAdvanced = AdvanceStage(light);
 
             return this;
@@ -105,19 +107,19 @@ namespace GanjaLibrary.Classes
         private void AdjustHealth(Water water, Light light, Food food)
         {
             if (water == Water)
-                Health *= 1.05;
+                Health *= 1.025;
             else
-                Health *= 0.95;
+                Health *= 0.975;
 
             if (light == Light)
-                Health *= 1.05;
+                Health *= 1.025;
             else
-                Health *= 0.95;
+                Health *= 0.975;
 
             if (food == Food)
-                Health *= 1.05;
+                Health *= 1.025;
             else
-                Health *= 0.95;
+                Health *= 0.975;
         }
 
         // Adjust plant height if watered and lighted.
@@ -149,8 +151,11 @@ namespace GanjaLibrary.Classes
         }
 
         // Quality improvement algorithm.
-        private void AdjustQuality()
+        private void AdjustQuality(Food food)
         {
+            if (food == Food)
+                Quality += 0.5;
+
             Quality *= Health;
         }
 
@@ -164,7 +169,7 @@ namespace GanjaLibrary.Classes
         {
             var hasAdvanced = false;
 
-            //Die if quality is bad
+            //Die if quality is bad.
             if (Quality <= 0.4)
             {
                 Stage = Stage.Dead;
@@ -175,14 +180,14 @@ namespace GanjaLibrary.Classes
                 hasAdvanced = true;
             }
 
-            // Advance from seed to vegetative
+            // Advance from seed to vegetative.
             if (Age == SeedingAge)
             {
                 Stage = Stage.Vegetative;
                 hasAdvanced = true;
             }
 
-            // Advance if 3 weeks are reached and light requirement is triggered
+            // Advance if 3 weeks are reached and light requirement is triggered.
             if (Age >= 21 && (light == LightNeed[Stage.Flowering]))
             {
                 if (Stage == Stage.Vegetative || Stage == Stage.Clone)
@@ -206,7 +211,7 @@ namespace GanjaLibrary.Classes
         public virtual void AdjustYield(Water water, Light light, Food food, Stage stage)
         {
             // If plant is flowering and has not reached flowering age, increase yield.
-            if (stage == Stage.Flowering && Age <= FloweringAge)
+            if (stage == Stage.Flowering && Yield <= MaxYield && Age <= FloweringAge)
             {
                 if (water == Water)
                     Yield++;
@@ -227,24 +232,47 @@ namespace GanjaLibrary.Classes
             // If flowering age has gone by, decrease yield.
             else if (stage == Stage.Flowering && Age > FloweringAge)
             {
-                if (water == Water)
-                    Yield -= 2;
-                if (light == Light)
-                    Yield -= 2;
+                Yield *= 0.95;
             }
 
             else return;
         }
 
+        // Adjust THC % of the plant.
+        public virtual void AdjustTHC(Stage stage)
+        {
+            // High health increases THC content.
+            if (stage == Stage.Flowering && (Health / 50) > 2 && (Quality / 2) > 2)
+                THC += 0.00015;
+
+            // Low health increases THC content.
+            else if (stage == Stage.Flowering && (Health / 50) <= 2 && (Quality / 2) <= 2)
+                THC -= 0.00015;
+        }
+
+        // Adjust CBD % of the plant.
+        public virtual void AdjustCBD(Stage stage)
+        {
+            // High health increases CBD content.
+            if (stage == Stage.Flowering && (Health / 50) > 2 && (Quality / 2) > 2)
+                CBD += 0.00015;
+
+            // Low health lowers CBD content.
+            else if (stage == Stage.Flowering && (Health / 50) <= 2 && (Quality / 2) <= 2)
+                CBD -= 0.00015;
+        }
+
         // Printing out all the changing variables so we can track progress.
         public virtual void Print()
         {
-            Console.WriteLine(string.Format("Name: {0}", Name));
-            Console.WriteLine(string.Format("Age: {0}; Flowering age: {1}; Seeding Age: {2};", Age, FloweringAge, SeedingAge));
-            Console.WriteLine(string.Format("Stage: {0}, Water: {1}, Food: {2}; Light: {3}", Stage, Water, Food, Light));
-            Console.WriteLine(string.Format("Quality: {0}, Health: {1}", Quality, Health));
-            Console.WriteLine(string.Format("ActualHeight: {0} centimeters" , ActualHeight));
+            Console.WriteLine(string.Format("Name: {0}  \nStage: {1}", Name, Stage));
+            Console.WriteLine(string.Format("Age: {0} \tFlowering age: {1} \tSeeding Age: {2};", Age, FloweringAge, SeedingAge));
+            Console.WriteLine(string.Format("Water: {0} \tFood: {1} \tLight: {2}", Water, Food, Light));
+            Console.WriteLine(string.Format("\nActual Height: {0} centimeters" , ActualHeight));
             Console.WriteLine(string.Format("Actual Yield: {0} grams", Yield));
+            Console.WriteLine(string.Format("CBD: {0}%; \tTHC: {1}%", CBD * 100, THC * 100));
+            Console.WriteLine(string.Format("Quality: {0}", Quality));
+            Console.WriteLine(string.Format("Health: {0}", Health));
 
             if (Globals.Debug)
             {
