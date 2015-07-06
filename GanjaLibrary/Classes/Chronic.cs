@@ -46,7 +46,7 @@ namespace GanjaLibrary.Classes
             MaxYield = 75;
             Quality = 1;
             Yield = 0;
-            Health = 15;
+            Health = 45;
             ActualHeight = 0;
 
             Height = Height.Short;
@@ -128,7 +128,7 @@ namespace GanjaLibrary.Classes
         private void AdjustHeight(Water water, Light light, Food food, Stage stage)
         {
             // Check if plant is alive and no longer a seed.
-            if (stage != Stage.Seed || stage == Stage.Dead)
+            if (stage != Stage.Seed || stage != Stage.Dead)
             {
                 if (water == Water)
                     ActualHeight += 0.75;
@@ -169,7 +169,7 @@ namespace GanjaLibrary.Classes
             var hasAdvanced = false;
 
             //Die if quality is bad.
-            if (Quality <= 0.4)
+            if (Health <= 25)
             {
                 Stage = Stage.Dead;
                 if (Died != null)
@@ -250,9 +250,13 @@ namespace GanjaLibrary.Classes
             // High health increases THC content.
             if (stage == Stage.Flowering && Health >= 100)
                 THC += 0.00015;
+            if (stage == Stage.Flowering && Health >= 150)
+                THC += 0.00025;
+            if (stage == Stage.Flowering && Health >= 190)
+                THC += 0.00035;
 
             // Low health increases THC content.
-            else if (stage == Stage.Flowering && Health <= 100)
+            else if (stage == Stage.Flowering && Health <= 75)
                 THC -= 0.00015;
         }
 
@@ -260,11 +264,15 @@ namespace GanjaLibrary.Classes
         private void AdjustCBD(Stage stage)
         {
             // High health increases CBD content.
-            if (stage == Stage.Flowering && (Health / 50) > 2 && (Quality / 2) > 2)
+            if (stage == Stage.Flowering && Health >= 100)
                 CBD += 0.00015;
+            if (stage == Stage.Flowering && Health >= 150)
+                CBD += 0.00025;
+            if (stage == Stage.Flowering && Health >= 190)
+                CBD += 0.00035;
 
             // Low health lowers CBD content.
-            else if (stage == Stage.Flowering && (Health / 50) <= 2 && (Quality / 2) <= 2)
+            else if (stage == Stage.Flowering && Health <= 75)
                 CBD -= 0.00015;
         }
 
