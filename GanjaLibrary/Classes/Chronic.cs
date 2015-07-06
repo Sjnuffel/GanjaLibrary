@@ -13,12 +13,13 @@ namespace GanjaLibrary.Classes
         public int Age { get; internal set; }
         public int FloweringAge { get; internal set; }
         public int SeedingAge { get; internal set; }
+        public int MaxHealth { get; private set; }
 
         public double CBD { get; internal set; }
         public double THC { get; internal set; }
+        public double Yield { get; private set; }
         public double MaxYield { get; private set; }
         public double Quality { get; private set; }
-        public double Yield { get; private set; }
         public double Health { get; internal set; }
         public double ActualHeight { get; private set; }
 
@@ -38,13 +39,14 @@ namespace GanjaLibrary.Classes
             Age = 0;
             FloweringAge = 90;
             SeedingAge = 1;
+            MaxHealth = 200;
 
             CBD = 0.15;
             THC = 0.10;
             MaxYield = 75;
             Quality = 1;
             Yield = 0;
-            Health = 1;
+            Health = 15;
             ActualHeight = 0;
 
             Height = Height.Short;
@@ -106,27 +108,27 @@ namespace GanjaLibrary.Classes
         // Adjust plant health if watered and lighted.
         private void AdjustHealth(Water water, Light light, Food food)
         {
-            if (water == Water)
-                Health *= 1.025;
+            if (water == Water && Health <= MaxHealth)
+                Health += 1;
             else
-                Health *= 0.975;
+                Health -= 1;
 
-            if (light == Light)
-                Health *= 1.025;
+            if (light == Light && Health <= MaxHealth)
+                Health += 1;
             else
-                Health *= 0.975;
+                Health -= 1;
 
-            if (food == Food)
-                Health *= 1.025;
+            if (food == Food && Health <= MaxHealth)
+                Health += 1;
             else
-                Health *= 0.975;
+                Health -= 1;
         }
 
         // Adjust plant height if watered and lighted.
         private void AdjustHeight(Water water, Light light, Food food, Stage stage)
         {
             // Check if plant is alive and no longer a seed.
-            if (stage == Stage.Vegetative || stage == Stage.Clone || stage == Stage.Flowering)
+            if (stage != Stage.Seed || stage == Stage.Dead)
             {
                 if (water == Water)
                     ActualHeight += 0.75;
@@ -153,10 +155,7 @@ namespace GanjaLibrary.Classes
         // Quality improvement algorithm.
         private void AdjustQuality(Food food)
         {
-            if (food == Food)
-                Quality += 0.5;
-
-            Quality *= Health;
+            Quality = Quality * Health;
         }
 
         public IChronic Harvest()
@@ -208,11 +207,12 @@ namespace GanjaLibrary.Classes
 
 
         // Adjust the actual yield of the plant.
-        public virtual void AdjustYield(Water water, Light light, Food food, Stage stage)
+        private void AdjustYield(Water water, Light light, Food food, Stage stage)
         {
             // If plant is flowering and has not reached flowering age, increase yield.
             if (stage == Stage.Flowering && Yield <= MaxYield && Age <= FloweringAge)
             {
+                // Depending on the height, health and resources received adjust yield.
                 if (water == Water)
                     Yield++;
                 if (light == Light)
@@ -227,6 +227,12 @@ namespace GanjaLibrary.Classes
                     Yield += 0.75;
                 if (ActualHeight >= 151 || ActualHeight <= 200)
                     Yield += 1;
+                if (Health <= 75)
+                    Yield -= 2;
+                if (Health >= 100 && Health <= 150)
+                    Yield += 0.25;
+                if (Health >= 151 && Health <= 200)
+                    Yield += 0.25;
             }
 
             // If flowering age has gone by, decrease yield.
@@ -239,19 +245,19 @@ namespace GanjaLibrary.Classes
         }
 
         // Adjust THC % of the plant.
-        public virtual void AdjustTHC(Stage stage)
+        private void AdjustTHC(Stage stage)
         {
             // High health increases THC content.
-            if (stage == Stage.Flowering && (Health / 50) > 2 && (Quality / 2) > 2)
+            if (stage == Stage.Flowering && Health >= 100)
                 THC += 0.00015;
 
             // Low health increases THC content.
-            else if (stage == Stage.Flowering && (Health / 50) <= 2 && (Quality / 2) <= 2)
+            else if (stage == Stage.Flowering && Health <= 100)
                 THC -= 0.00015;
         }
 
         // Adjust CBD % of the plant.
-        public virtual void AdjustCBD(Stage stage)
+        private void AdjustCBD(Stage stage)
         {
             // High health increases CBD content.
             if (stage == Stage.Flowering && (Health / 50) > 2 && (Quality / 2) > 2)
@@ -267,10 +273,11 @@ namespace GanjaLibrary.Classes
         {
             Console.WriteLine(string.Format("Name: {0}  \nStage: {1}", Name, Stage));
             Console.WriteLine(string.Format("Age: {0} \tFlowering age: {1} \tSeeding Age: {2};", Age, FloweringAge, SeedingAge));
-            Console.WriteLine(string.Format("Water: {0} \tFood: {1} \tLight: {2}", Water, Food, Light));
+            Console.WriteLine(string.Format("Water: {0} \tFood: {1} \t\tLight: {2}", Water, Food, Light));
+            Console.WriteLine(string.Format("CBD: {0}%; \tTHC: {1}%", CBD * 100, THC * 100));
+
             Console.WriteLine(string.Format("\nActual Height: {0} centimeters" , ActualHeight));
             Console.WriteLine(string.Format("Actual Yield: {0} grams", Yield));
-            Console.WriteLine(string.Format("CBD: {0}%; \tTHC: {1}%", CBD * 100, THC * 100));
             Console.WriteLine(string.Format("Quality: {0}", Quality));
             Console.WriteLine(string.Format("Health: {0}", Health));
 
