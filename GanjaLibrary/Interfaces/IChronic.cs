@@ -20,10 +20,6 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         double MaxYield { get; }
         /// <summary>
-        /// Quality of a plant (can be improved through good care).
-        /// </summary>
-        double Quality { get; }
-        /// <summary>
         /// Age of the plant in days.
         /// </summary>
         int Age { get; }
@@ -71,7 +67,6 @@ namespace GanjaLibrary.Interfaces
         /// Actual height of plant in centimeters (start at 0)
         /// </summary>
         double ActualHeight { get; }
-
         /// <summary>
         /// Dictionary containing water requirements.
         /// </summary>
@@ -84,6 +79,21 @@ namespace GanjaLibrary.Interfaces
         /// Day the seed is expected to flower.
         /// </summary>
         int SeedingAge { get; }
+        /// <summary>
+        /// Actual quality of the plant during growth.
+        /// </summary>
+        double ActualQuality { get; set; }
+        /// <summary>
+        /// Base or starting quality of the plant seed/clone.
+        /// </summary>
+        double BaseQuality { get; set; }
+        /// <summary>
+        /// Max health cap (200)
+        /// </summary>
+        int MaxHealth { get; set; }
+
+
+
 
 
         /// <summary>

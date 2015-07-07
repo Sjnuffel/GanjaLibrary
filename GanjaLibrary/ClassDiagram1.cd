@@ -1,50 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GanjaLibrary.Classes.Indica">
-    <Position X="6.25" Y="3.75" Width="1.5" />
+    <Position X="5.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Indica.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Sativa">
-    <Position X="6.25" Y="5" Width="1.5" />
+    <Position X="5.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Sativa.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Chronic">
-    <Position X="2.75" Y="0.75" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACCABBAAEAAJAAEwEAhQAAQIgAAAAABgAAwIFgAE=</HashCode>
+      <HashCode>AAgACCABBAAECAJAAEwEAhQAAQIgAAAAABgAAwIFgAE=</HashCode>
       <FileName>Classes\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Ruderalis">
-    <Position X="6.25" Y="2.5" Width="1.5" />
+    <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Ruderalis.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.MasterKush">
-    <Position X="8.25" Y="3.75" Width="1.5" />
+    <Position X="7.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\MasterKush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.SilverHaze">
-    <Position X="8.25" Y="5" Width="1.5" />
+    <Position X="7.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\SilverHaze.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
-    <Position X="1" Y="0.75" Width="1.5" />
+    <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgACAABBAAAAAJAAEwEAgQAAQAgAAAAABgAAwIFgAA=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
