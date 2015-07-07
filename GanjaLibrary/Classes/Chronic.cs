@@ -13,13 +13,14 @@ namespace GanjaLibrary.Classes
         public int Age { get; internal set; }
         public int FloweringAge { get; internal set; }
         public int SeedingAge { get; internal set; }
-        public int MaxHealth { get; private set; }
+        public int MaxHealth { get; set; }
 
         public double CBD { get; internal set; }
         public double THC { get; internal set; }
         public double Yield { get; private set; }
         public double MaxYield { get; private set; }
-        public double Quality { get; private set; }
+        public double BaseQuality { get; set; }
+        public double ActualQuality { get; set; }
         public double Health { get; internal set; }
         public double ActualHeight { get; private set; }
 
@@ -44,8 +45,9 @@ namespace GanjaLibrary.Classes
             CBD = 0.15;
             THC = 0.10;
             MaxYield = 75;
-            Quality = 1;
             Yield = 0;
+            BaseQuality = 10;
+            ActualQuality = BaseQuality;
             Health = 45;
             ActualHeight = 0;
 
@@ -96,7 +98,7 @@ namespace GanjaLibrary.Classes
             Age++;
             AdjustHealth(water, light, food);
             AdjustHeight(water, light, food, Stage);
-            AdjustQuality(food);
+            AdjustQuality(water, light, food);
             AdjustYield(water, light, food, Stage);
             AdjustTHC(Stage);
             AdjustCBD(Stage);
@@ -153,9 +155,19 @@ namespace GanjaLibrary.Classes
         }
 
         // Quality improvement algorithm.
-        private void AdjustQuality(Food food)
+        private void AdjustQuality(Water water, Light light, Food food)
         {
-            Quality = Quality * Health;
+            if (Health > 150)
+            {
+                if (water == Water && light == Light)
+                    ActualQuality *= 1.01;
+                if (food == Food.Low)
+                    ActualQuality *= 1.01;
+                if (food == Food.Medium)
+                    ActualQuality *= 1.02;
+                if (food == Food.High)
+                    ActualQuality *= 1.03;
+            }
         }
 
         public IChronic Harvest()
@@ -286,7 +298,7 @@ namespace GanjaLibrary.Classes
 
             Console.WriteLine(string.Format("\nActual Height: {0} centimeters" , ActualHeight));
             Console.WriteLine(string.Format("Actual Yield: {0} grams", Yield));
-            Console.WriteLine(string.Format("Quality: {0}", Quality));
+            Console.WriteLine(string.Format("Base Quality: {0} \t\t Actual Quality: {1}", BaseQuality, ActualQuality));
             Console.WriteLine(string.Format("Health: {0}", Health));
 
             if (Globals.Debug)
