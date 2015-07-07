@@ -4,21 +4,21 @@
     <Position X="5.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Indica.cs</FileName>
+      <FileName>Classes\Chronic\Indica.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Sativa">
     <Position X="5.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Sativa.cs</FileName>
+      <FileName>Classes\Chronic\Sativa.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACCABBAAECAJAAEwEAhQAAQIgAAAAABgAAwIFgAE=</HashCode>
-      <FileName>Classes\Chronic.cs</FileName>
+      <HashCode>AAiAGCABBAAECAIAAEwEAhQAAQIgAAAAABgAAwIFgAE=</HashCode>
+      <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -26,27 +26,27 @@
     <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Ruderalis.cs</FileName>
+      <FileName>Classes\Chronic\Ruderalis.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.MasterKush">
     <Position X="7.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\MasterKush.cs</FileName>
+      <FileName>Classes\Chronic\MasterKush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.SilverHaze">
     <Position X="7.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\SilverHaze.cs</FileName>
+      <FileName>Classes\Chronic\SilverHaze.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACAABBAAAAAJAAEwEAgQAAQAgAAAAABgAAwIFgAA=</HashCode>
+      <HashCode>AAiAGAABBAAACAIAAEwEAgQAAQAgAAAAABgAAwIFgAA=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>

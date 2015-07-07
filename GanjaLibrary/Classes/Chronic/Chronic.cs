@@ -13,14 +13,14 @@ namespace GanjaLibrary.Classes
         public int Age { get; internal set; }
         public int FloweringAge { get; internal set; }
         public int SeedingAge { get; internal set; }
-        public int MaxHealth { get; set; }
+        public int MaxHealth { get; private set; }
 
         public double CBD { get; internal set; }
         public double THC { get; internal set; }
         public double Yield { get; private set; }
         public double MaxYield { get; private set; }
-        public double BaseQuality { get; set; }
-        public double ActualQuality { get; set; }
+        public double BaseQuality { get; private set; }
+        public double ActualQuality { get; private set; }
         public double Health { get; internal set; }
         public double ActualHeight { get; private set; }
 
@@ -107,30 +107,30 @@ namespace GanjaLibrary.Classes
             return this;
         }
 
-        // Adjust plant health if watered and lighted.
+        // Adjust plant health if watered, lighted and fed.
         private void AdjustHealth(Water water, Light light, Food food)
         {
             if (water == Water && Health <= MaxHealth)
-                Health += 1;
+                Health++;
             else
-                Health -= 1;
+                Health--;
 
             if (light == Light && Health <= MaxHealth)
-                Health += 1;
+                Health++;
             else
-                Health -= 1;
+                Health--;
 
             if (food == Food && Health <= MaxHealth)
-                Health += 1;
+                Health++;
             else
-                Health -= 1;
+                Health--;
         }
 
         // Adjust plant height if watered and lighted.
         private void AdjustHeight(Water water, Light light, Food food, Stage stage)
         {
             // Check if plant is alive and no longer a seed.
-            if (stage != Stage.Seed || stage != Stage.Dead)
+            if (stage == Stage.Vegetative || stage == Stage.Flowering || stage == Stage.Clone)
             {
                 if (water == Water)
                     ActualHeight += 0.75;
@@ -157,16 +157,23 @@ namespace GanjaLibrary.Classes
         // Quality improvement algorithm.
         private void AdjustQuality(Water water, Light light, Food food)
         {
+            // Plant has to be very healthy
             if (Health > 150)
             {
+                // Always get some quality improvement.
                 if (water == Water && light == Light)
+                {
                     ActualQuality *= 1.01;
-                if (food == Food.Low)
-                    ActualQuality *= 1.01;
-                if (food == Food.Medium)
-                    ActualQuality *= 1.02;
-                if (food == Food.High)
-                    ActualQuality *= 1.03;
+
+                    if (food == Food.Low)
+                        ActualQuality *= 1.01;
+
+                    else if (food == Food.Medium)
+                        ActualQuality *= 1.02;
+
+                    else if (food == Food.High)
+                        ActualQuality *= 1.03;
+                }
             }
         }
 
