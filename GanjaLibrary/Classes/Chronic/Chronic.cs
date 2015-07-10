@@ -240,17 +240,17 @@ namespace GanjaLibrary.Classes
                     Yield += 2;
                 if (ActualHeight >= 0 || ActualHeight <= 50)
                     Yield += 0.25;
-                if (ActualHeight >= 51 || ActualHeight <= 100)
+                else if (ActualHeight >= 51 || ActualHeight <= 100)
                     Yield += 0.5;
-                if (ActualHeight >= 101 || ActualHeight <= 150)
+                else if (ActualHeight >= 101 || ActualHeight <= 150)
                     Yield += 0.75;
-                if (ActualHeight >= 151 || ActualHeight <= 200)
+                else if (ActualHeight >= 151 || ActualHeight <= 200)
                     Yield += 1;
                 if (Health <= 75)
                     Yield -= 2;
-                if (Health >= 100 && Health <= 150)
+                else if (Health >= 100 && Health <= 150)
                     Yield += 0.25;
-                if (Health >= 151 && Health <= 200)
+                else if (Health >= 151 && Health <= 200)
                     Yield += 0.25;
             }
 
