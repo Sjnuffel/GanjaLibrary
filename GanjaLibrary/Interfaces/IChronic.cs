@@ -94,19 +94,17 @@ namespace GanjaLibrary.Interfaces
 
 
 
-
-
         /// <summary>
         /// Grow the plant.
         /// </summary>
         IChronic Grow(Water water, Light light, Food food );
         /// <summary>
-        /// Print.
-        /// </summary>
-        void Print();
-        /// <summary>
         /// Harvest the plant.
         /// </summary>
         IChronic Harvest();
+        /// <summary>
+        /// Print.
+        /// </summary>
+        void Print();
     }
 }

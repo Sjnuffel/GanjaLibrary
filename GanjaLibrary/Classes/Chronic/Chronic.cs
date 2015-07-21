@@ -33,12 +33,16 @@ namespace GanjaLibrary.Classes
         public Dictionary<Stage, Water> WaterNeed { get; internal set; }
         public Dictionary<Stage, Light> LightNeed { get; internal set; }
 
+        // Add a random method.
+        public static Random randgen = new Random();
+
         public Chronic()
         {
             // Set base variables.
             Name = "Chronic";
             Age = 0;
-            FloweringAge = 90;
+            FloweringAge = randgen.Next(50, 60);
+            
             SeedingAge = 1;
             MaxHealth = 200;
 

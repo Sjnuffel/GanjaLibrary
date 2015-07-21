@@ -1,85 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GanjaLibrary.Classes.Indica">
-    <Position X="5.25" Y="2.75" Width="1.5" />
+    <Position X="4.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Chronic\Indica.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Sativa">
-    <Position X="5.25" Y="4" Width="1.5" />
+    <Position X="4.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Chronic\Sativa.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GanjaLibrary.Classes.Chronic">
-    <Position X="2.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAiAGCABBAAECAIAAEwEAhQAAQIgAAAAABgAAwIFgAE=</HashCode>
-      <FileName>Classes\Chronic\Chronic.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="GanjaLibrary.Classes.Ruderalis">
-    <Position X="5.25" Y="1.5" Width="1.5" />
+    <Position X="4.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Chronic\Ruderalis.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.MasterKush">
-    <Position X="7.25" Y="2.75" Width="1.5" />
+    <Position X="6.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Chronic\MasterKush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.SilverHaze">
-    <Position X="7.25" Y="4" Width="1.5" />
+    <Position X="6.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Chronic\SilverHaze.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="GanjaLibrary.Classes.Chronic">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAqAGCABBAAECAIAAEwEAhQAAQIgAAAAABgAAwIFgAU=</HashCode>
+      <FileName>Classes\Chronic\Chronic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAiAGAABBAAACAIAAEwEAgQAAQAgAAAAABgAAwIFgAA=</HashCode>
+      <HashCode>AAiAGAABBAAACAIAAEwEAgQAAQAgAAAAABgAAwIFgAQ=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">
-    <Position X="0.75" Y="8.25" Width="1.5" />
+    <Position X="6.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAgAAAAAAAQAAAAAACAAAABA=</HashCode>
       <FileName>Enums\Stage.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Light">
-    <Position X="2.25" Y="8.25" Width="1.5" />
+    <Position X="7.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAQIAAAAAAAAAQ=</HashCode>
       <FileName>Enums\Light.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Height">
-    <Position X="3.75" Y="8.25" Width="1.5" />
+    <Position X="9.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAACAAAEAAA=</HashCode>
       <FileName>Enums\Height.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Water">
-    <Position X="5.25" Y="8.25" Width="1.5" />
+    <Position X="10.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAgAAAAAEAAA=</HashCode>
       <FileName>Enums\Water.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Food">
-    <Position X="6.75" Y="8.25" Width="1.5" />
+    <Position X="12.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAEEIAA=</HashCode>
       <FileName>Enums\Food.cs</FileName>
