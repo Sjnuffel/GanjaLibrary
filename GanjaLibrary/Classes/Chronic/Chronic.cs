@@ -144,7 +144,7 @@ namespace GanjaLibrary.Classes
                     Yield *= 1.05;
                 else if (Health >= 100 && Health <= 150)                                    // Check the health of the plant and give bonus accordingly.
                     Yield *= 1.01;
-                else if (Health >= 150 && Health <= 190)
+                else if (Health >= 151 && Health <= 190)
                     Yield *= 1.02;
                 else if (Health >= 191 && Health <= 200)
                     Yield *= 1.05;
