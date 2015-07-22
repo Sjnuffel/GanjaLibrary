@@ -32,17 +32,39 @@ namespace GanjaLibrary.Classes
 
         public Dictionary<Stage, Water> WaterNeed { get; internal set; }
         public Dictionary<Stage, Light> LightNeed { get; internal set; }
+        
+        public Guid ID { get; internal set; }
 
         // Add a random method.
         public static Random randgen = new Random();
 
+        // Add a random decimal method.
+        public static decimal NextDecimal(Random randgen, decimal from, decimal to)
+        {
+            byte fromScale = new System.Data.SqlTypes.SqlDecimal(from).Scale;
+            byte toScale = new System.Data.SqlTypes.SqlDecimal(to).Scale;
+
+            byte scale = (byte)(fromScale + toScale);
+            if (scale > 28)
+                scale = 28;
+
+            decimal r = new decimal(randgen.Next(), randgen.Next(), randgen.Next(), false, scale);
+            if (Math.Sign(from) == Math.Sign(to) || from == 0 || to == 0)
+                return decimal.Remainder(r, to - from) + from;
+
+            bool getFromNegativeRange = (double)from + randgen.NextDouble() * ((double)to - (double)from) < 0;
+            return getFromNegativeRange ? decimal.Remainder(r, -from) + from : decimal.Remainder(r, to);
+
+        }
+
         public Chronic()
         {
             // Set base variables.
+            ID = Guid.NewGuid();
             Name = "Chronic";
             Age = 0;
             FloweringAge = randgen.Next(50, 60);
-            
+
             SeedingAge = 1;
             MaxHealth = 200;
 
@@ -271,38 +293,41 @@ namespace GanjaLibrary.Classes
         private void AdjustTHC(Stage stage)
         {
             // High health increases THC content.
-            if (stage == Stage.Flowering && Health >= 100)
-                THC += 0.00015;
-            if (stage == Stage.Flowering && Health >= 150)
-                THC += 0.00025;
-            if (stage == Stage.Flowering && Health >= 190)
-                THC += 0.00035;
-
+            if (stage == Stage.Flowering && Health >= 100 && Health <= 149)
+                THC += 0.000015;
+            else if (stage == Stage.Flowering && Health >= 150 && Health <= 199)
+                THC += 0.000020;
+            else if (stage == Stage.Flowering && Health >= 200)
+                THC += 0.000025;
             // Low health increases THC content.
             else if (stage == Stage.Flowering && Health <= 75)
-                THC -= 0.00015;
+                THC -= 0.000025;
         }
 
         // Adjust CBD % of the plant.
         private void AdjustCBD(Stage stage)
         {
             // High health increases CBD content.
-            if (stage == Stage.Flowering && Health >= 100)
+            if (stage == Stage.Flowering && Health >= 100 && Health <= 149)
                 CBD += 0.00015;
-            if (stage == Stage.Flowering && Health >= 150)
+            else if (stage == Stage.Flowering && Health >= 150 && Health <= 199)
                 CBD += 0.00025;
-            if (stage == Stage.Flowering && Health >= 190)
+            else if (stage == Stage.Flowering && Health >= 200)
                 CBD += 0.00035;
-
             // Low health lowers CBD content.
             else if (stage == Stage.Flowering && Health <= 75)
                 CBD -= 0.00015;
         }
 
+        private void AdjustWaterNeed(Water water, Height height)
+        {
+
+        }
+
         // Printing out all the changing variables so we can track progress.
         public virtual void Print()
         {
-            Console.WriteLine(string.Format("Name: {0}  \nStage: {1}", Name, Stage));
+            Console.WriteLine(string.Format("Name: {0}  \nStage: {1} \nGUID: {2}", Name, Stage, ID));
             Console.WriteLine(string.Format("Age: {0} \tFlowering age: {1} \tSeeding Age: {2};", Age, FloweringAge, SeedingAge));
             Console.WriteLine(string.Format("Water: {0} \tFood: {1} \t\tLight: {2}", Water, Food, Light));
             Console.WriteLine(string.Format("CBD: {0}%; \tTHC: {1}%", CBD * 100, THC * 100));

@@ -91,6 +91,11 @@ namespace GanjaLibrary.Interfaces
         /// Max health cap (200)
         /// </summary>
         int MaxHealth { get; }
+        /// <summary>
+        /// A unique ID for all the plants grown.
+        /// </summary>
+        Guid ID { get; }
+
 
 
 

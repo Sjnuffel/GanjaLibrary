@@ -9,9 +9,6 @@ namespace GanjaTestApplication
     {
         static void Main(string[] args)
         {
-            // Add a random method.
-            Random rgenerator = new Random();
-
             IChronic GanjaTest = new SilverHaze();
             GanjaTest.Print();
             Console.WriteLine();
@@ -22,14 +19,14 @@ namespace GanjaTestApplication
                 Console.WriteLine();
             }
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 20; i++)
             {
                 GanjaTest.Grow(Water.Medium, Light.Spring, Food.None);
                 GanjaTest.Print();
                 Console.WriteLine();
             }
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 10; i++)
             {
                 GanjaTest.Grow(Water.High, Light.Summer, Food.None);
                 GanjaTest.Print();

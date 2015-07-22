@@ -49,6 +49,8 @@
     <Compile Include="Classes\Chronic\Sativa.cs" />
     <Compile Include="Enums\Stage.cs" />
     <Compile Include="Classes\Chronic\MasterKush.cs" />
+    <Compile Include="Classes\GameInventory\ObtainableItem.cs" />
+    <Compile Include="Classes\GameInventory\PlayerInventory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\Water.cs" />
     <Compile Include="Classes\Chronic\Ruderalis.cs" />
