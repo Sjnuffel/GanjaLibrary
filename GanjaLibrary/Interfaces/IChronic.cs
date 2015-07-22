@@ -44,7 +44,7 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         double CBD { get; }
         /// <summary>
-        /// Actual yield of the plant in grams.
+        /// Yield of the plant in grams, during growth.
         /// </summary>
         double Yield { get; }
         /// <summary>
@@ -95,6 +95,11 @@ namespace GanjaLibrary.Interfaces
         /// A unique ID for all the plants grown.
         /// </summary>
         Guid ID { get; }
+        /// <summary>
+        /// Harvested Yield of the plant, in grams.
+        /// </summary>
+        double ActualYield { get; }
+
 
 
 
