@@ -44,6 +44,7 @@
     <Compile Include="Enums\Food.cs" />
     <Compile Include="Enums\Height.cs" />
     <Compile Include="Classes\Chronic\Indica.cs" />
+    <Compile Include="IGameInventory.cs" />
     <Compile Include="Interfaces\IChronic.cs" />
     <Compile Include="Enums\Light.cs" />
     <Compile Include="Classes\Chronic\Sativa.cs" />

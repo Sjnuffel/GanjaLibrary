@@ -38,24 +38,6 @@ namespace GanjaLibrary.Classes
 
         public static Random randgen = new Random();
 
-        public static decimal NextDecimal(Random randgen, decimal from, decimal to)
-        {
-            byte fromScale = new System.Data.SqlTypes.SqlDecimal(from).Scale;
-            byte toScale = new System.Data.SqlTypes.SqlDecimal(to).Scale;
-
-            byte scale = (byte)(fromScale + toScale);
-            if (scale > 28)
-                scale = 28;
-
-            decimal r = new decimal(randgen.Next(), randgen.Next(), randgen.Next(), false, scale);
-            if (Math.Sign(from) == Math.Sign(to) || from == 0 || to == 0)
-                return decimal.Remainder(r, to - from) + from;
-
-            bool getFromNegativeRange = (double)from + randgen.NextDouble() * ((double)to - (double)from) < 0;
-            return getFromNegativeRange ? decimal.Remainder(r, -from) + from : decimal.Remainder(r, to);
-
-        }
-
         public Chronic()
         {
             ID = Guid.NewGuid();
@@ -131,7 +113,6 @@ namespace GanjaLibrary.Classes
         public IChronic Harvest()                                                          // What to do when harvesting the plant.
         {
             CutPlant(Stage);
-            TransferToInventory();
 
             return this;
         }
@@ -149,15 +130,12 @@ namespace GanjaLibrary.Classes
                 else if (Health >= 191 && Health <= 200)
                     Yield *= 1.05;
 
+                Health = 50;                                                                // Causes a lot of stress for the plant.
                 ActualHeight = 10;                                                          // Since we cut the plant, set height to 10 cm.
                 Stage = Stage.Clone;                                                        // Cutting does not kill, reduce to clone stage.
                 Yield = ActualYield;                                                        // Transfer Yield to ActualYield
                 Yield = 0;
             }
-        }
-
-        private void TransferToInventory()
-        {
         }
             
     private void AdjustHealth(Water water, Light light, Food food)                         // Adjust plant health if watered, lighted and fed.

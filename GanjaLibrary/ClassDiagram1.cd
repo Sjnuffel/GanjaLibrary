@@ -38,7 +38,7 @@
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAiAGCARBABEiAIAAEwEAhQAAQIgAAAAABgAAwYFgAE=</HashCode>
+      <HashCode>AAyAGCARBAAEiAIAAEwEAhQAAQIgAAAAARgAAwIFgAE=</HashCode>
       <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -67,7 +67,7 @@
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAiAGAABBAAAiAIAAEwEAgQAAQAgAAAAABgAAwIFgAA=</HashCode>
+      <HashCode>AAyAGAABBAAAiAIAAEwEAgQAAQAgAAAAABgAAwIFgAA=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
