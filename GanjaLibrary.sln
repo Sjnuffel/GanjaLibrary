@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GanjaLibrary", "GanjaLibrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GanjaTestApplication", "GanjaTestApplication\GanjaTestApplication.csproj", "{82C00056-57A2-40FE-A18E-46CA84AEDB0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GanjaUnitTest", "GanjaUnitTest\GanjaUnitTest.csproj", "{AE38686D-35F7-41D4-A447-CAF62B66F461}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{82C00056-57A2-40FE-A18E-46CA84AEDB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82C00056-57A2-40FE-A18E-46CA84AEDB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82C00056-57A2-40FE-A18E-46CA84AEDB0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE38686D-35F7-41D4-A447-CAF62B66F461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE38686D-35F7-41D4-A447-CAF62B66F461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE38686D-35F7-41D4-A447-CAF62B66F461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE38686D-35F7-41D4-A447-CAF62B66F461}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

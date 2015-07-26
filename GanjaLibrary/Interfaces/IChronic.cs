@@ -14,7 +14,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Height category of the plant
         /// </summary>
-        Height Height { get; }
+        double Height { get; set; }
         /// <summary>
         /// Max yield a plant can get in grams.
         /// </summary>
@@ -22,7 +22,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Age of the plant in days.
         /// </summary>
-        int Age { get; }
+        int Age { get; set; }
         /// <summary>
         /// Time the plant should be ready for harvest in days.
         /// </summary>
@@ -30,7 +30,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Stage the plant is in.
         /// </summary>
-        Stage Stage { get; }
+        Stage Stage { get; set; }
         /// <summary>
         /// Day to Day health of the plant (%).
         /// </summary>
@@ -64,10 +64,6 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         string Name { get; }
         /// <summary>
-        /// Actual height of plant in centimeters (start at 0)
-        /// </summary>
-        double ActualHeight { get; }
-        /// <summary>
         /// Dictionary containing water requirements.
         /// </summary>
         Dictionary<Stage, Water> WaterNeed { get; }
@@ -92,18 +88,9 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         int MaxHealth { get; }
         /// <summary>
-        /// A unique ID for all the plants grown.
+        /// Ideal drying age/time of the plant.
         /// </summary>
-        Guid ID { get; }
-        /// <summary>
-        /// Harvested Yield of the plant, in grams.
-        /// </summary>
-        double ActualYield { get; }
-
-
-
-
-
+        int DryingAge { get; }
         /// <summary>
         /// Grow the plant.
         /// </summary>
@@ -116,5 +103,21 @@ namespace GanjaLibrary.Interfaces
         /// Print.
         /// </summary>
         void Print();
+        /// <summary>
+        /// Dry the plant.
+        /// </summary>
+        IChronic Dry();
+        /// <summary>
+        /// Actual curing process.
+        /// </summary>
+        IChronic Cure();
+        /// <summary>
+        /// Final steps before plant is ready for sale.
+        /// </summary>
+        IChronic Finish();
+        /// <summary>
+        /// Cure the plant (in a weck jar).
+        /// </summary>
+        IChronic Weck();
     }
 }

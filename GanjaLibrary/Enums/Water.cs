@@ -10,7 +10,7 @@ namespace GanjaLibrary.Enums
         /// <summary>
         /// Close water tap.
         /// </summary>
-        Nothing,
+        None,
         /// <summary>
         /// Slightly open water tap.
         /// </summary>

@@ -26,6 +26,18 @@ namespace GanjaLibrary.Enums
         /// <summary>
         /// You killed it
         /// </summary>
-        Dead
+        Dead,
+        /// <summary>
+        /// Dried plant.
+        /// </summary>
+        Drying,
+        /// <summary>
+        /// Curing plant.
+        /// </summary>
+        Curing,
+        /// <summary>
+        /// All done.
+        /// </summary>
+        Finished
     }
 }

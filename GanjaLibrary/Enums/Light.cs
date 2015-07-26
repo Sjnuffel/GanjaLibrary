@@ -10,7 +10,7 @@ namespace GanjaLibrary.Enums
         /// <summary>
         /// ...
         /// </summary>
-        Off = 0,
+        None = 0,
         /// <summary>
         /// Has no specific lighting.
         /// </summary>
