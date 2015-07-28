@@ -27,11 +27,12 @@ namespace GanjaLibrary.Classes.Tests
                 GanjaTest.Grow(Water.Medium, Light.Spring, Food.None);
             }
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 30; i++)
             {
                 GanjaTest.Grow(Water.High, Light.Summer, Food.None);
             }
             Assert.IsTrue(GanjaTest.Stage == Stage.Flowering);
+            Assert.IsTrue(GanjaTest.Health > 90);
         }
 
         [TestMethod()]
@@ -48,11 +49,12 @@ namespace GanjaLibrary.Classes.Tests
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
             }
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 25; i++)
             {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
             }
             Assert.IsTrue(GanjaTest.Stage == Stage.Flowering);
+            Assert.IsTrue(GanjaTest.Health > 90);
         }
 
         [TestMethod()]
