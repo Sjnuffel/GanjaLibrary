@@ -58,7 +58,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void KillMasterSeedKushTest()
+        public void KillMasterKushSeedTest()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < 4; i++)
@@ -79,7 +79,19 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void KillMasterVegatativeKushTest()
+        public void KillSilverHazeSeed()
+        {
+            IChronic GanjaTest = new MasterKush();
+            for (int i = 0; i < 20; i++)
+            {
+                GanjaTest.Grow(Water.None, Light.None, Food.None);
+            }
+
+            Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
+        }
+
+        [TestMethod()]
+        public void KillMasterKushVegatativeTest()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < 4; i++)
@@ -101,7 +113,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void KillMasterFloweringKushTest()
+        public void KillMasterKushFloweringTest()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < 4; i++)
