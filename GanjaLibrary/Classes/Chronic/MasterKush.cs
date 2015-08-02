@@ -11,7 +11,6 @@ namespace GanjaLibrary.Classes
         public MasterKush() : base()
         {
             Name = "Master Kush";
-            SeedingAge = 4;
             FloweringAge = randgen.Next(50, 65);
 
             CBD = 0.25;
