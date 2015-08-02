@@ -75,7 +75,7 @@ namespace GanjaLibrary.Classes.Tests
         [TestMethod()]
         public void KillSilverHazeSeed()
         {
-            IChronic GanjaTest = new MasterKush();
+            IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < 20; i++)
             {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
@@ -102,10 +102,49 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
+        public void KillSilverHazeVegatativeTest()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+            {
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+            }
+
+            // For test to succeed it needed extra days in Vegatative state.
+            for (int i = 0; i < 30; i++)
+            {
+                GanjaTest.Grow(Water.None, Light.None, Food.None);
+            }
+            Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
+        }
+
+        [TestMethod()]
         public void KillMasterKushFloweringTest()
         {
             IChronic GanjaTest = new MasterKush();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+            {
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+            }
+
+            // For test to succeed it needed extra days in Vegatative state.
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+            {
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+            }
+
+            for (int i = 0; i < 70; i++)
+            {
+                GanjaTest.Grow(Water.None, Light.None, Food.None);
+            }
+            Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
+        }
+
+        [TestMethod()]
+        public void KillSilverHazeFloweringTest()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
             {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
             }
