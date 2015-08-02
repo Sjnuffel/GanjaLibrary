@@ -44,11 +44,10 @@ namespace GanjaLibrary.Classes
         public Chronic() : base("Chronic", "Base type of weed", 0, 0)
         {
             Age = 0;
-
+            SeedingAge = randgen.Next(1, 7);
             FloweringAge = randgen.Next(50, 60);
             DryingAge = randgen.Next(6, 10);
 
-            SeedingAge = 1;
             MaxHealth = 100;
 
             CBD = 0.15;
