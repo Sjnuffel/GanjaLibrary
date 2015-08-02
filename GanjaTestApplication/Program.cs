@@ -15,14 +15,14 @@ namespace GanjaTestApplication
             IChronic GanjaTest = new MasterKush();
             GanjaTest.Print();
             Console.WriteLine();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
             {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
                 GanjaTest.Print();
                 Console.WriteLine();
             }
 
-            for (int i = 0; i < 35; i++)
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
             {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
                 GanjaTest.Print();
@@ -35,7 +35,7 @@ namespace GanjaTestApplication
                 GanjaTest.Print();
                 Console.WriteLine();
             }
-
+            /*
             IChronic harvest = GanjaTest.Harvest();
 
             harvest.Print();
@@ -64,8 +64,9 @@ namespace GanjaTestApplication
             shop.Sell((IItem)harvest);
             
             var price = shop.Buy("Master Kush").Value;
-
+            
             Console.WriteLine(price);
+            */
             Console.ReadLine();
         }
     }

@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GanjaLibrary.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GanjaLibrary.Interfaces;
 using GanjaLibrary.Enums;
 
@@ -17,19 +11,19 @@ namespace GanjaLibrary.Classes.Tests
         public void PerfectSilverHazeGrowTest()
         {
             IChronic GanjaTest = new SilverHaze();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
             {
-                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                GanjaTest.Grow(Water.Low, Light.None, Food.Low);
             }
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
             {
-                GanjaTest.Grow(Water.Medium, Light.Spring, Food.None);
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
             }
 
             for (int i = 0; i < 30; i++)
             {
-                GanjaTest.Grow(Water.High, Light.Summer, Food.None);
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
             }
             Assert.IsTrue(GanjaTest.Stage == Stage.Flowering);
             Assert.IsTrue(GanjaTest.Health > 90);
@@ -39,12 +33,12 @@ namespace GanjaLibrary.Classes.Tests
         public void PerfectMasterKushGrowTest()
         {
             IChronic GanjaTest = new MasterKush();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
             {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
             }
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
             {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
             }
@@ -61,7 +55,7 @@ namespace GanjaLibrary.Classes.Tests
         public void KillMasterKushSeedTest()
         {
             IChronic GanjaTest = new MasterKush();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
             {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
             }
@@ -94,18 +88,13 @@ namespace GanjaLibrary.Classes.Tests
         public void KillMasterKushVegatativeTest()
         {
             IChronic GanjaTest = new MasterKush();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
             {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
             }
 
             // For test to succeed it needed extra days in Vegatative state.
             for (int i = 0; i < 30; i++)
-            {
-                GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
-
-            for (int i = 0; i < 10; i++)
             {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
             }
@@ -122,7 +111,7 @@ namespace GanjaLibrary.Classes.Tests
             }
 
             // For test to succeed it needed extra days in Vegatative state.
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
             {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
             }
@@ -139,12 +128,12 @@ namespace GanjaLibrary.Classes.Tests
         {
             {
                 IChronic GanjaTest = new MasterKush();
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
                     GanjaTest.Grow(Water.None, Light.None, Food.None);
                 }
 
-                for (int i = 0; i < 20; i++)
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
                 {
                     GanjaTest.Grow(Water.None, Light.None, Food.None);
                 }
@@ -200,6 +189,14 @@ namespace GanjaLibrary.Classes.Tests
                     GanjaTest.Grow(Water.None, Light.None, Food.None);
                 }
                 Assert.IsTrue(GanjaTest.Health <= -25);
+            }
+        }
+
+        [TestMethod()]
+        public void GrowAndHarvestPlantTest()
+        {
+            {
+
             }
         }
     }
