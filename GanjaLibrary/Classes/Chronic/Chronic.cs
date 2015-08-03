@@ -392,15 +392,18 @@ namespace GanjaLibrary.Classes
 
         public virtual void Print()                                                         // Printing out all the changing variables so we can track progress.
         {
-            Console.WriteLine(string.Format("Name: {0}  \nStage: {1} \nGUID: {2}", Name, Stage, Id));
-            Console.WriteLine(string.Format("Age: {0} \tFlowering age: {1} \tSeeding Age: {2};", Age, FloweringAge, SeedingAge));
-            Console.WriteLine(string.Format("Water: {0} \tFood: {1} \t\tLight: {2}", Water, Food, Light));
-            Console.WriteLine(string.Format("CBD: {0}%; \tTHC: {1}%", CBD * 100, THC * 100));
+            Console.WriteLine(string.Format("==================="));
+            Console.WriteLine(string.Format("GUID: {0}", Id));
+            Console.WriteLine(string.Format("Age: {0}     \t\t\tName: {1}", Age, Name));
+            Console.WriteLine(string.Format("Seeding Age: {0} \t\t\tFlowering Age: {1}", SeedingAge, FloweringAge));
+            Console.WriteLine(string.Format("Water: {0}  \t\t\tLight: {1}", Water, Light));
+            Console.WriteLine(string.Format("Food: {0} \t\t\tHealth: {1}", Food, Health));
+            Console.WriteLine(string.Format("CBD: {0}%  \t\t\tTHC: {1}%", CBD * 100, THC * 100));
+            Console.WriteLine(string.Format("Actual Height: {0} \t\tActual Quality: {1}", Height, ActualQuality));
 
-            Console.WriteLine(string.Format("\nActual Height: {0} centimeters", Height));
-            Console.WriteLine(string.Format("Actual Yield: {0} grams", Yield));
-            Console.WriteLine(string.Format("Base Quality: {0} \t\t Actual Quality: {1}", BaseQuality, ActualQuality));
-            Console.WriteLine(string.Format("Health: {0}", Health));
+
+
+
 
             if (Globals.Debug)
             {
