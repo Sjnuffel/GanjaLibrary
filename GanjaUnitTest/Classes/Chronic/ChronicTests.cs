@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GanjaLibrary.Interfaces;
 using GanjaLibrary.Enums;
+using GanjaLibrary.Interfaces.Items;
+using GanjaLibrary.Classes.Items;
 
 namespace GanjaLibrary.Classes.Tests
 {
@@ -235,7 +237,132 @@ namespace GanjaLibrary.Classes.Tests
         public void GrowAndHarvestPlantTest()
         {
             {
+                IChronic GanjaTest = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                }
 
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic HarvestTest = GanjaTest.Harvest();
+                Assert.IsTrue(HarvestTest.Stage == Stage.Drying);
+            }
+        }
+
+        [TestMethod()]
+        public void GrowHarvestAndDryPlantTest()
+        {
+            {
+                IChronic GanjaTest = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                }
+
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic DryTest = GanjaTest.Harvest();
+
+                for (int i = 0; i < DryTest.DryingAge; i++)
+                {
+                    DryTest.Dry();
+                }
+                Assert.IsTrue(DryTest.Stage == Stage.Drying);
+            }
+        }
+
+        [TestMethod()]
+        public void GrowHarvestDryAndCurePlantTest()
+        {
+            {
+                IChronic GanjaTest = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                }
+
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic CureTest = GanjaTest.Harvest();
+
+                for (int i = 0; i < CureTest.DryingAge; i++)
+                {
+                    CureTest.Dry();
+                }
+
+                CureTest.Weck();
+                for (int i = 0; i < 14; i++)
+                {
+                    CureTest.Cure();
+                }
+                Assert.IsTrue(CureTest.Stage == Stage.Curing);
+            }
+        }
+
+        [TestMethod()]
+        public void GrowHarvestDryCureAndFinishPlantTest()
+        {
+            {
+                IChronic GanjaTest = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                }
+
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic CureTest = GanjaTest.Harvest();
+
+                for (int i = 0; i < CureTest.DryingAge; i++)
+                {
+                    CureTest.Dry();
+                }
+
+                CureTest.Weck();
+                for (int i = 0; i < 14; i++)
+                {
+                    CureTest.Cure();
+                }
+
+                CureTest.Finish();
+                Assert.IsTrue(CureTest.Stage == Stage.Finished);
             }
         }
     }
