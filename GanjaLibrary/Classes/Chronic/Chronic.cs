@@ -99,7 +99,8 @@ namespace GanjaLibrary.Classes
         public event EventHandler Died;
 
         #region Processing functions
-        public IChronic Grow(Water water, Light light, Food food)                           // What to do when plant grows.
+        // What to do when plant grows.
+        public IChronic Grow(Water water, Light light, Food food)                           
         {
             if (Stage == Stage.Vegetative || Stage == Stage.Seed || Stage == Stage.Clone || Stage == Stage.Flowering)
             {
@@ -120,7 +121,8 @@ namespace GanjaLibrary.Classes
             return this;
         }
 
-        public IChronic Harvest()                                                          // What to do when harvesting the plant.
+        // What to do when harvesting the plant.
+        public IChronic Harvest()                                                          
         {
             IChronic harvest = null;
 
@@ -128,9 +130,11 @@ namespace GanjaLibrary.Classes
             {
                 if (Age >= (FloweringAge - 5) && Age <= FloweringAge + 5)
                 {
-                    if (Age == FloweringAge)                                                    // Check if plant has reached optimal flowering age.
+                    // Check if plant has reached optimal flowering age.
+                    if (Age == FloweringAge)                                                    
                         Yield *= 1.05;
-                    else if (Health >= 0 && Health <= 50)                                       // Check the health of the plant and give bonus accordingly.
+                    // Check the health of the plant and give bonus accordingly.
+                    else if (Health >= 0 && Health <= 50)                                       
                         Yield *= 1.01;
                     else if (Health > 50 && Health <= 90)
                         Yield *= 1.02;
@@ -144,8 +148,10 @@ namespace GanjaLibrary.Classes
 
                 harvest = DeepClone();
 
-                Height = 10;                                                          // Since we cut the plant, set height to 10 cm.
-                Stage = Stage.Clone;                                                        // Cutting does not kill, reduce to clone stage.
+                // Since we cut the plant, set height to 10 cm.
+                Height = 10;
+                // Cutting does not kill, reduce to clone stage.
+                Stage = Stage.Clone;                                                        
                 Yield = 0;
 
                 harvest.Stage = Stage.Drying;
@@ -204,7 +210,8 @@ namespace GanjaLibrary.Classes
         #endregion
 
         #region Plant Biology
-        private void AdjustHealth(Water water, Light light, Food food)                         // Adjust plant health if watered, lighted and fed.
+        // Adjust plant health if watered, lighted and fed.
+        private void AdjustHealth(Water water, Light light, Food food)                        
         {
             if (Stage == Stage.Dead)
             {
@@ -227,7 +234,8 @@ namespace GanjaLibrary.Classes
             }
         }
 
-        private void AdjustHeight(Water water, Light light, Food food, Stage stage)         // Adjust plant height if watered and lighted.
+        // Adjust plant height if watered and lighted.
+        private void AdjustHeight(Water water, Light light, Food food, Stage stage)        
         {
             // Check if plant is alive and no longer a seed.
             if (stage == Stage.Vegetative || stage == Stage.Flowering || stage == Stage.Clone)
@@ -258,11 +266,14 @@ namespace GanjaLibrary.Classes
 
         }
 
-        private void AdjustQuality(Water water, Light light, Food food)                     // Quality improvement algorithm.
+        // Quality improvement algorithm.
+        private void AdjustQuality(Water water, Light light, Food food)                     
         {
-            if (Health > 50)                                                               // Plant has to be very healthy
+            // Plant has to be very healthy
+            if (Health > 50)                                                               
             {
-                if (water == Water && light == Light)                                       // Always get some quality improvement.
+                // Always get some quality improvement.
+                if (water == Water && light == Light)                                       
                 {
                     ActualQuality *= 1.01;
 
@@ -278,11 +289,13 @@ namespace GanjaLibrary.Classes
             }
         }
 
-        public bool AdvanceStage(Light light)                                               // How the plant enhances through growth stages.    
+        // How the plant enhances through growth stages.    
+        public bool AdvanceStage(Light light)                                               
         {
             var hasAdvanced = false;
 
-            if (Health <= GameSettings.Default.DeathThreshold)                                                               // Die if quality is bad.
+            // Die if quality is bad.
+            if (Health <= GameSettings.Default.DeathThreshold)                                                              
             {
                 Stage = Stage.Dead;
                 if (Died != null)
@@ -292,13 +305,15 @@ namespace GanjaLibrary.Classes
                 hasAdvanced = true;
             }
 
-            if (Age == SeedingAge && Health >= 0)                                                          // Advance from seed to vegetative.
+            // Advance from seed to vegetative.
+            if (Age == SeedingAge && Health >= 0)                                                          
             {
                 Stage = Stage.Vegetative;
                 hasAdvanced = true;
             }
 
-            if (Age >= 21 && (light == LightNeed[Stage.Flowering]))                         // Advance if 3 weeks are reached and light requirement is triggered.
+            // Advance if 3 weeks are reached and light requirement is triggered.
+            if (Age >= 21 && (light == LightNeed[Stage.Flowering]))                         
             {
                 if (Stage == Stage.Vegetative || Stage == Stage.Clone)
                 {
@@ -316,11 +331,14 @@ namespace GanjaLibrary.Classes
             return hasAdvanced;
         }
 
-        private void AdjustYield(Water water, Light light, Food food, Stage stage)          // Adjust the actual yield of the plant.
+        // Adjust the actual yield of the plant.
+        private void AdjustYield(Water water, Light light, Food food, Stage stage)          
         {
-            if (stage == Stage.Flowering && Yield <= MaxYield && Age <= FloweringAge)       // If plant is flowering and has not reached flowering age, increase yield.
+            // If plant is flowering and has not reached flowering age, increase yield.
+            if (stage == Stage.Flowering && Yield <= MaxYield && Age <= FloweringAge)       
             {
-                if (water == Water)                                                         // Depending on the height, health and resources received adjust yield.
+                // Depending on the height, health and resources received adjust yield.
+                if (water == Water)                                                         
                     Yield++;
                 if (light == Light)
                     Yield++;
@@ -342,7 +360,8 @@ namespace GanjaLibrary.Classes
                     Yield += 0.25;
             }
 
-            else if (stage == Stage.Flowering && Age > FloweringAge)                        // If flowering age has gone by, decrease yield.
+            // If flowering age has gone by, decrease yield.
+            else if (stage == Stage.Flowering && Age > FloweringAge)                        
             {
                 Yield *= 0.95;
             }
@@ -350,11 +369,14 @@ namespace GanjaLibrary.Classes
             else return;
         }
 
-        private void AdjustTHC(int optimalAge, int variance)                                                 // Adjust THC % of the plant.
+        // Adjust THC % of the plant.
+        private void AdjustTHC(int optimalAge, int variance)
         {
-            if (Health < 0)                              // Low health decreases THC content.
+            // Low health decreases THC content.
+            if (Health < 0)                              
                 THC -= 0.000025;
-            if (Health >= 0 && Health <= 50)                 // High health increases THC content.
+            // High health increases THC content.
+            if (Health >= 0 && Health <= 50)                 
                 THC += 0.000015;
             if (Health > 50 && Health <= 100)
                 THC += 0.000020;
@@ -369,11 +391,14 @@ namespace GanjaLibrary.Classes
                 THC -= 0.000015;
         }
 
-        private void AdjustCBD(int optimalAge, int variance)                                                 // Adjust CBD % of the plant.
+        // Adjust CBD % of the plant.
+        private void AdjustCBD(int optimalAge, int variance)                                                 
         {
-            if (Health < 0)                                 // Low health lowers CBD content.
+            // Low health lowers CBD content.
+            if (Health < 0)                                 
                 CBD -= 0.00015;
-            if (Health >= 0 && Health <= 50)                 // High health increases CBD content.
+            // High health increases CBD content.
+            if (Health >= 0 && Health <= 50)                 
                 CBD += 0.00015;
             if (Health > 50 && Health <= 100)
                 CBD += 0.00025;
@@ -390,7 +415,8 @@ namespace GanjaLibrary.Classes
 
         #endregion
 
-        public virtual void Print()                                                         // Printing out all the changing variables so we can track progress.
+        // Printing out all the changing variables so we can track progress.
+        public virtual void Print()                                                        
         {
             Console.WriteLine(string.Format("==================="));
             Console.WriteLine(string.Format("GUID: {0}", Id));
@@ -400,10 +426,6 @@ namespace GanjaLibrary.Classes
             Console.WriteLine(string.Format("Food: {0} \t\t\tHealth: {1}", Food, Health));
             Console.WriteLine(string.Format("CBD: {0}%  \t\t\tTHC: {1}%", CBD * 100, THC * 100));
             Console.WriteLine(string.Format("Actual Height: {0} \t\tActual Quality: {1}", Height, ActualQuality));
-
-
-
-
 
             if (Globals.Debug)
             {
