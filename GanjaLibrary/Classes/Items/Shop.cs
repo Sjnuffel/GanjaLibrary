@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class Shop: IShop, IContainer
+    public class Shop : IShop, IContainer
     {
         public List<IItem> Items { get; set; }
 

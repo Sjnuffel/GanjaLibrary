@@ -35,7 +35,7 @@ namespace GanjaTestApplication
                 GanjaTest.Print();
                 Console.WriteLine();
             }
-            /*
+            
             IChronic harvest = GanjaTest.Harvest();
 
             harvest.Print();
@@ -66,7 +66,6 @@ namespace GanjaTestApplication
             var price = shop.Buy("Master Kush").Value;
             
             Console.WriteLine(price);
-            */
             Console.ReadLine();
         }
     }

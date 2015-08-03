@@ -73,7 +73,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void KillSilverHazeSeed()
+        public void KillSilverHazeSeedTest()
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < 20; i++)
