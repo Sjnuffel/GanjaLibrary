@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GanjaLibrary.Interfaces;
 using GanjaLibrary.Enums;
+using GanjaLibrary.Interfaces.Items;
+using GanjaLibrary.Classes.Items;
 
 namespace GanjaLibrary.Classes.Tests
 {
@@ -363,5 +365,133 @@ namespace GanjaLibrary.Classes.Tests
                 Assert.IsTrue(CureTest.Stage == Stage.Finished);
             }
         }
-    }
+
+        [TestMethod()]
+        public void FullCycleGrowthAddToInventoryTest()
+        {
+            {
+                IContainer FirstTrousers = new Trousers();
+                IChronic GanjaTest = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                }
+
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic InventoryTest = GanjaTest.Harvest();
+
+                for (int i = 0; i < InventoryTest.DryingAge; i++)
+                {
+                    InventoryTest.Dry();
+                }
+
+                InventoryTest.Weck();
+                for (int i = 0; i < 14; i++)
+                {
+                    InventoryTest.Cure();
+                }
+
+                InventoryTest.Finish();
+                FirstTrousers.Add((IItem)InventoryTest);
+                Assert.IsTrue(FirstTrousers.ItemAmount == 1);
+            }
+        }
+
+        [TestMethod()]
+        public void FullCycleGrowthAddThenRemoveFromInventoryTest()
+        {
+            {
+                IContainer FirstTrousers = new Trousers();
+                IChronic GanjaTest = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                }
+
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic InventoryTest = GanjaTest.Harvest();
+
+                for (int i = 0; i < InventoryTest.DryingAge; i++)
+                {
+                    InventoryTest.Dry();
+                }
+
+                InventoryTest.Weck();
+                for (int i = 0; i < 14; i++)
+                {
+                    InventoryTest.Cure();
+                }
+
+                InventoryTest.Finish();
+                FirstTrousers.Add((IItem)InventoryTest);
+                FirstTrousers.Remove((IItem)InventoryTest);
+                Assert.IsTrue(FirstTrousers.ItemAmount == 0);
+            }
+        }
+
+        [TestMethod()]
+        public void FullCycleGrowthAddToInventorySellToShopTest()
+        {
+            {
+                IContainer FirstTrousers = new Trousers();
+                IChronic GanjaTest = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                }
+
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic SellTest = GanjaTest.Harvest();
+
+                for (int i = 0; i < SellTest.DryingAge; i++)
+                {
+                    SellTest.Dry();
+                }
+
+                SellTest.Weck();
+                for (int i = 0; i < 14; i++)
+                {
+                    SellTest.Cure();
+                }
+
+                SellTest.Finish();
+                FirstTrousers.Add((IItem)SellTest);
+
+                IShop shop = new Shop();
+                shop.Sell((IItem)SellTest);
+
+                Assert.IsTrue(shop.ItemAmount == 1);
+            }
+        }
+    }   
 }

@@ -38,7 +38,7 @@
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAiAGCAxBAAECAIAAEwEAhIAAIIgABAAABgAA4IFgAk=</HashCode>
+      <HashCode>AAgACCAxBAAECAJAAEwEAhIAAIIgABAAABgAA4IFgAk=</HashCode>
       <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -62,7 +62,7 @@
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAiAGAAhBAAACAIAAEwEAgYAAAAgABAAABgAA4IFgAg=</HashCode>
+      <HashCode>AAgACAAhBAAACAJAAEwEAgYAAAAgABAAABgAA4IFgAg=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -76,8 +76,15 @@
   <Interface Name="GanjaLibrary.Interfaces.Items.IContainer">
     <Position X="10" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAACAAAQAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAACAAACAAAAAAAFAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GanjaLibrary.Interfaces.Items.IShop">
+    <Position X="13.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAACAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Items\IShop.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">

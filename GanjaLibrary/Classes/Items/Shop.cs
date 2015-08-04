@@ -39,7 +39,7 @@ namespace GanjaLibrary.Classes.Items
             return false;
         }
 
-        private bool Remove(IItem item)
+        public bool Remove(IItem item)
         {
             return Items.Remove(item);
         }
