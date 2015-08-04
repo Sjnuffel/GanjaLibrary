@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GanjaLibrary.Interfaces;
 using GanjaLibrary.Enums;
-using GanjaLibrary.Interfaces.Items;
-using GanjaLibrary.Classes.Items;
 
 namespace GanjaLibrary.Classes.Tests
 {

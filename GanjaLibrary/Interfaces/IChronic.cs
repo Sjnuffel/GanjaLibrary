@@ -78,11 +78,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Actual quality of the plant during growth.
         /// </summary>
-        double ActualQuality { get; }
-        /// <summary>
-        /// Base or starting quality of the plant seed/clone.
-        /// </summary>
-        double BaseQuality { get; }
+        double Quality { get; }
         /// <summary>
         /// Max health cap (200)
         /// </summary>

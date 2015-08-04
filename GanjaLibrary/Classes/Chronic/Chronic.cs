@@ -24,8 +24,7 @@ namespace GanjaLibrary.Classes
         public double THC { get; internal set; }
         public double Yield { get; private set; }
         public double MaxYield { get; private set; }
-        public double BaseQuality { get; private set; }
-        public double ActualQuality { get; private set; }
+        public double Quality { get; private set; }
         public double Health { get; internal set; }
         public double Height { get; set; }
 
@@ -54,8 +53,7 @@ namespace GanjaLibrary.Classes
             THC = 0.10;
             MaxYield = 150;
             Yield = 0;
-            BaseQuality = 10;
-            ActualQuality = BaseQuality;
+            Quality = 10;
             Health = 0;
             Height = 0;
 
@@ -191,7 +189,7 @@ namespace GanjaLibrary.Classes
                 Yield *= 0.55;
             }
 
-            Value = (ActualQuality * Yield) * THC;
+            Value = (Quality * Yield) * THC;
 
             return this;
         }
@@ -275,16 +273,16 @@ namespace GanjaLibrary.Classes
                 // Always get some quality improvement.
                 if (water == Water && light == Light)                                       
                 {
-                    ActualQuality *= 1.01;
+                    Quality *= 1.01;
 
                     if (food == Food.Low)
-                        ActualQuality *= 1.01;
+                        Quality *= 1.01;
 
                     else if (food == Food.Medium)
-                        ActualQuality *= 1.02;
+                        Quality *= 1.02;
 
                     else if (food == Food.High)
-                        ActualQuality *= 1.03;
+                        Quality *= 1.03;
                 }
             }
         }
@@ -425,7 +423,7 @@ namespace GanjaLibrary.Classes
             Console.WriteLine(string.Format("Water: {0}  \t\t\tLight: {1}", Water, Light));
             Console.WriteLine(string.Format("Food: {0} \t\t\tHealth: {1}", Food, Health));
             Console.WriteLine(string.Format("CBD: {0}%  \t\t\tTHC: {1}%", CBD * 100, THC * 100));
-            Console.WriteLine(string.Format("Actual Height: {0} \t\tActual Quality: {1}", Height, ActualQuality));
+            Console.WriteLine(string.Format("Actual Height: {0} \t\tQuality: {1}", Height, Quality));
 
             if (Globals.Debug)
             {
