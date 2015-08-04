@@ -26,5 +26,9 @@ namespace GanjaLibrary.Interfaces.Items
         /// Add an item.
         /// </summary>
         bool Add(IItem item);
+        /// <summary>
+        /// Remove an item.
+        /// </summary>
+        bool Remove(IItem item);
     }
 }
