@@ -9,7 +9,6 @@ namespace GanjaLibrary.Classes
         public SilverHaze() : base()
         {
             Name = "Silver Haze";
-            SeedingAge = 6;
             FloweringAge = randgen.Next(90, 100);
 
             CBD = 0.05;

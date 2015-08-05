@@ -7,7 +7,9 @@ namespace GanjaLibrary.Classes
     [Serializable]
     public class Indica : Chronic
     {
-        public Indica() : base("Indica", Water.Low, Light.Spring, Food.None) {
+        public Indica() : base("Indica", Water.Low, Light.Spring, Food.None)
+        {
+            // Overwriting Base variables.
             CBD = 0.25;
             THC = 0.20;
 

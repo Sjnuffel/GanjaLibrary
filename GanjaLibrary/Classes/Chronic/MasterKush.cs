@@ -10,6 +10,7 @@ namespace GanjaLibrary.Classes
     {
         public MasterKush() : base()
         {
+            // Overwriting base variables.
             Name = "Master Kush";
             FloweringAge = randgen.Next(50, 65);
 

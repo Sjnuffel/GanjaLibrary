@@ -5,11 +5,10 @@ namespace GanjaLibrary.Classes
 {
     public class Sativa : Chronic
     {
-        public Sativa() : base("Sativa", Water.Low, Light.Spring, Food.None) {
-
+        public Sativa() : base("Sativa", Water.Low, Light.Spring, Food.None)
+        {
             // Overwriting the base variables.
-            SeedingAge = 6;
-
+            Name = "Sativa";
             CBD = 0.05;
             THC = 0.25;
             
