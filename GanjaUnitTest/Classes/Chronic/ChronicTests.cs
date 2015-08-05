@@ -493,5 +493,65 @@ namespace GanjaLibrary.Classes.Tests
                 Assert.IsTrue(shop.ItemAmount == 1);
             }
         }
-    }   
+
+        [TestMethod()]
+        public void MaxSlotsInventoryNotOverridenTest()
+        {
+            {
+                IContainer FirstTrousers = new Trousers();
+                IChronic GanjaTest = new MasterKush();
+                IChronic GanjaTest2 = new MasterKush();
+                IChronic GanjaTest3 = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                    GanjaTest2.Grow(Water.Low, Light.None, Food.None);
+                    GanjaTest3.Grow(Water.Low, Light.None, Food.None);
+                }
+
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                    GanjaTest2.Grow(Water.Low, Light.Spring, Food.None);
+                    GanjaTest3.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                    GanjaTest2.Grow(Water.Medium, Light.Summer, Food.None);
+                    GanjaTest3.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic SellTest = GanjaTest.Harvest();
+                IChronic SellTest2 = GanjaTest2.Harvest();
+                IChronic SellTest3 = GanjaTest3.Harvest();
+
+                for (int i = 0; i < SellTest.DryingAge; i++)
+                {
+                    SellTest.Dry();
+                    SellTest2.Dry();
+                    SellTest3.Dry();
+                }
+
+                SellTest.Weck();
+                for (int i = 0; i < 14; i++)
+                {
+                    SellTest.Cure();
+                    SellTest2.Cure();
+                    SellTest3.Cure();
+                }
+
+                SellTest.Finish();
+                SellTest2.Finish();
+                SellTest3.Finish();
+                FirstTrousers.Add((IItem)SellTest);
+                FirstTrousers.Add((IItem)SellTest2);
+                FirstTrousers.Add((IItem)SellTest3);
+                // Trousers only have 2 item slots, so should always assert to 2, the 3rd one will not be added.
+                Assert.IsTrue(FirstTrousers.ItemAmount == 2);
+            }
+        }
+    }
 }
