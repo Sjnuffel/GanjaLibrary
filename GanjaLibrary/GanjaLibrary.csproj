@@ -41,10 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Chronic\Chronic.cs" />
-    <Compile Include="Classes\Items\CargoPants.cs" />
+    <Compile Include="Classes\Items\Clothing - Leggings\CargoPants.cs" />
     <Compile Include="Classes\Items\Item.cs" />
     <Compile Include="Classes\Items\Shop.cs" />
-    <Compile Include="Classes\Items\Trousers.cs" />
+    <Compile Include="Classes\Items\Clothing - Leggings\Trousers.cs" />
     <Compile Include="Enums\Food.cs" />
     <Compile Include="Classes\Chronic\Indica.cs" />
     <Compile Include="GameSettings.Designer.cs">
