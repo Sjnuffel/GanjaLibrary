@@ -12,6 +12,8 @@ namespace GanjaTestApplication
         static void Main(string[] args)
         {
             IContainer FirstTrousers = new Trousers();
+            Item Butane = new Butane();
+            FirstTrousers.Add(Butane);
             IChronic GanjaTest = new MasterKush();
             GanjaTest.Print();
             Console.WriteLine();
