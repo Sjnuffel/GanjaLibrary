@@ -1,9 +1,5 @@
 ﻿using GanjaLibrary.Interfaces.Items;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GanjaLibrary.Classes.Items
 {
@@ -18,7 +14,6 @@ namespace GanjaLibrary.Classes.Items
 
         public Guid Id { get; set; }
 
-       
         public Item()
         {
             Id = Guid.NewGuid();

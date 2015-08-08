@@ -55,7 +55,7 @@
     <Position X="6.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Items\Clothing - Leggings\Trousers.cs</FileName>
+      <FileName>Classes\Items\ClothingLegs\Trousers.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
