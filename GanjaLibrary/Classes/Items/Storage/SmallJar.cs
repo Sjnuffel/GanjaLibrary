@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GanjaLibrary.Classes.Items.Storage
 {
-    class SmallJar : Item, IContainer
+    public class SmallJar : Item, IContainer
     {
         public List<IItem> Items { get; set; }
 
