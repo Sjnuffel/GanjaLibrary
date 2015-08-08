@@ -15,18 +15,18 @@ namespace GanjaLibrary.Interfaces.Items
         /// <summary>
         /// Name of the item.
         /// </summary>
-        string Name { get; set; }
+        string Name { get; }
         /// <summary>
         /// A description of the item.
         /// </summary>
-        string Description { get; set; }
+        string Description { get; }
         /// <summary>
         /// Weight of the item (in grams).
         /// </summary>
-        double Weight { get; set; }
+        double Weight { get; }
         /// <summary>
         /// Value of the item (in euros).
         /// </summary>
-        double Value { get; set; }
+        double Value { get; }
     }
 }

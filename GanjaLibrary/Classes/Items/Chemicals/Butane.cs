@@ -1,14 +1,11 @@
-﻿
-namespace GanjaLibrary.Classes.Items.Chemicals
+﻿using GanjaLibrary.Interfaces.Items;
+
+namespace GanjaLibrary.Classes.Items
 {
-    class Butane : Item
+    public class Butane : Item, IItem
     {
-        public Butane() :base()
+        public Butane() :base("Butane", "Commanly known as lighter fluid, 500 ml.", 1, 25)
         {
-            Name = "Butane";
-            Description = "Lighter Fluid";
-            Weight = 0.5;
-            Value = 25;
         }
     }
 }
