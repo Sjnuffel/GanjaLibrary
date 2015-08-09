@@ -1,8 +1,10 @@
 ﻿using GanjaLibrary.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace GanjaLibrary.Classes
 {
+    [Serializable]
     public class Sativa : Chronic
     {
         public Sativa() : base("Sativa", Water.Low, Light.Spring, Food.None)

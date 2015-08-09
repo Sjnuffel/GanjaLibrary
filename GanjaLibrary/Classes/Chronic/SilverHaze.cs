@@ -1,9 +1,11 @@
 ﻿using GanjaLibrary.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace GanjaLibrary.Classes
 {
     // Silver Haze is an example of a near 100% Sativa plant.
+    [Serializable]
     public class SilverHaze : Sativa
     {
         public SilverHaze() : base()
