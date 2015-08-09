@@ -416,8 +416,8 @@ namespace GanjaLibrary.Classes
         // Printing out all the changing variables so we can track progress.
         public virtual void Print()                                                        
         {
-            Console.WriteLine(string.Format("==================="));
             Console.WriteLine(string.Format("GUID: {0}", Id));
+            Console.WriteLine(string.Format("Stage: {0}", Stage));
             Console.WriteLine(string.Format("Age: {0}     \t\t\tName: {1}", Age, Name));
             Console.WriteLine(string.Format("Seeding Age: {0} \t\t\tFlowering Age: {1}", SeedingAge, FloweringAge));
             Console.WriteLine(string.Format("Water: {0}  \t\t\tLight: {1}", Water, Light));
