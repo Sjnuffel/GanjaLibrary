@@ -9,65 +9,190 @@ namespace GanjaTestApplication
 {
     class Program
     {
+        private static int tableWidth = 77;
+
+        static void PrintLine()
+        {
+            Console.WriteLine(new string('=', tableWidth));
+        }
+
         static void Main(string[] args)
         {
             IContainer FirstTrousers = new Trousers();
             Item Butane = new Butane();
             FirstTrousers.Add(Butane);
-            IChronic GanjaTest = new MasterKush();
-            GanjaTest.Print();
-            Console.WriteLine();
-            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+            IChronic MasterKush = new MasterKush();
+            IChronic SilverHaze = new SilverHaze();
+
+            PrintLine();
+            Console.WriteLine(string.Format("\n\tSo, you want to grow some weed, huh?" +
+                                            "\n\tWell, what do you want to do?\n"+
+                                            "\n\t\t1) Grow Master Kush"+
+                                            "\n\t\t2) Grow Silver Haze\n"));
+            PrintLine();
+            string str = Console.ReadLine();
+
+            switch (str)
             {
-                GanjaTest.Grow(Water.Low, Light.None, Food.None);
-                GanjaTest.Print();
-                Console.WriteLine();
+                case "1":
+                case "Master Kush":
+                    PrintLine();
+                    MasterKush.Print();
+                    Console.WriteLine();
+                    for (int i = 0; i < MasterKush.SeedingAge; i++)
+                    {
+                        MasterKush.Grow(Water.Low, Light.None, Food.None);
+                        PrintLine();
+                        MasterKush.Print();
+                        Console.WriteLine();
+                    }
+
+                    for (int i = 0; i < MasterKush.FloweringAge; i++)
+                    {
+                        MasterKush.Grow(Water.Low, Light.Spring, Food.Low);
+                        PrintLine();
+                        MasterKush.Print();
+                        Console.WriteLine();
+                    }
+
+                    for (int i = 0; i < 20; i++)
+                    {
+                        MasterKush.Grow(Water.Medium, Light.Summer, Food.Low);
+                        PrintLine();
+                        MasterKush.Print();
+                        Console.WriteLine();
+                    }
+
+                    PrintLine();
+                    Console.WriteLine(string.Format("\tAll grown up, what do you want to now?\n"));
+                    Console.WriteLine(string.Format("\t\t1) Harvest the plant, let it dry and cure the nuggets."));
+                    Console.WriteLine(string.Format("\t\t2) Harvest the plant, but use it to make some oils.\n"));
+                    PrintLine();
+
+                    string str2 = Console.ReadLine();
+
+                    switch (str2)
+                    {
+                        case "1":
+                        case "Nuggets":
+                            IChronic harvest = MasterKush.Harvest();
+
+                            harvest.Print();
+
+                            for (int i = 0; i < 12; i++)
+                            {
+                                PrintLine();
+                                harvest.Dry();
+                                harvest.Print();
+                            }
+
+                            harvest.Weck();
+                            harvest.Print();
+
+                            for (int i = 0; i < 14; i++)
+                            {
+                                PrintLine();
+                                harvest.Cure();
+                                harvest.Print();
+                            }
+
+                            PrintLine();
+                            harvest.Finish();
+                            harvest.Print();
+                            break;
+                        case "2":
+                        case "Oils":
+                            Console.WriteLine(string.Format("Yeah I haven't made this yet..."));
+                            break;
+                        default:
+                            PrintLine();
+                            Console.WriteLine(string.Format("Can't do that dude, type 1 or 2."));
+                            break;
+                    }
+                    break;
+                case "2":
+                case "Silver Haze":
+                    PrintLine();
+                    SilverHaze.Print();
+                    Console.WriteLine();
+                    for (int i = 0; i < SilverHaze.SeedingAge; i++)
+                    {
+                        SilverHaze.Grow(Water.Low, Light.None, Food.None);
+                        PrintLine();
+                        SilverHaze.Print();
+                        Console.WriteLine();
+                    }
+
+                    for (int i = 0; i < SilverHaze.FloweringAge; i++)
+                    {
+                        SilverHaze.Grow(Water.Low, Light.Spring, Food.Low);
+                        PrintLine();
+                        SilverHaze.Print();
+                        Console.WriteLine();
+                    }
+
+                    for (int i = 0; i < 30; i++)
+                    {
+                        SilverHaze.Grow(Water.Medium, Light.Summer, Food.Low);
+                        PrintLine();
+                        SilverHaze.Print();
+                        Console.WriteLine();
+                    }
+
+                    PrintLine();
+                    Console.WriteLine(string.Format("\tAll grown up, what do you want to now?\n"));
+                    Console.WriteLine(string.Format("\t\t1) Harvest the plant, let it dry and cure the nuggets."));
+                    Console.WriteLine(string.Format("\t\t2) Harvest the plant, but use it to make some oils.\n"));
+                    PrintLine();
+
+                    string str3 = Console.ReadLine();
+
+                    switch (str3)
+                    {
+                        case "1":
+                        case "Nuggets":
+                            IChronic harvest = SilverHaze.Harvest();
+
+                            harvest.Print();
+
+                            for (int i = 0; i < 12; i++)
+                            {
+                                PrintLine();
+                                harvest.Dry();
+                                harvest.Print();
+                            }
+
+                            harvest.Weck();
+                            harvest.Print();
+
+                            for (int i = 0; i < 14; i++)
+                            {
+                                PrintLine();
+                                harvest.Cure();
+                                harvest.Print();
+                            }
+
+                            PrintLine();
+                            harvest.Finish();
+                            harvest.Print();
+                            break;
+                        case "2":
+                        case "Oils":
+                            Console.WriteLine(string.Format("Yeah I haven't actually made this yet..."));
+                            break;
+                        default:
+                            PrintLine();
+                            Console.WriteLine(string.Format("Can't do that dude, type 1 or 2."));
+                            break;
+                    }
+
+                    break;
+                default:
+                    PrintLine();
+                    Console.WriteLine("\tThat's not going to work buddy, please type 1 or 2.\n");
+                    break;
             }
 
-            for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
-                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-                GanjaTest.Print();
-                Console.WriteLine();
-            }
-
-            for (int i = 0; i < 20; i++)
-            {
-                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-                GanjaTest.Print();
-                Console.WriteLine();
-            }
-            
-            IChronic harvest = GanjaTest.Harvest();
-
-            harvest.Print();
-
-            for (int i = 0; i < 12; i++)
-            {
-                harvest.Dry();
-                harvest.Print();
-            }
-
-            harvest.Weck();
-            harvest.Print();
-
-            for (int i = 0; i < 14; i++)
-            {
-                harvest.Cure();
-                harvest.Print();
-            }
-
-            harvest.Finish();
-            harvest.Print();
-
-            FirstTrousers.Add((IItem)harvest);
-
-            IShop shop = new Shop();
-            shop.Sell((IItem)harvest);
-            
-            var price = shop.Buy("Master Kush").Value;
-            
-            Console.WriteLine(price);
             Console.ReadLine();
         }
     }
