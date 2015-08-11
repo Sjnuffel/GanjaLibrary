@@ -5,18 +5,16 @@ using System.Text;
 
 namespace GanjaLibrary.Interfaces.Items
 {
-    public interface IShop
+    public interface IShop : IContainer
     {
         /// <summary>
-        /// Amount of items in the shop storage.
-        /// </summary>
-        int ItemAmount { get; }
-
-        /// <summary>
-        /// Sell an item.
+        /// Sell an item to the shop.
         /// </summary>
         double Sell(IItem item);
 
+        /// <summary>
+        /// Buy an item from the shop.
+        /// </summary>
         IItem Buy(string name);
     }
 }
