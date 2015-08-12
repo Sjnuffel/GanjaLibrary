@@ -1,6 +1,7 @@
 ﻿using GanjaLibrary.Classes.Items;
 using GanjaLibrary.Enums;
 using GanjaLibrary.Interfaces;
+using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Statics;
 using System;
 using System.Collections.Generic;
@@ -158,7 +159,7 @@ namespace GanjaLibrary.Classes
 
             return harvest;
         }
-
+        
         public IChronic Dry()
         {
             if (Stage == Stage.Drying)
@@ -170,11 +171,33 @@ namespace GanjaLibrary.Classes
             return this;
         }
 
+        // What to do when using the harvested plant for making oils.
+        public IChronic OilExtraction()
+        {
+            if (Stage == Stage.Extracting)
+            {
+                Age++;
+                /* Yield is doubled. When extracting the waste of the harvest is also used.
+                Waste in this case are the trimmings, stalks and such. */
+                Yield *= 2;
+                if (CBD > THC)
+                    Yield = Yield * CBD;
+                else
+                    Yield = Yield * THC;
+
+                return this;
+            }
+
+            return this;
+        }
+
+        // What to do when curing the plant.
         public IChronic Cure()
         {
             if (Stage == Stage.Curing)
             {
                 Age++;
+                // Adjust THC/CBD with the optimalAge and variance in mind
                 AdjustTHC(14, 1);
                 AdjustCBD(14, 1);
             }
@@ -189,7 +212,10 @@ namespace GanjaLibrary.Classes
                 Yield *= 0.55;
             }
 
-            Value = (Quality * Yield) * THC;
+            if (CBD > THC)
+                Value = (Quality * Yield) * CBD;
+            else
+                Value = (Quality * Yield) * THC;
 
             return this;
         }
@@ -200,6 +226,17 @@ namespace GanjaLibrary.Classes
             {
                 Age = 0;
                 Stage = Stage.Curing;
+            }
+
+            return this;
+        }
+
+        public IChronic Extract()
+        {
+            if (Stage == Stage.Drying)
+            {
+                Age = 0;
+                Stage = Stage.Extracting;
             }
 
             return this;

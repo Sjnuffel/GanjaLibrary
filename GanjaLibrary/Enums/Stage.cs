@@ -38,6 +38,10 @@ namespace GanjaLibrary.Enums
         /// <summary>
         /// All done.
         /// </summary>
-        Finished
+        Finished,
+        /// <summary>
+        /// In the process of extracting hash oil from the plant
+        /// </summary>
+        Extracting
     }
 }

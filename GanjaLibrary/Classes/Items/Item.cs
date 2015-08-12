@@ -12,6 +12,8 @@ namespace GanjaLibrary.Classes.Items
         public double Weight { get; set; }
         public double Value { get; set; }
 
+        public double MaxStackableQuantity { get; set; }
+
         public Guid Id { get; set; }
 
         public Item()
@@ -21,6 +23,7 @@ namespace GanjaLibrary.Classes.Items
             Weight = 0;
             Value = 0;
             Description = string.Empty;
+            MaxStackableQuantity = 1;
         }
 
         public Item(string name, string description, double weight, double value) :this()

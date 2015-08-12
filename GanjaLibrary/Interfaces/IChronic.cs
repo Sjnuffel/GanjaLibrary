@@ -115,5 +115,13 @@ namespace GanjaLibrary.Interfaces
         /// Cure the plant (in a weck jar).
         /// </summary>
         IChronic Weck();
+        /// <summary>
+        /// Change stage to Extracting
+        /// </summary>
+        IChronic Extract();
+        /// <summary>
+        /// Extracting the oils from the plant.
+        /// </summary>
+        IChronic OilExtraction();
     }
 }
