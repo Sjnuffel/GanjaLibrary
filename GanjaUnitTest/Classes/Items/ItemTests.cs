@@ -29,5 +29,15 @@ namespace GanjaUnitTest.Classes.Items
 
             Assert.IsTrue(ShopTest.ItemAmount == 1);
         }
+
+        [TestMethod()]
+        public void AddCargoPantsToShopTest()
+        {
+            IContainer ShopTest = new Shop();
+            IContainer CargoPants = new CargoPants();
+            ShopTest.Add((IItem)CargoPants);
+
+            Assert.IsTrue(ShopTest.ItemAmount == 1);
+        }
     }
 }
