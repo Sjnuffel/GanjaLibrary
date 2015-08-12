@@ -18,11 +18,15 @@ namespace GanjaTestApplication
 
         static void Main(string[] args)
         {
-            IContainer FirstTrousers = new Trousers();
+            IContainer Sweatpants = new Trousers();
+            IShop GanjaShop = new Shop();
             Item Butane = new Butane();
-            FirstTrousers.Add(Butane);
+            Sweatpants.Add(Butane);
+
             IChronic MasterKush = new MasterKush();
             IChronic SilverHaze = new SilverHaze();
+            GanjaShop.Add((IItem)MasterKush);
+            GanjaShop.Add((IItem)SilverHaze);
 
             PrintLine();
             Console.WriteLine(string.Format("\n\tSo, you want to grow some weed, huh?" +
@@ -30,6 +34,19 @@ namespace GanjaTestApplication
                                             "\n\t\t1) Grow Master Kush"+
                                             "\n\t\t2) Grow Silver Haze\n"));
             PrintLine();
+            // First choice.
+
+            string choice = Console.ReadLine();
+
+
+    
+    
+    
+    
+    
+    
+    
+    /*
             string str = Console.ReadLine();
 
             switch (str)
@@ -64,11 +81,12 @@ namespace GanjaTestApplication
                     }
 
                     PrintLine();
-                    Console.WriteLine(string.Format("\tAll grown up, what do you want to now?\n"));
+                    Console.WriteLine(string.Format("\tAll grown up, what do you want to do now?\n"));
                     Console.WriteLine(string.Format("\t\t1) Harvest the plant, let it dry and cure the nuggets."));
                     Console.WriteLine(string.Format("\t\t2) Harvest the plant, but use it to make some oils.\n"));
                     PrintLine();
 
+                    // Second possible choice.
                     string str2 = Console.ReadLine();
 
                     switch (str2)
@@ -125,7 +143,7 @@ namespace GanjaTestApplication
 
                     for (int i = 0; i < SilverHaze.FloweringAge; i++)
                     {
-                        SilverHaze.Grow(Water.Low, Light.Spring, Food.Low);
+                        SilverHaze.Grow(Water.Medium, Light.Spring, Food.Low);
                         PrintLine();
                         SilverHaze.Print();
                         Console.WriteLine();
@@ -133,18 +151,19 @@ namespace GanjaTestApplication
 
                     for (int i = 0; i < 30; i++)
                     {
-                        SilverHaze.Grow(Water.Medium, Light.Summer, Food.Low);
+                        SilverHaze.Grow(Water.High, Light.Summer, Food.Low);
                         PrintLine();
                         SilverHaze.Print();
                         Console.WriteLine();
                     }
 
                     PrintLine();
-                    Console.WriteLine(string.Format("\tAll grown up, what do you want to now?\n"));
+                    Console.WriteLine(string.Format("\tAll grown up, what do you want to do now?\n"));
                     Console.WriteLine(string.Format("\t\t1) Harvest the plant, let it dry and cure the nuggets."));
                     Console.WriteLine(string.Format("\t\t2) Harvest the plant, but use it to make some oils.\n"));
                     PrintLine();
 
+                    // Third possible choice.
                     string str3 = Console.ReadLine();
 
                     switch (str3)
@@ -194,6 +213,7 @@ namespace GanjaTestApplication
             }
 
             Console.ReadLine();
+            */
         }
     }
 }

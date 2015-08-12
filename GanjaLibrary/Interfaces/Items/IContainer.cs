@@ -30,5 +30,9 @@ namespace GanjaLibrary.Interfaces.Items
         /// Remove an item.
         /// </summary>
         bool Remove(IItem item);
+        /// <summary>
+        /// Check inside the container if it contains an item.
+        /// </summary>
+        bool Contains(IItem item);
     }
 }

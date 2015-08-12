@@ -38,7 +38,7 @@
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACCAxBAAECAJAAEwEAhIAAIIgABAAABgAA4IFgAk=</HashCode>
+      <HashCode>AAgACCAxBAAEaAJAAEwEAhIAAIIgABAAABgAA4IFgAk=</HashCode>
       <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -46,7 +46,7 @@
   <Class Name="GanjaLibrary.Classes.Items.Item">
     <Position X="4.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAAAgAAAAABA=</HashCode>
       <FileName>Classes\Items\Item.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -54,7 +54,7 @@
   <Class Name="GanjaLibrary.Classes.Items.Trousers" Collapsed="true">
     <Position X="6.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Classes\Items\ClothingLegs\Trousers.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -62,15 +62,14 @@
   <Class Name="GanjaLibrary.Classes.Items.CargoPants" Collapsed="true">
     <Position X="6.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Items\ClothingLegs\CargoPants.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Shop" Collapsed="true">
     <Position X="8.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Classes\Items\Storage\Shop.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -78,7 +77,7 @@
   <Class Name="GanjaLibrary.Classes.Items.Storage.SmallJar" Collapsed="true">
     <Position X="6.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Classes\Items\Storage\SmallJar.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -91,49 +90,49 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IItem">
-    <Position X="11.75" Y="5.75" Width="1.5" />
+    <Position X="12.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IContainer">
-    <Position X="10" Y="5.75" Width="1.5" />
+    <Position X="10.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAACAAAAAAAFAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAACAAACAAAAAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Interfaces\Items\IContainer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IShop">
-    <Position X="13.5" Y="5.75" Width="1.5" />
+    <Position X="8.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IShop.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAEQAAgAAAAAAAQAAIAAACAAAABA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAEAAAEQAAgAAAAAAAQAAIAAACAAAABA=</HashCode>
       <FileName>Enums\Stage.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Light">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAQIAAAAAEAAAQ=</HashCode>
       <FileName>Enums\Light.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Water">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="11.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAgAAAAEEAAA=</HashCode>
       <FileName>Enums\Water.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Food">
-    <Position X="10.75" Y="0.5" Width="1.5" />
+    <Position X="12.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAEEIAA=</HashCode>
       <FileName>Enums\Food.cs</FileName>
