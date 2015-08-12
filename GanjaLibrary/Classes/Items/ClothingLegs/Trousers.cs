@@ -48,5 +48,15 @@ namespace GanjaLibrary.Classes.Items
             else
                 return 0;
         }
+
+        public bool Contains(IItem item)
+        {
+            if (Items.Contains(item))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

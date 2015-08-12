@@ -40,6 +40,16 @@ namespace GanjaLibrary.Classes.Items.Storage
             return Items.Remove(item);
         }
 
+        public bool Contains(IItem item)
+        {
+            if (Items.Contains(item))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public double Sell(IItem item)
         {
             double retVal = item.Value;

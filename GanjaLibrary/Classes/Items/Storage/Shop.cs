@@ -50,6 +50,15 @@ namespace GanjaLibrary.Classes.Items
             Add(item);
             return retVal;
         }
+
+        public bool Contains(IItem item)
+        {
+            if (Items.Contains(item))
+            {
+                return true;
+            }
+            return false;
+        }
         
         public IItem Buy(string name)
         {
