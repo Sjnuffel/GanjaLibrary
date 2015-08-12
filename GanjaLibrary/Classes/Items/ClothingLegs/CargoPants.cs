@@ -3,50 +3,15 @@ using System.Collections.Generic;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class CargoPants : Item, IContainer
+    public class CargoPants : Trousers
     {
-        public List<IItem> Items { get; set; }
-
-        public int Slots { get; internal set; }
-        public int ItemAmount
+        public CargoPants()
         {
-            get
-            { 
-                if (Items == null) return 0;
-                else return Items.Count;
-            }
-        }
-
-        public CargoPants() : base("Cargopants", "Pockets everywhere! Imagine the blunts you could hide in there.", 3, 250)
-        {
-            Items = new List<IItem>();
+            Name = "Cargo Pants";
+            Description = "Look at all these pockets, you could hide a zoo in here!";
+            Weight = 2;
+            Value = 250;
             Slots = 8;
-        }
-
-        public bool Add(IItem item)
-        {
-            if (ItemAmount != Slots)
-            {
-                Items.Add(item);
-                if (Items.Contains(item))
-                    return true;
-            }
-
-            return false;
-        }
-
-        public bool Remove(IItem item)
-        {
-            return Items.Remove(item);
-        }
-
-        public double Sell(IItem item)
-        {
-            double retVal = item.Value;
-            if (Remove(item))
-                return retVal;
-            else
-                return 0;
         }
     }
 }
