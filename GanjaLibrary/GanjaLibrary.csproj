@@ -41,7 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Chronic\Chronic.cs" />
+    <Compile Include="Classes\Items\Chemicals\Acetone.cs" />
+    <Compile Include="Classes\Items\Chemicals\Benzene.cs" />
     <Compile Include="Classes\Items\Chemicals\Butane.cs" />
+    <Compile Include="Classes\Items\Chemicals\Ether.cs" />
+    <Compile Include="Classes\Items\Chemicals\Ethanol.cs" />
+    <Compile Include="Classes\Items\Chemicals\GrainAlcohol.cs" />
+    <Compile Include="Classes\Items\Chemicals\Isopropanol.cs" />
+    <Compile Include="Classes\Items\Chemicals\Naphta.cs" />
+    <Compile Include="Classes\Items\Chemicals\Strohrum.cs" />
+    <Compile Include="Classes\Items\Chemicals\WhiteSpirit.cs" />
     <Compile Include="Classes\Items\ClothingLegs\CargoPants.cs" />
     <Compile Include="Classes\Items\Item.cs" />
     <Compile Include="Classes\Items\Storage\Shop.cs" />
