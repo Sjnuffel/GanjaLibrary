@@ -14,14 +14,24 @@
 
 */
 
+using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class Acetone : Item, IItem
+    public class Acetone : Chemical, IItem
     {
-        public Acetone() : base("Acetone", "Solvent used as a paint thinner or degreaser. Contents 500 ml.", 1, 10)
+        public Acetone() : base()
         {
+            Name = "Acetone";
+            Description = "Most commonly used as a degreaser or as a paint thinner.";
+
+            Weight = 1;
+            Value = 15;
+
+            Flashpoint = -20;
+            Contents = 500;
+            Flammable = true;
         }
     }
 }

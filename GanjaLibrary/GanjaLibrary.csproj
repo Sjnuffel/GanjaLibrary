@@ -44,6 +44,7 @@
     <Compile Include="Classes\Items\Chemicals\Acetone.cs" />
     <Compile Include="Classes\Items\Chemicals\Benzene.cs" />
     <Compile Include="Classes\Items\Chemicals\Butane.cs" />
+    <Compile Include="Classes\Items\Chemicals\Chemical.cs" />
     <Compile Include="Classes\Items\Chemicals\Ether.cs" />
     <Compile Include="Classes\Items\Chemicals\Ethanol.cs" />
     <Compile Include="Classes\Items\Chemicals\GrainAlcohol.cs" />
@@ -63,6 +64,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>GameSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Items\IChemical.cs" />
     <Compile Include="Interfaces\Items\IContainer.cs" />
     <Compile Include="Interfaces\IChronic.cs" />
     <Compile Include="Enums\Light.cs" />

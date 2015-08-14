@@ -10,6 +10,8 @@
     - See more at: http://www.cannabiscure.info/files/cannabis_oil.htm#sthash.DxdGsIpo.dpuf
 */
 
+using GanjaLibrary.Classes.Items.Chemicals;
+
 namespace GanjaLibrary.Classes.Items.Chemicals
 {
     class Naphta

@@ -6,14 +6,25 @@
     This isn't proper alcohol, will leave a taste that might not be acceptable. Gives a 70% bonus to yield.
 */
 
+using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class Strohrum : Item, IItem
+    public class Strohrum : Chemical, IItem
     {
-        public Strohrum() : base("Stroh Rum 80%", "Quality alcoholic beverage. Contains 500ml.", 1, 35)
+        public Strohrum() : base()
         {
+            Name = "Stroh Rum 80%";
+            Description = "Quality alcoholic beverage.";
+
+            Weight = 1;
+            Value = 35;
+
+            Flashpoint = 350;
+            Contents = 500;
+            Flammable = true;
+
         }
     }
 }

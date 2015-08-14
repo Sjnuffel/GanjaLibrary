@@ -17,9 +17,26 @@
     - See more at: http://www.cannabiscure.info/files/cannabis_oil.htm#sthash.6IioCYdZ.dpuf
 
 */
+
+using GanjaLibrary.Classes.Items.Chemicals;
+using GanjaLibrary.Interfaces.Items;
+
 namespace GanjaLibrary.Classes.Items.Chemicals
 {
-    class GrainAlcohol
+    class GrainAlcohol : Chemical, IItem
     {
+        public GrainAlcohol() :base()
+        {
+            Name = "Grain Alocohol";
+            Description = "Good to get drunk on, 80% alcohol.";
+
+            Weight = 2;
+            Value = 120;
+
+            Flashpoint = 350;
+            Contents = 1000;
+            Flammable = true;
+        }
     }
+
 }

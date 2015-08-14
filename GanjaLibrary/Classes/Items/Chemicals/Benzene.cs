@@ -1,4 +1,5 @@
 ﻿/*
+    Boiling point 80.1 °C (176.2 °F; 353.2 K) 
 
     Benzene is an important organic chemical compound with the chemical formula C6H6. Its molecule is 
     composed of 6 carbon atoms joined in a ring, with 1 hydrogen atom attached to each carbon atom. 
@@ -12,19 +13,31 @@
     octane number, it is an important component of gasoline, comprising a few percent of its mass. 
     Most non-industrial applications have been limited by benzene's carcinogenicity.
 
+    Flash point (PMCC)	°C	-11.1
+
     - https://en.wikipedia.org/wiki/Benzene
 
 */
 
 
 using GanjaLibrary.Interfaces.Items;
+using GanjaLibrary.Classes.Items.Chemicals;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class Benzene : Item, IItem
+    public class Benzene : Chemical, IItem
     {
-        public Benzene() : base("Benzene", "Can be used to remove stains from clothing. CAUTION: Flammable. Contents 500 ml.", 1, 25)
+        public Benzene() :base()
         {
+            Name = "Benzene";
+            Description = "Can be used to remove stains from clothing.";
+
+            Weight = 1;
+            Value = 25;
+
+            Flashpoint = -11.1;
+            Contents = 500;
+            Flammable = true;
         }
     }
 }

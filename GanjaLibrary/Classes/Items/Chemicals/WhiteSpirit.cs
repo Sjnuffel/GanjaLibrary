@@ -9,21 +9,33 @@
     mineral spirits are used for cleaning and degreasing machine tools and parts, and in 
     conjunction with cutting oil as a thread cutting and reaming lubricant.
 
+    Initial boiling point (IBP) (°C)	130–144
+    Flash point (°C)	21–30	31–54	> 55
+
     - https://en.wikipedia.org/wiki/White_spirit
 
     WhiteSpirit or Turpentine can be used as a chemical to create Honey Oil with.
     Pretty decent alcohol for it's cheapness. Provides 90% bonus to yield.
 
 */
-
+using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class WhiteSpirit : Item, IItem
+    public class WhiteSpirit : Chemical, IItem
     {
-        public WhiteSpirit() : base("Turpentine", "Primarily used as a paint thinner or as varnish. Contents 1000 ml.", 1, 10)
+        public WhiteSpirit() : base()
         {
+            Name = "Turpentine";
+            Description = "Primarily used as a paint thinner or as varnish.";
+
+            Weight = 1;
+            Value = 15;
+
+            Flashpoint = 20;
+            Contents = 500;
+            Flammable = true;
         }
     }
 }

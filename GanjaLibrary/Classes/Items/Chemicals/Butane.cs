@@ -11,20 +11,33 @@
     so then wear protective clothing and always carry out the procedure outdoors away from 
     any flame source.
 
+    Butane, Boiling point   -1 °C
+    Flash point	−60 °C (−76 °F; 213 K)
+
     - See more at: http://www.cannabiscure.info/files/cannabis_oil.htm#sthash.6IioCYdZ.dpuf
 
-    Butane is used as a chemical to create Honey Oil with.
     This type of alcohol is decent enough, will give you an 80% boost to yield.
 */
 
+using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
+
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class Butane : Item, IItem
+    public class Butane : Chemical, IItem
     {
-        public Butane() :base("Butane", "Commonly known as lighter fluid. Contains 500 ml.", 1, 50)
+        public Butane() :base()
         {
+            Name = "Butane";
+            Description = "Commonly known as lighter fluid.";
+
+            Weight = 1;
+            Value = 15;
+
+            Flashpoint = -60;
+            Contents = 500;
+            Flammable = true;
         }
     }
 }

@@ -11,20 +11,32 @@
     Isopropanol is used as a chemical to create Honey Oil with.
     This oil is itself is good, giving an 90% boost to yield. 
 
+    Boiling point	82.6 °C (180.7 °F; 355.8 K)
+    Ethyl Alcohol, Ethanol	63°C
+
     HOWEVER: denatured alcohol is poisonous to humans. Customers will probably not like you for it. 
     Cheaper though.
 
 */
 
-
+using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class Ethanol : Item, IItem
+    public class Ethanol : Chemical, IItem
     {
-        public Ethanol() : base("Ethanol","Denatured alcoholic solution. Contains traces of methanol. Contains 1000 ml.", 1, 15)
+        public Ethanol() : base()
         {
+            Name = "Ethanol";
+            Description = "Denatured alcoholic solution. Contains traces of methanol.";
+
+            Weight = 1;
+            Value = 15;
+
+            Flashpoint = 63;
+            Contents = 500;
+            Flammable = true;
         }
     }
 }

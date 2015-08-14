@@ -10,6 +10,10 @@
     household use (rubbing alcohol) and in personal care products. Following poisoning in humans it 
     mainly acts as a central nervous system (CNS) depressant.[5]
 
+    Boiling point	82.6 °C (180.7 °F; 355.8 K)
+    Flash point	Open cup: 11.7 °C (53.1 °F; 284.8 K)
+    Closed cup: 13 °C (55 °F)
+
     - https://en.wikipedia.org/wiki/Isopropyl_alcohol
 
     Isopropanol is used as a chemical to create Honey Oil with. Using this is the so called "Quick-Wash" method.
@@ -17,15 +21,23 @@
 */
 
 using GanjaLibrary.Interfaces.Items;
+using GanjaLibrary.Classes.Items.Chemicals;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class Isopropanol : Item, IItem
+    public class Isopropanol : Chemical, IItem
     {
-        public Isopropanol() : base("Isopropanol 99%", 
-            "High purity Isopropyl Alcohol, 99.9%. CAUTION: take care of ventilation when using product. Contains 1000 ml.", 
-            1, 75)
+        public Isopropanol() : base()
         {
+            Name = "Isopropanol 99%";
+            Description = "High purity Isopropyl Alcohol, 99.9%. CAUTION: flammable.";
+
+            Weight = 1;
+            Value = 85;
+
+            Flashpoint = 11.7;
+            Contents = 1000;
+            Flammable = true;
         }
     }
 }

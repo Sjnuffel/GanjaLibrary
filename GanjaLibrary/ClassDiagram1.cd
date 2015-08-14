@@ -85,7 +85,7 @@
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACAAhBAAACAJAAEwEAgYAAAAgABAAABgAA4IFgAg=</HashCode>
+      <HashCode>AAgACAAhBAAAaAJAAEwEAgYAAAAgABAAABgAA4IFgAg=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -108,6 +108,13 @@
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IShop.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GanjaLibrary.Interfaces.Items.IChemical">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAABAAAA=</HashCode>
+      <FileName>Interfaces\Items\IChemical.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">
