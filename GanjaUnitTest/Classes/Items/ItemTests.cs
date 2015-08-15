@@ -14,7 +14,7 @@ namespace GanjaUnitTest.Classes.Items
         public void AddButaneToShopTest()
         {
             IContainer ShopTest = new Shop();
-            Item Butane = new Butane();
+            IChemical Butane = new Butane();
             ShopTest.Add(Butane);
 
             Assert.IsTrue(ShopTest.ItemAmount == 1);
@@ -36,6 +36,16 @@ namespace GanjaUnitTest.Classes.Items
             IContainer ShopTest = new Shop();
             IContainer CargoPants = new CargoPants();
             ShopTest.Add((IItem)CargoPants);
+
+            Assert.IsTrue(ShopTest.ItemAmount == 1);
+        }
+
+        [TestMethod()]
+        public void AddBenzeneToInventoryTest()
+        {
+            IContainer ShopTest = new Shop();
+            IChemical Benzene = new Butane();
+            ShopTest.Add((IItem)Benzene);
 
             Assert.IsTrue(ShopTest.ItemAmount == 1);
         }
