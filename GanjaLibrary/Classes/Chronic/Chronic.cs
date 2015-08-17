@@ -99,7 +99,7 @@ namespace GanjaLibrary.Classes
 
         #region Processing functions
         // What to do when plant grows.
-        public IChronic Grow(Water water, Light light, Food food)                           
+        public IChronic Grow(Water water, Light light, Food food)
         {
             if (Stage == Stage.Vegetative || Stage == Stage.Seed || Stage == Stage.Clone || Stage == Stage.Flowering)
             {
@@ -121,7 +121,7 @@ namespace GanjaLibrary.Classes
         }
 
         // What to do when harvesting the plant.
-        public IChronic Harvest()                                                          
+        public IChronic Harvest()
         {
             IChronic harvest = null;
 
@@ -130,10 +130,10 @@ namespace GanjaLibrary.Classes
                 if (Age >= (FloweringAge - 5) && Age <= FloweringAge + 5)
                 {
                     // Check if plant has reached optimal flowering age.
-                    if (Age == FloweringAge)                                                    
+                    if (Age == FloweringAge)
                         Yield *= 1.05;
                     // Check the health of the plant and give bonus accordingly.
-                    else if (Health >= 0 && Health <= 50)                                       
+                    else if (Health >= 0 && Health <= 50)
                         Yield *= 1.01;
                     else if (Health > 50 && Health <= 90)
                         Yield *= 1.02;
@@ -150,7 +150,7 @@ namespace GanjaLibrary.Classes
                 // Since we cut the plant, set height to 10 cm.
                 Height = 10;
                 // Cutting does not kill, reduce to clone stage.
-                Stage = Stage.Clone;                                                        
+                Stage = Stage.Clone;
                 Yield = 0;
 
                 harvest.Stage = Stage.Drying;
@@ -159,7 +159,7 @@ namespace GanjaLibrary.Classes
 
             return harvest;
         }
-        
+
         public IChronic Dry()
         {
             if (Stage == Stage.Drying)
@@ -168,26 +168,6 @@ namespace GanjaLibrary.Classes
                 AdjustTHC(DryingAge, 2);
                 AdjustCBD(DryingAge, 2);
             }
-            return this;
-        }
-
-        // What to do when using the harvested plant for making oils.
-        public IChronic OilExtraction()
-        {
-            if (Stage == Stage.Extracting)
-            {
-                Age++;
-                /* Yield is doubled. When extracting the waste of the harvest is also used.
-                Waste in this case are the trimmings, stalks and such. */
-                Yield *= 2;
-                if (CBD > THC)
-                    Yield = Yield * CBD;
-                else
-                    Yield = Yield * THC;
-
-                return this;
-            }
-
             return this;
         }
 
@@ -231,14 +211,41 @@ namespace GanjaLibrary.Classes
             return this;
         }
 
-        public IChronic Extract()
+        public IChronic Wash()
         {
-            if (Stage == Stage.Drying)
+            // First wash is most important.
+            // Second wash is optional, but if you don't do it, it'll be a waste.
+            // Washing requires: containers (ie.: jars, bowls, glasses), chemical solvent.
+            double washCount = 0;
+            
+            if (washCount == 0)
             {
-                Age = 0;
-                Stage = Stage.Extracting;
+                // Double yield on the FIRST wash, because we use the waste as well.
+                // For every 100 grams of weed, require 300 ml of solvent to wash with (1:3)
+                Yield *= 2;
+                // Remove ~80% of the THC during the first wash.
+                washCount++;
+            }
+            if (washCount >= 1)
+            {
+                washCount++;
             }
 
+            return this;
+        }
+
+        public IChronic Rinse()
+        {
+            // Filter the plant remains from the solvent.
+            // Requires filters, containers.
+            return this;
+        }
+
+        public IChronic Heat()
+        {
+            // Heat away the chemical solvent. Some chemicals can vaporize in open air without heat.
+            // Might even be a better idea in the first place...
+            // Requires: ventilation/open air, heat source.
             return this;
         }
 
