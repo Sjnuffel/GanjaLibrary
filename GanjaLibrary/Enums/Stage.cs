@@ -42,6 +42,18 @@ namespace GanjaLibrary.Enums
         /// <summary>
         /// In the process of extracting hash oil from the plant
         /// </summary>
-        Extracting
+        Extracting,
+        /// <summary>
+        /// Washing the Weed with the selected Chemical
+        /// </summary>
+        Washing,
+        /// <summary>
+        /// Filter the weed remains from the solvent.
+        /// </summary>
+        Filtering,
+        /// <summary>
+        /// Heating off the remaining solvent.
+        /// </summary>
+        Heating
     }
 }
