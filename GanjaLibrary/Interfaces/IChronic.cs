@@ -149,6 +149,6 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Extracting the oils from the plant.
         /// </summary>
-        IChronic OilExtraction();
+        IChronic Wash();
     }
 }

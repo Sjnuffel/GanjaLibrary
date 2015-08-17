@@ -541,7 +541,7 @@ namespace GanjaLibrary.Classes.Tests
                 if (FirstTrousers.Contains(Butane))
                 {
                     ExtractionTest.Extract();
-                    ExtractionTest.OilExtraction();
+                    ExtractionTest.Wash();
                     FirstTrousers.Remove(Butane);
                 }
 
