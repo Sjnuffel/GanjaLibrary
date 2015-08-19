@@ -105,12 +105,14 @@ namespace GanjaLibrary.Classes
             {
                 Age++;
                 AdjustHealth(water, light, food);
-                AdjustHeight(water, light, food, Stage);
                 AdjustQuality(water, light, food);
-                AdjustYield(water, light, food, Stage);
+
+                if (Stage != Stage.Seed)
+                    AdjustHeight(water, light, food, Stage);
 
                 if (Stage == Stage.Flowering)
                 {
+                    AdjustYield(water, light, food);
                     AdjustTHC(FloweringAge, 5);
                     AdjustCBD(FloweringAge, 5);
                 }
@@ -200,6 +202,8 @@ namespace GanjaLibrary.Classes
             return this;
         }
 
+        // To switch from a drying to curing stage.
+        // The real life action means storing it in a mason jar (Wecking).
         public IChronic Weck()
         {
             if (Stage == Stage.Drying)
@@ -213,39 +217,55 @@ namespace GanjaLibrary.Classes
 
         public IChronic Wash()
         {
-            // First wash is most important.
-            // Second wash is optional, but if you don't do it, it'll be a waste.
-            // Washing requires: containers (ie.: jars, bowls, glasses), chemical solvent.
+            /* 
+            First wash is most important.
+            Second wash is optional, but if you don't do it, it'll be a waste of good product.
+            Washing requires: containers (ie.: jars, bowls, glasses), chemical solvent. 
+            */
+
             double washCount = 0;
+            double solventRatio;
+            double extractedOils = randgen.Next(75, 85);
+            double remainingOils = 100 - extractedOils;
             
             if (washCount == 0)
             {
                 // Double yield on the FIRST wash, because we use the waste as well.
-                // For every 100 grams of weed, require 300 ml of solvent to wash with (1:3)
                 Yield *= 2;
+                // For every gram of weed, require 3 ml of solvent to wash with (1:3)
+                solventRatio = Yield * 3;
+                
+                // Extract the CBD or THC from the entire yield.
+                if (THC > CBD)
+                    Yield *= THC;
+                if (CBD > THC)
+                    Yield *= CBD;
+                
                 // Remove ~80% of the THC during the first wash.
+                Yield *= (extractedOils / 100);
+                // Set to washing stage for both original and remainder.
+                Stage = Stage.Washing;
                 washCount++;
             }
-            if (washCount >= 1)
-            {
-                washCount++;
-            }
-
+            
             return this;
         }
 
-        public IChronic Rinse()
+        public IChronic Filter()
         {
             // Filter the plant remains from the solvent.
             // Requires filters, containers.
+            
             return this;
         }
 
         public IChronic Heat()
         {
-            // Heat away the chemical solvent. Some chemicals can vaporize in open air without heat.
-            // Might even be a better idea in the first place...
-            // Requires: ventilation/open air, heat source.
+            /* 
+            Heat away the chemical solvent. Some chemicals can vaporize in open air without heat.
+            Might even be a better idea in the first place...
+            Requires: ventilation/open air, heat source.
+            */
             return this;
         }
 
@@ -374,10 +394,10 @@ namespace GanjaLibrary.Classes
         }
 
         // Adjust the actual yield of the plant.
-        private void AdjustYield(Water water, Light light, Food food, Stage stage)          
+        private void AdjustYield(Water water, Light light, Food food)          
         {
             // If plant is flowering and has not reached flowering age, increase yield.
-            if (stage == Stage.Flowering && Yield <= MaxYield && Age <= FloweringAge)       
+            if (Yield <= MaxYield && Age <= FloweringAge)       
             {
                 // Depending on the height, health and resources received adjust yield.
                 if (water == Water)                                                         
@@ -403,7 +423,7 @@ namespace GanjaLibrary.Classes
             }
 
             // If flowering age has gone by, decrease yield.
-            else if (stage == Stage.Flowering && Age > FloweringAge)                        
+            else if (Age > FloweringAge)                        
             {
                 Yield *= 0.95;
             }
@@ -467,7 +487,8 @@ namespace GanjaLibrary.Classes
             Console.WriteLine(string.Format("Water: {0}  \t\t\tLight: {1}", Water, Light));
             Console.WriteLine(string.Format("Food: {0} \t\t\tHealth: {1}", Food, Health));
             Console.WriteLine(string.Format("CBD: {0}%  \t\t\tTHC: {1}%", CBD * 100, THC * 100));
-            Console.WriteLine(string.Format("Actual Height: {0} \t\tQuality: {1}", Height, Quality));
+            Console.WriteLine(string.Format("Height: {0} \t\tQuality: {1}", Height, Quality));
+            Console.WriteLine(string.Format("Yield: {0}", Yield));
 
             if (Globals.Debug)
             {

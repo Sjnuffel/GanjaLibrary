@@ -40,10 +40,6 @@ namespace GanjaLibrary.Enums
         /// </summary>
         Finished,
         /// <summary>
-        /// In the process of extracting hash oil from the plant
-        /// </summary>
-        Extracting,
-        /// <summary>
         /// Washing the Weed with the selected Chemical
         /// </summary>
         Washing,
