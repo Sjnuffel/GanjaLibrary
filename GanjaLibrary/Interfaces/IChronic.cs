@@ -142,11 +142,6 @@ namespace GanjaLibrary.Interfaces
         IChronic Weck();
 
         /// <summary>
-        /// Change stage to Extracting
-        /// </summary>
-        IChronic Extract();
-
-        /// <summary>
         /// Extracting the oils from the plant.
         /// </summary>
         IChronic Wash();

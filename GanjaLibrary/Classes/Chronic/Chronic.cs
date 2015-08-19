@@ -15,12 +15,14 @@ namespace GanjaLibrary.Classes
     public class Chronic : Item, IChronic
     {
         #region Properties
+        // Growing related variables.
         public int Age { get; set; }
         public int FloweringAge { get; internal set; }
         public int DryingAge { get; internal set; }
         public int SeedingAge { get; internal set; }
         public int MaxHealth { get; private set; }
 
+        
         public double CBD { get; internal set; }
         public double THC { get; internal set; }
         public double Yield { get; private set; }
@@ -28,7 +30,15 @@ namespace GanjaLibrary.Classes
         public double Quality { get; private set; }
         public double Health { get; internal set; }
         public double Height { get; set; }
+        
+        // Washing related variables.
+        public double WashCount { get; internal set; }
+        public double SolventRatio { get; internal set; }
+        public double ExtractedOils { get; internal set; }
+        public double RemainingOils { get; internal set; }
+        public double WashRemains { get; internal set; }
 
+        // Growing related variables.
         public Water Water { get; internal set; }
         public Stage Stage { get; set; }
         public Food Food { get; internal set; }
@@ -37,6 +47,7 @@ namespace GanjaLibrary.Classes
         public Dictionary<Stage, Water> WaterNeed { get; internal set; }
         public Dictionary<Stage, Light> LightNeed { get; internal set; }
 
+        // Static to generate a random number.
         public static Random randgen = new Random();
         #endregion
 
@@ -47,6 +58,12 @@ namespace GanjaLibrary.Classes
             SeedingAge = randgen.Next(1, 7);
             FloweringAge = randgen.Next(50, 60);
             DryingAge = randgen.Next(6, 10);
+
+            // Required for washing.
+            WashCount = 0;
+            SolventRatio = 0;
+            ExtractedOils = randgen.Next(75, 85);
+            RemainingOils = 100 - ExtractedOils;
 
             MaxHealth = 100;
 
@@ -223,30 +240,38 @@ namespace GanjaLibrary.Classes
             Washing requires: containers (ie.: jars, bowls, glasses), chemical solvent. 
             */
 
-            double washCount = 0;
-            double solventRatio;
-            double extractedOils = randgen.Next(75, 85);
-            double remainingOils = 100 - extractedOils;
-            
-            if (washCount == 0)
+            if (WashCount == 0)
             {
                 // Double yield on the FIRST wash, because we use the waste as well.
                 Yield *= 2;
                 // For every gram of weed, require 3 ml of solvent to wash with (1:3)
-                solventRatio = Yield * 3;
+                SolventRatio = Yield * 3;
                 
                 // Extract the CBD or THC from the entire yield.
                 if (THC > CBD)
                     Yield *= THC;
                 if (CBD > THC)
                     Yield *= CBD;
-                
+
+                // Calculate a remainder before we modify the yield.
+                WashRemains = Yield * (RemainingOils / 100);
                 // Remove ~80% of the THC during the first wash.
-                Yield *= (extractedOils / 100);
+                Yield *= (ExtractedOils / 100);
                 // Set to washing stage for both original and remainder.
                 Stage = Stage.Washing;
-                washCount++;
+                WashCount++;
             }
+
+            if (WashCount == 1)
+            {
+                // Add the remainder to the yield.
+                Yield += WashRemains;
+                WashCount++;
+            }
+                
+            // Washing any more will dissolve the green bits, thus reducing the oil quality.
+            else
+                Quality *= 0.95;
             
             return this;
         }
@@ -397,7 +422,7 @@ namespace GanjaLibrary.Classes
         private void AdjustYield(Water water, Light light, Food food)          
         {
             // If plant is flowering and has not reached flowering age, increase yield.
-            if (Yield <= MaxYield && Age <= FloweringAge)       
+            if (Yield <= MaxYield && Age >= FloweringAge)       
             {
                 // Depending on the height, health and resources received adjust yield.
                 if (water == Water)                                                         

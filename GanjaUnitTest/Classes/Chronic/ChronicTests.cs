@@ -495,6 +495,39 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
+        public void FullGrowthAndWashTest()
+        {
+            {
+                IContainer FirstTrousers = new Trousers();
+                IChronic GanjaTest = new MasterKush();
+                GanjaTest.Print();
+                for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.None, Food.None);
+                }
+
+                for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                {
+                    GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+                }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+                }
+
+                IChronic WashTest = GanjaTest.Harvest();
+                for (int i = 0; i < WashTest.DryingAge; i++)
+                {
+                    WashTest.Dry();
+                }
+
+                WashTest.Wash();
+                Assert.IsTrue(WashTest.Stage == Stage.Washing);
+            }
+        }
+
+        [TestMethod()]
         public void MaxSlotsInventoryNotOverridenTest()
         {
             {
@@ -508,45 +541,6 @@ namespace GanjaLibrary.Classes.Tests
                 FirstTrousers.Add((IItem)GanjaTest3);
                 // Trousers only have 2 item slots, so should always assert to 2, the 3rd one will not be added.
                 Assert.IsTrue(FirstTrousers.ItemAmount == 2);
-            }
-        }
-
-        [TestMethod()]
-        public void FullCycleGrowthAndExtractionTest()
-        {
-            {
-                IChronic GanjaTest = new MasterKush();
-                IContainer FirstTrousers = new Trousers();
-                IItem Butane = new Butane();
-                FirstTrousers.Add(Butane);
-
-                GanjaTest.Print();
-                for (int i = 0; i < GanjaTest.SeedingAge; i++)
-                {
-                    GanjaTest.Grow(Water.Low, Light.None, Food.Low);
-                }
-
-                for (int i = 0; i < GanjaTest.FloweringAge; i++)
-                {
-                    GanjaTest.Grow(Water.Low, Light.Spring, Food.Low);
-                }
-
-                for (int i = 0; i < 20; i++)
-                {
-                    GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-                }
-
-                IChronic ExtractionTest = GanjaTest.Harvest();
-
-                if (FirstTrousers.Contains(Butane))
-                {
-                    ExtractionTest.Extract();
-                    ExtractionTest.Wash();
-                    FirstTrousers.Remove(Butane);
-                }
-
-                Assert.IsTrue(ExtractionTest.Stage == Stage.Extracting);
-                Assert.IsTrue(FirstTrousers.ItemAmount == 0);
             }
         }
     }
