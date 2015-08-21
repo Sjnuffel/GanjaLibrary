@@ -2,7 +2,9 @@
     
     Diethyl ether
     Chemical Compound
-    Diethyl ether, also known as ethoxyethane, ethyl ether, sulfuric ether, or simply ether, is an organic compound in the ether class with the formula 2O. It is a colorless, highly volatile flammable liquid. Wikipedia
+    Diethyl ether, also known as ethoxyethane, ethyl ether, sulfuric ether, or simply ether, 
+    is an organic compound in the ether class with the formula 2O. It is a colorless,
+    highly volatile flammable liquid. Wikipedia
     Density: 713.40 kg/m³
     Formula: (C2H5)2O
     Boiling point: 34.6 °C
@@ -33,9 +35,9 @@ namespace GanjaLibrary.Classes.Items
 
             Weight = 1;
             Value = 75;
-
             Flashpoint = -45;
             Contents = 500;
+
             Flammable = true;
         }
     }

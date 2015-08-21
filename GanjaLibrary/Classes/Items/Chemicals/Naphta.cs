@@ -8,13 +8,29 @@
     Some commonly available forms of Naptha contain impurities which may also have harmful properties of their own.
 
     - See more at: http://www.cannabiscure.info/files/cannabis_oil.htm#sthash.DxdGsIpo.dpuf
+
+    Works well with extracting THC/CBD from plants, sadly there is a (high) risk of it being denatured. 
 */
 
 using GanjaLibrary.Classes.Items.Chemicals;
+using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items.Chemicals
 {
-    class Naphta
+    class Naphta : Chemical, IItem
     {
+        public Naphta() :base()
+        {
+            Name = "Naphta";
+            Description = "";
+
+            Weight = 2;
+            Value = 12;
+            Flashpoint = 350;
+            Contents = 1000;
+
+            Flammable = true;
+            Denatured = true;
+        }
     }
 }

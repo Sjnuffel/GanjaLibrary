@@ -32,9 +32,9 @@ namespace GanjaLibrary.Classes.Items.Chemicals
 
             Weight = 2;
             Value = 120;
-
             Flashpoint = 350;
             Contents = 1000;
+
             Flammable = true;
         }
     }

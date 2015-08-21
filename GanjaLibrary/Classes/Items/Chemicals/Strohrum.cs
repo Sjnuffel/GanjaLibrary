@@ -20,11 +20,10 @@ namespace GanjaLibrary.Classes.Items
 
             Weight = 1;
             Value = 35;
-
             Flashpoint = 350;
             Contents = 500;
-            Flammable = true;
 
+            Flammable = true;
         }
     }
 }
