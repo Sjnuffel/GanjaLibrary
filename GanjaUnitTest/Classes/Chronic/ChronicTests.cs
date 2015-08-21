@@ -168,24 +168,22 @@ namespace GanjaLibrary.Classes.Tests
         [TestMethod()]
         public void NegativeHeightTest()
         {
+            IChronic GanjaTest = new MasterKush();
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
             {
-                IChronic GanjaTest = new MasterKush();
-                for (int i = 0; i < GanjaTest.SeedingAge; i++)
-                {
-                    GanjaTest.Grow(Water.None, Light.None, Food.None);
-                }
-
-                for (int i = 0; i < GanjaTest.FloweringAge; i++)
-                {
-                    GanjaTest.Grow(Water.None, Light.None, Food.None);
-                }
-
-                for (int i = 0; i < 10; i++)
-                {
-                    GanjaTest.Grow(Water.None, Light.None, Food.None);
-                }
-                Assert.IsTrue(GanjaTest.Height >= 0);
+                GanjaTest.Grow(Water.None, Light.None, Food.None);
             }
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+            {
+                GanjaTest.Grow(Water.None, Light.None, Food.None);
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                GanjaTest.Grow(Water.None, Light.None, Food.None);
+            }
+            Assert.IsTrue(GanjaTest.Height >= 0);
         }
 
         [TestMethod()]
@@ -239,7 +237,6 @@ namespace GanjaLibrary.Classes.Tests
         {
             {
                 IChronic GanjaTest = new MasterKush();
-                GanjaTest.Print();
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
                     GanjaTest.Grow(Water.Low, Light.None, Food.None);
@@ -265,7 +262,6 @@ namespace GanjaLibrary.Classes.Tests
         {
             {
                 IChronic GanjaTest = new MasterKush();
-                GanjaTest.Print();
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
                     GanjaTest.Grow(Water.Low, Light.None, Food.None);
@@ -296,7 +292,6 @@ namespace GanjaLibrary.Classes.Tests
         {
             {
                 IChronic GanjaTest = new MasterKush();
-                GanjaTest.Print();
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
                     GanjaTest.Grow(Water.Low, Light.None, Food.None);
@@ -333,7 +328,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             {
                 IChronic GanjaTest = new MasterKush();
-                GanjaTest.Print();
+
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
                     GanjaTest.Grow(Water.Low, Light.None, Food.None);
@@ -373,7 +368,7 @@ namespace GanjaLibrary.Classes.Tests
             {
                 IContainer FirstTrousers = new Trousers();
                 IChronic GanjaTest = new MasterKush();
-                GanjaTest.Print();
+
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
                     GanjaTest.Grow(Water.Low, Light.None, Food.None);
@@ -456,7 +451,6 @@ namespace GanjaLibrary.Classes.Tests
             {
                 IContainer FirstTrousers = new Trousers();
                 IChronic GanjaTest = new MasterKush();
-                GanjaTest.Print();
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
                     GanjaTest.Grow(Water.Low, Light.None, Food.None);
@@ -502,8 +496,8 @@ namespace GanjaLibrary.Classes.Tests
                 IContainer FirstTrousers = new Trousers();
                 IChronic GanjaTest = new MasterKush();
                 IContainer MasonJar = new SmallJar();
-                IChemical Butane = new Butane();
-                GanjaTest.Print();
+                IChemical GrainAlcohol = new GrainAlcohol();
+
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
                     GanjaTest.Grow(Water.Low, Light.None, Food.None);
@@ -525,7 +519,7 @@ namespace GanjaLibrary.Classes.Tests
                     WashTest.Dry();
                 }
 
-                WashTest.Wash(Butane, MasonJar);
+                WashTest.Wash(GrainAlcohol, MasonJar);
                 Assert.IsTrue(WashTest.Stage == Stage.Washing);
             }
         }

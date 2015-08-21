@@ -240,50 +240,64 @@ namespace GanjaLibrary.Classes
             Washing requires: containers (ie.: jars, bowls, glasses), chemical solvent. 
             */
 
-            if (WashCount == 0)
-            {
-                // Double yield on the FIRST wash, because we use the waste as well.
-                Yield *= 2;
-                // For every gram of weed, require 3 ml of solvent to wash with (1:3)
-                SolventRatio = Yield * 3;
-                
-                // Extract the CBD or THC from the entire yield.
-                if (THC > CBD)
-                    Yield *= THC;
-                if (CBD > THC)
-                    Yield *= CBD;
+            // For every gram of weed, require 3 ml of solvent to wash with (1:3)
+            SolventRatio = (Yield * 2) * 3;
 
-                // Calculate a remainder before we modify the yield.
-                WashRemains = Yield * (RemainingOils / 100);
-                // Remove ~80% of the THC during the first wash.
-                Yield *= (ExtractedOils / 100);
-                // Set to washing stage for both original and remainder.
-                Stage = Stage.Washing;
-                WashCount++;
+            // Check if there's enough chemicals for a wash.
+            if (SolventRatio <= chemical.Contents)
+            {
+                if (WashCount == 0)
+                {
+                    // Double yield on the FIRST wash, because we use the waste as well.
+                    Yield *= 2;
+
+                    // Remove the required solvent ratio from the bottle of chemicals.
+                    chemical.Contents -= SolventRatio;
+                    
+                    container.Add(chemical);
+                    
+                    // Extract the CBD or THC from the entire yield.
+                    if (THC > CBD)
+                        Yield *= THC;
+                    if (CBD > THC)
+                        Yield *= CBD;
+
+                    // Calculate a remainder before we modify the yield.
+                    WashRemains = Yield * (RemainingOils / 100);
+                    // Remove ~80% of the THC during the first wash.
+                    Yield *= (ExtractedOils / 100);
+                    // Set to washing stage for both original and remainder.
+                    Stage = Stage.Washing;
+                    WashCount++;
+                }
+
+                if (WashCount == 1)
+                {
+                    // Add the remainder to the yield.
+                    Yield += WashRemains;
+                    WashCount++;
+                }
+
+                // Washing any more will dissolve the green bits, thus reducing the oil quality.
+                if (WashCount > 1 && SolventRatio > chemical.Contents)
+                {
+                    Quality *= 0.95;
+                    WashCount++;
+                }
             }
 
-            if (WashCount == 1)
-            {
-                // Add the remainder to the yield.
-                Yield += WashRemains;
-                WashCount++;
-            }
-
-            // Washing any more will dissolve the green bits, thus reducing the oil quality.
-            else
-            {
-                Quality *= 0.95;
-                WashCount++;
-            }
             return this;
         }
 
-        public IChronic Filter()
+        public IChronic Filter(IContainer originContainer, IContainer destContainer, IItem filter)
         {
             // Filter the plant remains from the solvent.
             // Depending on the type of solvent and the contents (ie. denatured alcohol) have different effects.
-            // Requires filters, containers.
-            
+            // Requires filters, two containers for transfer/sifting.
+            if (Stage == Stage.Washing)
+            {
+
+            }
             return this;
         }
 
@@ -292,7 +306,7 @@ namespace GanjaLibrary.Classes
             /* 
             Heat away the chemical solvent. Some chemicals can vaporize in open air without heat.
             Might even be a better idea in the first place...
-            Requires: ventilation/open air, heat source.
+            Requires: ventilation/open air and time or a heat source like a gasburner or stove.
             */
             return this;
         }

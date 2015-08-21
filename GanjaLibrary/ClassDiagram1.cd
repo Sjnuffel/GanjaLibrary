@@ -38,7 +38,7 @@
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACCAxBAAEaAJAAEwEAhIAAIIgABAAABgAA4IFgAk=</HashCode>
+      <HashCode>EAgACCAxBACECAJAAEwEAhIAAJIgYhAAABgAA5IFgAk=</HashCode>
       <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -85,7 +85,7 @@
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACAAhBAAAaAJAAEwEAgYAAAAgABAAABgAA4IFgAg=</HashCode>
+      <HashCode>AAgACAAhBAAACAJAAEwEAgYAAAAgQBAAABgAA4IFgAg=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -111,16 +111,16 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IChemical">
-    <Position X="12.25" Y="4.25" Width="1.5" />
+    <Position X="12.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAABAAAI=</HashCode>
       <FileName>Interfaces\Items\IChemical.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAEAAAEQAAgAAAAAAAQAAIAAACAAAABA=</HashCode>
+      <HashCode>IAAAAAAAAAAEAAAAAEQAAgAAAAAAAQAAIAAgCAIAABA=</HashCode>
       <FileName>Enums\Stage.cs</FileName>
     </TypeIdentifier>
   </Enum>
