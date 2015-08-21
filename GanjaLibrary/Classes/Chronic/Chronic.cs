@@ -232,7 +232,7 @@ namespace GanjaLibrary.Classes
             return this;
         }
 
-        public IChronic Wash()
+        public IChronic Wash(IChemical chemical, IContainer container)
         {
             /* 
             First wash is most important.
@@ -268,17 +268,20 @@ namespace GanjaLibrary.Classes
                 Yield += WashRemains;
                 WashCount++;
             }
-                
+
             // Washing any more will dissolve the green bits, thus reducing the oil quality.
             else
+            {
                 Quality *= 0.95;
-            
+                WashCount++;
+            }
             return this;
         }
 
         public IChronic Filter()
         {
             // Filter the plant remains from the solvent.
+            // Depending on the type of solvent and the contents (ie. denatured alcohol) have different effects.
             // Requires filters, containers.
             
             return this;

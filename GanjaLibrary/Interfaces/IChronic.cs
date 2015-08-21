@@ -1,4 +1,5 @@
 ﻿using GanjaLibrary.Enums;
+using GanjaLibrary.Interfaces.Items;
 using System;
 using System.Collections.Generic;
 
@@ -144,6 +145,6 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Extracting the oils from the plant.
         /// </summary>
-        IChronic Wash();
+        IChronic Wash(IChemical chemical, IContainer container);
     }
 }

@@ -3,6 +3,7 @@ using GanjaLibrary.Interfaces;
 using GanjaLibrary.Enums;
 using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Classes.Items;
+using GanjaLibrary.Classes.Items.Storage;
 
 namespace GanjaLibrary.Classes.Tests
 {
@@ -500,6 +501,8 @@ namespace GanjaLibrary.Classes.Tests
             {
                 IContainer FirstTrousers = new Trousers();
                 IChronic GanjaTest = new MasterKush();
+                IContainer MasonJar = new SmallJar();
+                IChemical Butane = new Butane();
                 GanjaTest.Print();
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 {
@@ -522,7 +525,7 @@ namespace GanjaLibrary.Classes.Tests
                     WashTest.Dry();
                 }
 
-                WashTest.Wash();
+                WashTest.Wash(Butane, MasonJar);
                 Assert.IsTrue(WashTest.Stage == Stage.Washing);
             }
         }

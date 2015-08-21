@@ -4,6 +4,7 @@ using GanjaLibrary.Classes;
 using GanjaLibrary.Enums;
 using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Classes.Items;
+using GanjaLibrary.Classes.Items.Storage;
 
 namespace GanjaTestApplication
 {
@@ -41,6 +42,12 @@ namespace GanjaTestApplication
             */
 
             IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallJar();
+            IChemical Butane = new Butane();
+            IContainer Trousers = new Trousers();
+            Trousers.Add((IItem)MasonJar);
+            Trousers.Add((IItem)Trousers);
+
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
             {
                 PrintLine();
@@ -75,10 +82,10 @@ namespace GanjaTestApplication
             }
 
             PrintLine();
-            WashTest.Wash();
+            WashTest.Wash(Butane, MasonJar);
             WashTest.Print();
             PrintLine();
-            WashTest.Wash();
+            WashTest.Wash(Butane, MasonJar);
             WashTest.Print();
             Console.WriteLine();
             Console.ReadLine();
