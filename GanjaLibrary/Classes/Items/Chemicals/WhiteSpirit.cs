@@ -18,7 +18,6 @@
     Pretty decent alcohol for it's cheapness. Provides 90% bonus to yield.
 
 */
-using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items

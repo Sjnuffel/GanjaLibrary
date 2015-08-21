@@ -19,9 +19,7 @@
     This type of alcohol is decent enough, will give you an 80% boost to yield.
 */
 
-using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
-
 
 namespace GanjaLibrary.Classes.Items
 {

@@ -18,12 +18,11 @@
 
 */
 
-using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
 
-namespace GanjaLibrary.Classes.Items.Chemicals
+namespace GanjaLibrary.Classes.Items
 {
-    class GrainAlcohol : Chemical, IItem
+    public class GrainAlcohol : Chemical, IItem
     {
         public GrainAlcohol() :base()
         {
@@ -33,7 +32,7 @@ namespace GanjaLibrary.Classes.Items.Chemicals
             Weight = 2;
             Value = 120;
             Flashpoint = 350;
-            Contents = 1000;
+            Contents = 2000;
 
             Flammable = true;
         }

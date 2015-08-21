@@ -12,12 +12,11 @@
     Works well with extracting THC/CBD from plants, sadly there is a (high) risk of it being denatured. 
 */
 
-using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
 
-namespace GanjaLibrary.Classes.Items.Chemicals
+namespace GanjaLibrary.Classes.Items
 {
-    class Naphta : Chemical, IItem
+    public class Naphta : Chemical, IItem
     {
         public Naphta() :base()
         {

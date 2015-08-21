@@ -6,7 +6,6 @@
     This isn't proper alcohol, will leave a taste that might not be acceptable. Gives a 70% bonus to yield.
 */
 
-using GanjaLibrary.Classes.Items.Chemicals;
 using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items

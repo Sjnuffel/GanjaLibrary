@@ -6,7 +6,7 @@
 
 using GanjaLibrary.Interfaces.Items;
 
-namespace GanjaLibrary.Classes.Items.Chemicals
+namespace GanjaLibrary.Classes.Items
 {
     public class Chemical : Item, IChemical
     {

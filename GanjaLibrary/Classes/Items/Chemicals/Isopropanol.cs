@@ -21,7 +21,6 @@
 */
 
 using GanjaLibrary.Interfaces.Items;
-using GanjaLibrary.Classes.Items.Chemicals;
 
 namespace GanjaLibrary.Classes.Items
 {
