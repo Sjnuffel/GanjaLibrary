@@ -53,6 +53,8 @@
     <Compile Include="Classes\Items\Chemicals\Strohrum.cs" />
     <Compile Include="Classes\Items\Chemicals\WhiteSpirit.cs" />
     <Compile Include="Classes\Items\ClothingLegs\CargoPants.cs" />
+    <Compile Include="Classes\Items\Filters\Filter.cs" />
+    <Compile Include="Classes\Items\Filters\WaterFilters\CoffeeFilter.cs" />
     <Compile Include="Classes\Items\Item.cs" />
     <Compile Include="Classes\Items\Storage\Shop.cs" />
     <Compile Include="Classes\Items\ClothingLegs\Trousers.cs" />
@@ -64,6 +66,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>GameSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Items\IFilter.cs" />
     <Compile Include="Interfaces\Items\IChemical.cs" />
     <Compile Include="Interfaces\Items\IContainer.cs" />
     <Compile Include="Interfaces\IChronic.cs" />
@@ -87,7 +90,9 @@
       <LastGenOutput>GameSettings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Classes\Items\Filters\AirFilters\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

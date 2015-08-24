@@ -92,7 +92,7 @@
   <Interface Name="GanjaLibrary.Interfaces.Items.IItem">
     <Position X="12.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAAAgAAAAABA=</HashCode>
       <FileName>Interfaces\Items\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -115,6 +115,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAABAAAI=</HashCode>
       <FileName>Interfaces\Items\IChemical.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GanjaLibrary.Interfaces.Items.IFilter">
+    <Position X="14" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Items\IFilter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">

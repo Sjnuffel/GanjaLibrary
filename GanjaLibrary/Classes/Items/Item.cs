@@ -12,7 +12,7 @@ namespace GanjaLibrary.Classes.Items
         public double Weight { get; set; }
         public double Value { get; set; }
 
-        public double MaxStackableQuantity { get; set; }
+        public int MaxStackableQuantity { get; set; }
 
         public Guid Id { get; set; }
 

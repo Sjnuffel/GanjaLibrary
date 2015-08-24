@@ -32,5 +32,10 @@ namespace GanjaLibrary.Interfaces.Items
         /// Value of the item (in euros).
         /// </summary>
         double Value { get; }
+
+        /// <summary>
+        /// Maximum stacksize for this item in an inventory.
+        /// </summary>
+        int MaxStackableQuantity { get; }
     }
 }
