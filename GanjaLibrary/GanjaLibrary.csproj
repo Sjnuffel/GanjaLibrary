@@ -58,8 +58,8 @@
     <Compile Include="Classes\Items\Item.cs" />
     <Compile Include="Classes\Items\Storage\Shop.cs" />
     <Compile Include="Classes\Items\ClothingLegs\Trousers.cs" />
-    <Compile Include="Classes\Items\Storage\SmallJar.cs" />
-    <Compile Include="Enums\Food.cs" />
+    <Compile Include="Classes\Items\Storage\SmallMasonJar.cs" />
+    <Compile Include="Enums\Chronic\Food.cs" />
     <Compile Include="Classes\Chronic\Indica.cs" />
     <Compile Include="GameSettings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -70,14 +70,15 @@
     <Compile Include="Interfaces\Items\IChemical.cs" />
     <Compile Include="Interfaces\Items\IContainer.cs" />
     <Compile Include="Interfaces\IChronic.cs" />
-    <Compile Include="Enums\Light.cs" />
+    <Compile Include="Enums\Chronic\Light.cs" />
     <Compile Include="Classes\Chronic\Sativa.cs" />
-    <Compile Include="Enums\Stage.cs" />
+    <Compile Include="Enums\Chronic\Stage.cs" />
     <Compile Include="Classes\Chronic\MasterKush.cs" />
     <Compile Include="Interfaces\Items\IItem.cs" />
     <Compile Include="Interfaces\Items\IShop.cs" />
+    <Compile Include="Enums\Chronic\ItemType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Enums\Water.cs" />
+    <Compile Include="Enums\Chronic\Water.cs" />
     <Compile Include="Classes\Chronic\Ruderalis.cs" />
     <Compile Include="Classes\Chronic\SilverHaze.cs" />
     <Compile Include="Statics\Globals.cs" />
@@ -92,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\Items\Filters\AirFilters\" />
+    <Folder Include="Enums\Item\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

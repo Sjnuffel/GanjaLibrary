@@ -13,14 +13,19 @@ namespace GanjaLibrary.Interfaces
         event EventHandler Died;
 
         /// <summary>
-        /// Height category of the plant
+        /// Day the seed is expected to flower.
         /// </summary>
-        double Height { get; set; }
+        int SeedingAge { get; }
 
         /// <summary>
-        /// Max yield a plant can get in grams.
+        /// Max health cap (200)
         /// </summary>
-        double MaxYield { get; }
+        int MaxHealth { get; }
+
+        /// <summary>
+        /// Ideal drying age/time of the plant.
+        /// </summary>
+        int DryingAge { get; }
 
         /// <summary>
         /// Age of the plant in days.
@@ -33,9 +38,24 @@ namespace GanjaLibrary.Interfaces
         int FloweringAge { get; }
 
         /// <summary>
-        /// Stage the plant is in.
+        /// Height category of the plant
         /// </summary>
-        Stage Stage { get; set; }
+        double Height { get; set; }
+
+        /// <summary>
+        /// Max yield a plant can get in grams.
+        /// </summary>
+        double MaxYield { get; }
+
+        /// <summary>
+        /// Actual quality of the plant during growth.
+        /// </summary>
+        double Quality { get; }
+
+        /// <summary>
+        /// The non-useful plant bits that are generated.
+        /// </summary>
+        double Trimmings { get; set; }
 
         /// <summary>
         /// Day to Day health of the plant (%).
@@ -73,6 +93,11 @@ namespace GanjaLibrary.Interfaces
         Food Food { get; }
 
         /// <summary>
+        /// Stage the plant is in.
+        /// </summary>
+        Stage Stage { get; set; }
+
+        /// <summary>
         /// Name of the plant.
         /// </summary>
         string Name { get; }
@@ -88,26 +113,6 @@ namespace GanjaLibrary.Interfaces
         Dictionary<Stage, Light> LightNeed { get; }
 
         /// <summary>
-        /// Day the seed is expected to flower.
-        /// </summary>
-        int SeedingAge { get; }
-
-        /// <summary>
-        /// Actual quality of the plant during growth.
-        /// </summary>
-        double Quality { get; }
-
-        /// <summary>
-        /// Max health cap (200)
-        /// </summary>
-        int MaxHealth { get; }
-
-        /// <summary>
-        /// Ideal drying age/time of the plant.
-        /// </summary>
-        int DryingAge { get; }
-
-        /// <summary>
         /// Grow the plant.
         /// </summary>
         IChronic Grow(Water water, Light light, Food food );
@@ -116,11 +121,6 @@ namespace GanjaLibrary.Interfaces
         /// Harvest the plant.
         /// </summary>
         IChronic Harvest();
-
-        /// <summary>
-        /// Print.
-        /// </summary>
-        void Print();
 
         /// <summary>
         /// Dry the plant.
@@ -146,5 +146,10 @@ namespace GanjaLibrary.Interfaces
         /// Extracting the oils from the plant.
         /// </summary>
         IChronic Wash(IChemical chemical, IContainer container);
+
+        /// <summary>
+        /// Print.
+        /// </summary>
+        void Print();
     }
 }

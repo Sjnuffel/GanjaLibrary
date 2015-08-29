@@ -36,5 +36,7 @@ namespace GanjaLibrary.Interfaces.Items
         /// Check inside the container if it contains an item.
         /// </summary>
         bool Contains(IItem item);
+
+
     }
 }

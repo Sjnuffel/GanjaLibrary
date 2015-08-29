@@ -1,5 +1,7 @@
 ﻿using GanjaLibrary.Interfaces.Items;
+using GanjaLibrary.Enums;
 using System;
+using GanjaLibrary;
 
 namespace GanjaLibrary.Classes.Items
 {
@@ -15,6 +17,7 @@ namespace GanjaLibrary.Classes.Items
         public int MaxStackableQuantity { get; set; }
 
         public Guid Id { get; set; }
+
 
         public Item()
         {

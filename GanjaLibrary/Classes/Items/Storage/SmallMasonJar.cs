@@ -1,9 +1,11 @@
 ﻿using GanjaLibrary.Interfaces.Items;
 using System.Collections.Generic;
+using GanjaLibrary.Interfaces;
+using System;
 
 namespace GanjaLibrary.Classes.Items.Storage
 {
-    public class SmallJar : Item, IContainer
+    public class SmallMasonJar : Item, IContainer
     {
         public List<IItem> Items { get; set; }
 
@@ -17,7 +19,7 @@ namespace GanjaLibrary.Classes.Items.Storage
             }
         }
 
-        public SmallJar() :base("Small Mason Jar", "Useful for keeping stuff sealed in for a long period of time", 2, 25)
+        public SmallMasonJar() :base("Small Mason Jar", "Useful for keeping stuff sealed in for a long period of time", 2, 25)
         {
             Items = new List<IItem>();
             Slots = 1;

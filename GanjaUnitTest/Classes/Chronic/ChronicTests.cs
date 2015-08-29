@@ -495,7 +495,7 @@ namespace GanjaLibrary.Classes.Tests
             {
                 IContainer FirstTrousers = new Trousers();
                 IChronic GanjaTest = new MasterKush();
-                IContainer MasonJar = new SmallJar();
+                IContainer MasonJar = new SmallMasonJar();
                 IChemical GrainAlcohol = new GrainAlcohol();
 
                 for (int i = 0; i < GanjaTest.SeedingAge; i++)

@@ -24,7 +24,7 @@ namespace GanjaUnitTest.Classes.Items
         public void AddSmallJarToShopTest()
         {
             IContainer ShopTest = new Shop();
-            Item MasonJar = new SmallJar();
+            Item MasonJar = new SmallMasonJar();
             ShopTest.Add(MasonJar);
 
             Assert.IsTrue(ShopTest.ItemAmount == 1);

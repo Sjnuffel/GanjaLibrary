@@ -22,7 +22,6 @@ namespace GanjaLibrary.Classes
         public int SeedingAge { get; internal set; }
         public int MaxHealth { get; private set; }
 
-        
         public double CBD { get; internal set; }
         public double THC { get; internal set; }
         public double Yield { get; private set; }
@@ -30,13 +29,14 @@ namespace GanjaLibrary.Classes
         public double Quality { get; private set; }
         public double Health { get; internal set; }
         public double Height { get; set; }
-        
+
         // Washing related variables.
         public double WashCount { get; internal set; }
         public double SolventRatio { get; internal set; }
         public double ExtractedOils { get; internal set; }
         public double RemainingOils { get; internal set; }
         public double WashRemains { get; internal set; }
+        public double Trimmings { get; set; }
 
         // Growing related variables.
         public Water Water { get; internal set; }
@@ -54,17 +54,11 @@ namespace GanjaLibrary.Classes
         #region constructors
         public Chronic() : base("Chronic", "Base type of weed", 0, 0)
         {
+            // Required variables for growing
             Age = 0;
             SeedingAge = randgen.Next(1, 7);
             FloweringAge = randgen.Next(50, 60);
             DryingAge = randgen.Next(6, 10);
-
-            // Required for washing.
-            WashCount = 0;
-            SolventRatio = 0;
-            ExtractedOils = randgen.Next(75, 85);
-            RemainingOils = 100 - ExtractedOils;
-
             MaxHealth = 100;
 
             CBD = 0.15;
@@ -80,7 +74,15 @@ namespace GanjaLibrary.Classes
             Food = Food.None;
             Light = Light.None;
 
-            WaterNeed = new Dictionary<Stage, Water>()                                      // Create a dict for changing water need per stage.
+            // Required for washing.
+            WashCount = 0;
+            SolventRatio = 0;
+            Trimmings = 0;
+            ExtractedOils = randgen.Next(75, 85);
+            RemainingOils = 100 - ExtractedOils;
+
+            // Create a dict for changing water need per stage.
+            WaterNeed = new Dictionary<Stage, Water>()
             {
                 { Stage.Seed, Water.Low },
                 { Stage.Clone, Water.Low },
@@ -89,7 +91,8 @@ namespace GanjaLibrary.Classes
                 { Stage.Dead, Water.None },
             };
 
-            LightNeed = new Dictionary<Stage, Light>()                                      // Create a dict for changing light need per stage.
+            // Create a dict for changing light need per stage.
+            LightNeed = new Dictionary<Stage, Light>()
             {
                 { Stage.Seed, Light.None },
                 { Stage.Clone, Light.Spring },
@@ -125,7 +128,10 @@ namespace GanjaLibrary.Classes
                 AdjustQuality(water, light, food);
 
                 if (Stage != Stage.Seed)
+                {
                     AdjustHeight(water, light, food, Stage);
+                    AdjustCompost(water, light, food, Stage);
+                }
 
                 if (Stage == Stage.Flowering)
                 {
@@ -161,17 +167,21 @@ namespace GanjaLibrary.Classes
                 }
 
                 // Causes a lot of stress for the plant.
+                // Also since we cut the plant, set height to 10 cm.                
                 Health = 0;
                 Age = 0;
+                Height = 10;
 
                 harvest = DeepClone();
 
-                // Since we cut the plant, set height to 10 cm.
-                Height = 10;
-                // Cutting does not kill, reduce to clone stage.
-                Stage = Stage.Clone;
+                // After cloning reduce the yield and trimmings.
                 Yield = 0;
+                Trimmings = 0;
 
+                // Cutting does not kill, set to clone stage.
+                Stage = Stage.Clone;
+
+                // Different stage and height for the clone.
                 harvest.Stage = Stage.Drying;
                 harvest.Height -= 10;
             }
@@ -234,39 +244,30 @@ namespace GanjaLibrary.Classes
 
         public IChronic Wash(IChemical chemical, IContainer container)
         {
-            /* 
-            First wash is most important.
-            Second wash is optional, but if you don't do it, it'll be a waste of good product.
-            Washing requires: containers (ie.: jars, bowls, glasses), chemical solvent. 
-            */
-
             // For every gram of weed, require 3 ml of solvent to wash with (1:3)
-            SolventRatio = (Yield * 2) * 3;
-
+            SolventRatio = (Yield + Trimmings) * 3;
+            
             // Check if there's enough chemicals for a wash.
             if (SolventRatio <= chemical.Contents)
             {
                 if (WashCount == 0)
                 {
-                    // Double yield on the FIRST wash, because we use the waste as well.
-                    Yield *= 2;
+                    // Increase the stackable quantity
+                    MaxStackableQuantity = (int)Yield + (int)Trimmings;
 
                     // Remove the required solvent ratio from the bottle of chemicals.
                     chemical.Contents -= SolventRatio;
-                    
-                    container.Add(chemical);
-                    
+
                     // Extract the CBD or THC from the entire yield.
                     if (THC > CBD)
-                        Yield *= THC;
+                        Yield += Trimmings * THC;
                     if (CBD > THC)
-                        Yield *= CBD;
+                        Yield += Trimmings * CBD;
 
                     // Calculate a remainder before we modify the yield.
-                    WashRemains = Yield * (RemainingOils / 100);
+                    WashRemains = (Yield + Trimmings) * (RemainingOils / 100);
                     // Remove ~80% of the THC during the first wash.
-                    Yield *= (ExtractedOils / 100);
-                    // Set to washing stage for both original and remainder.
+                    Yield += Trimmings * (ExtractedOils / 100);
                     Stage = Stage.Washing;
                     WashCount++;
                 }
@@ -279,7 +280,7 @@ namespace GanjaLibrary.Classes
                 }
 
                 // Washing any more will dissolve the green bits, thus reducing the oil quality.
-                if (WashCount > 1 && SolventRatio > chemical.Contents)
+                if (WashCount > 1)
                 {
                     Quality *= 0.95;
                     WashCount++;
@@ -315,7 +316,7 @@ namespace GanjaLibrary.Classes
 
         #region Plant Biology
         // Adjust plant health if watered, lighted and fed.
-        private void AdjustHealth(Water water, Light light, Food food)                        
+        private void AdjustHealth(Water water, Light light, Food food)
         {
             if (Stage == Stage.Dead)
             {
@@ -339,7 +340,7 @@ namespace GanjaLibrary.Classes
         }
 
         // Adjust plant height if watered and lighted.
-        private void AdjustHeight(Water water, Light light, Food food, Stage stage)        
+        private void AdjustHeight(Water water, Light light, Food food, Stage stage)
         {
             // Check if plant is alive and no longer a seed.
             if (stage == Stage.Vegetative || stage == Stage.Flowering || stage == Stage.Clone)
@@ -368,6 +369,34 @@ namespace GanjaLibrary.Classes
             if (Height < 0)
                 Height = 0;
 
+        }
+
+        // Adjust plant compost amount. Compost in this sense means bits of the plant you'll have to cut off.
+        private void AdjustCompost(Water water, Light light, Food food, Stage stage)
+        {
+            if (stage == Stage.Vegetative || stage == Stage.Flowering || stage == Stage.Seed || stage == Stage.Clone)
+            {
+                if (water == Water)
+                    Trimmings += 1.5;
+                else
+                    Trimmings -= 1.5;
+
+                if (light == Light)
+                    Trimmings += 1.5;
+                else
+                    Trimmings -= 1.5;
+
+                if (food == Food)
+                    Trimmings += 1.5;
+                else
+                    Trimmings -= 1.5;
+
+                if (stage == Stage.Dead)
+                    Trimmings -= 2;
+
+                if (Trimmings < 0)
+                    Trimmings = 0;
+            }
         }
 
         // Quality improvement algorithm.
@@ -530,7 +559,7 @@ namespace GanjaLibrary.Classes
             Console.WriteLine(string.Format("Food: {0} \t\t\tHealth: {1}", Food, Health));
             Console.WriteLine(string.Format("CBD: {0}%  \t\t\tTHC: {1}%", CBD * 100, THC * 100));
             Console.WriteLine(string.Format("Height: {0} \t\tQuality: {1}", Height, Quality));
-            Console.WriteLine(string.Format("Yield: {0}", Yield));
+            Console.WriteLine(string.Format("Yield: {0} \t\tCompost: {1}", Yield, Trimmings));
 
             if (Globals.Debug)
             {

@@ -3,7 +3,7 @@ using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items.Filters
 {
-    class Filter : IFilter
+    public class Filter : IFilter
     {
         // Implement IFilter interface.
         public Guid Id { get; set; }
@@ -18,6 +18,8 @@ namespace GanjaLibrary.Classes.Items.Filters
 
         public bool AirFilter { get; set; }
         public bool WaterFilter { get; set; }
+
+        public double Effectiveness { get; set; } 
 
         // Base template for a filter.
         public Filter() :base()

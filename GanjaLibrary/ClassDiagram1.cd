@@ -38,7 +38,7 @@
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAgACCAxBACECAJAAEwEAhIAAJIgYhAAABgAA5IFgAk=</HashCode>
+      <HashCode>EAgAKCAxBQCECAJAAEwEAhIAAJIgYhAAABgAA5IFgAk=</HashCode>
       <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -49,7 +49,6 @@
       <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAAAgAAAAABA=</HashCode>
       <FileName>Classes\Items\Item.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Trousers" Collapsed="true">
     <Position X="6.5" Y="6.75" Width="1.5" />
@@ -74,18 +73,18 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="GanjaLibrary.Classes.Items.Storage.SmallJar" Collapsed="true">
+  <Class Name="GanjaLibrary.Classes.Items.Storage.SmallMasonJar" Collapsed="true">
     <Position X="6.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
-      <FileName>Classes\Items\Storage\SmallJar.cs</FileName>
+      <FileName>Classes\Items\Storage\SmallMasonJar.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgACAAhBAAACAJAAEwEAgYAAAAgQBAAABgAA4IFgAg=</HashCode>
+      <HashCode>AAgAKAAhBAAACAJAAEwEAgYAAAAgQBAAABgAA4IFgAg=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -118,9 +117,9 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IFilter">
-    <Position X="14" Y="4" Width="1.5" />
+    <Position X="13.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IFilter.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -128,28 +127,35 @@
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAEAAAAAEQAAgAAAAAAAQAAIAAgCAIAABA=</HashCode>
-      <FileName>Enums\Stage.cs</FileName>
+      <FileName>Enums\Chronic\Stage.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Light">
     <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAQIAAAAAEAAAQ=</HashCode>
-      <FileName>Enums\Light.cs</FileName>
+      <FileName>Enums\Chronic\Light.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Water">
     <Position X="11.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAgAAAAEEAAA=</HashCode>
-      <FileName>Enums\Water.cs</FileName>
+      <FileName>Enums\Chronic\Water.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GanjaLibrary.Enums.Food">
     <Position X="12.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAEEIAA=</HashCode>
-      <FileName>Enums\Food.cs</FileName>
+      <FileName>Enums\Chronic\Food.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GanjaLibrary.Enums.ItemType">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\Chronic\ItemType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

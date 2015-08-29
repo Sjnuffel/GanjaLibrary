@@ -11,6 +11,10 @@
         /// To specify if this is a filter used in water filtration.
         /// </summary>
         bool WaterFilter { get; }
+
+        /// <summary>
+        /// Effectiveness of the filter.
+        /// </summary>
         double Effectiveness { get; set; }
     }
 }

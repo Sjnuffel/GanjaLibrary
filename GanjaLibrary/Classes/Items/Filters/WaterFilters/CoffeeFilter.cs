@@ -1,13 +1,12 @@
 ﻿/*
 
-    A cheap coffee filter to filter water from the coffee grounds.
-    The same principle works fine for weed remains as well.
+The most basic type of filter that can be used to seperate the waste from the solvent.
 
-    */
+*/
 
 namespace GanjaLibrary.Classes.Items.Filters
 {
-    class CoffeeFilter : Filter
+    public class CoffeeFilter : Filter
     {
         public CoffeeFilter() :base()
         {
