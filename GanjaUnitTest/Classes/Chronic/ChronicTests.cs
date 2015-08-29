@@ -521,6 +521,8 @@ namespace GanjaLibrary.Classes.Tests
 
                 WashTest.Wash(GrainAlcohol, MasonJar);
                 Assert.IsTrue(WashTest.Stage == Stage.Washing);
+                Assert.IsTrue(GrainAlcohol.Contents != 1000);
+                Assert.IsTrue(MasonJar.Contains((IItem)WashTest) == true);
             }
         }
 

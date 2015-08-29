@@ -245,45 +245,58 @@ namespace GanjaLibrary.Classes
 
         public IChronic Wash(IChemical chemical, IContainer container)
         {
-            // For every gram of weed, require 3 ml of solvent to wash with (1:3)
-            SolventRatio = (Yield + Trimmings) * 3;
-            
-            // Check if there's enough chemicals for a wash.
-            if (SolventRatio <= chemical.Contents)
+            // Calculate the solvent first so it doesn't change initial calculation.
+            if (WashCount == 0)
             {
-                if (WashCount == 0)
+                // Calculate solvent ratio for this batch of weed.
+                SolventRatio = Yield + Trimmings;
+                SolventRatio *= 3;
+            }
+
+            if (SolventRatio <= chemical.Contents || Yield + Trimmings > MaxStackableQuantity)
+            {
+                // Washing any more will dissolve the green bits, thus reducing the oil quality.
+                if (WashCount > 1)
                 {
-                    // Increase the stackable quantity
-                    MaxStackableQuantity = (int)Yield + (int)Trimmings;
-
-                    // Remove the required solvent ratio from the bottle of chemicals.
-                    chemical.Contents -= SolventRatio;
-
-                    // Extract the CBD or THC from the entire yield.
-                    if (THC > CBD)
-                        Yield += Trimmings * THC;
-                    if (CBD > THC)
-                        Yield += Trimmings * CBD;
-
-                    // Calculate a remainder before we modify the yield.
-                    WashRemains = (Yield + Trimmings) * (RemainingOils / 100);
-                    // Remove ~80% of the THC during the first wash.
-                    Yield += Trimmings * (ExtractedOils / 100);
-                    Stage = Stage.Washing;
+                    Quality *= 0.95;
                     WashCount++;
                 }
 
                 if (WashCount == 1)
                 {
-                    // Add the remainder to the yield.
+                    // Add remainder to the yield.
                     Yield += WashRemains;
                     WashCount++;
                 }
 
-                // Washing any more will dissolve the green bits, thus reducing the oil quality.
-                if (WashCount > 1)
+                if (WashCount == 0)
                 {
-                    Quality *= 0.95;
+                    // Remove the solvent from the chemical bottle.
+                    chemical.Contents -= SolventRatio;
+                    // Add the weed into the container.
+                    container.Add(this);
+
+                    // Extract either THC or CBD from the yield.
+                    if (THC >= CBD)
+                    {
+                        Yield += Trimmings;
+                        Yield *= THC;
+                    }
+                    if (CBD > THC)
+                    {
+                        Yield += Trimmings;
+                        Yield *= CBD;
+                    }
+
+                    // We have to work with a %
+                    RemainingOils /= 100;
+                    ExtractedOils /= 100;
+
+                    // Calculate remainder.
+                    WashRemains = Yield * RemainingOils;
+                    // Extract the first 80% of THC/CBD during first wash
+                    Yield *= ExtractedOils;
+                    Stage = Stage.Washing;
                     WashCount++;
                 }
             }
