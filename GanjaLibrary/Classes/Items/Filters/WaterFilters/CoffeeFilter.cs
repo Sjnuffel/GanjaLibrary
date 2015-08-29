@@ -4,6 +4,9 @@ The most basic type of filter that can be used to seperate the waste from the so
 
 */
 
+using GanjaLibrary.Enums;
+using System;
+
 namespace GanjaLibrary.Classes.Items.Filters
 {
     public class CoffeeFilter : Filter

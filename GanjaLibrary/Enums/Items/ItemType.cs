@@ -12,8 +12,16 @@ namespace GanjaLibrary.Enums
         /// </summary>
         BaseItem,
         /// <summary>
-        /// Base Chemical type.
+        /// Chemical type.
         /// </summary>
-        Chemical
+        Chemical,
+        /// <summary>
+        /// Plant type.
+        /// </summary>
+        Plant,
+        /// <summary>
+        /// Filter type.
+        /// </summary>
+        Filter
     }
 }

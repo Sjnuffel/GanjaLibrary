@@ -1,5 +1,6 @@
-﻿using System;
-using GanjaLibrary.Interfaces.Items;
+﻿using GanjaLibrary.Interfaces.Items;
+using GanjaLibrary.Enums;
+using System;
 
 namespace GanjaLibrary.Classes.Items.Filters
 {
@@ -21,6 +22,8 @@ namespace GanjaLibrary.Classes.Items.Filters
 
         public double Effectiveness { get; set; } 
 
+        public ItemType Type { get; set; }
+
         // Base template for a filter.
         public Filter() :base()
         {
@@ -32,6 +35,8 @@ namespace GanjaLibrary.Classes.Items.Filters
 
             AirFilter = true;
             WaterFilter = false;
+
+            Type = ItemType.Filter;
         }
     }
 }

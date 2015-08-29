@@ -54,7 +54,7 @@ namespace GanjaLibrary.Classes
         #region constructors
         public Chronic() : base("Chronic", "Base type of weed", 0, 0)
         {
-            // Required variables for growing
+            // Assign values to variables for growing
             Age = 0;
             SeedingAge = randgen.Next(1, 7);
             FloweringAge = randgen.Next(50, 60);
@@ -73,6 +73,7 @@ namespace GanjaLibrary.Classes
             Stage = Stage.Seed;
             Food = Food.None;
             Light = Light.None;
+            Type = ItemType.Plant;
 
             // Required for washing.
             WashCount = 0;

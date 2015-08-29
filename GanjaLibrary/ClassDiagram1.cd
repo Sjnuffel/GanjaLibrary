@@ -43,12 +43,13 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="GanjaLibrary.Classes.Items.Item">
+  <Class Name="GanjaLibrary.Classes.Item">
     <Position X="4.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAAAgAAAAABA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAQAgAAAAABA=</HashCode>
       <FileName>Classes\Items\Item.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Trousers" Collapsed="true">
     <Position X="6.5" Y="6.75" Width="1.5" />
@@ -91,7 +92,7 @@
   <Interface Name="GanjaLibrary.Interfaces.Items.IItem">
     <Position X="12.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAAAgAAAAABA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAQAgAAAAABA=</HashCode>
       <FileName>Interfaces\Items\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -154,8 +155,8 @@
   <Enum Name="GanjaLibrary.Enums.ItemType">
     <Position X="15.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Enums\Chronic\ItemType.cs</FileName>
+      <HashCode>AAAQAABAAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\Items\ItemType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

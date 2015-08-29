@@ -34,5 +34,10 @@ namespace GanjaLibrary.Interfaces.Items
         /// Maximum stacksize for this item in an inventory.
         /// </summary>
         int MaxStackableQuantity { get; }
+
+        /// <summary>
+        /// Type of item.
+        /// </summary>
+        ItemType Type { get; }
     }
 }

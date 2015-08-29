@@ -5,6 +5,7 @@
 */
 
 using GanjaLibrary.Interfaces.Items;
+using GanjaLibrary.Enums;
 
 namespace GanjaLibrary.Classes.Items
 {
@@ -24,6 +25,8 @@ namespace GanjaLibrary.Classes.Items
 
             Flammable = false;
             Denatured = false;
+
+            Type = ItemType.Chemical;
         }
     }
 }
