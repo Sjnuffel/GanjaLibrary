@@ -202,10 +202,11 @@ namespace GanjaLibrary.Classes
         }
 
         // What to do when curing the plant.
-        public IChronic Cure()
+        public IChronic Cure(IContainer container)
         {
             if (Stage == Stage.Curing)
             {
+                container.Add(this);
                 Age++;
                 // Adjust THC/CBD with the optimalAge and variance in mind
                 AdjustTHC(14, 1);
@@ -258,12 +259,14 @@ namespace GanjaLibrary.Classes
                 // Washing any more will dissolve the green bits, thus reducing the oil quality.
                 if (WashCount > 1)
                 {
+                    chemical.Contents -= SolventRatio;
                     Quality *= 0.95;
                     WashCount++;
                 }
 
                 if (WashCount == 1)
                 {
+                    chemical.Contents -= SolventRatio;
                     // Add remainder to the yield.
                     Yield += WashRemains;
                     WashCount++;
@@ -313,6 +316,10 @@ namespace GanjaLibrary.Classes
             {
 
             }
+
+            else
+                Console.WriteLine("There is nothing to filter.");
+
             return this;
         }
 

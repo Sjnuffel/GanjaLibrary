@@ -130,7 +130,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Actual curing process.
         /// </summary>
-        IChronic Cure();
+        IChronic Cure(IContainer container);
 
         /// <summary>
         /// Final steps before plant is ready for sale.
