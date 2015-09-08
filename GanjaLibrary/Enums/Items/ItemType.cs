@@ -23,6 +23,8 @@ namespace GanjaLibrary.Enums
         /// Filter type.
         /// </summary>
         Filter,
-        SolventMix
+        SolventMix,
+        Solvent,
+        CannaOil
     }
 }

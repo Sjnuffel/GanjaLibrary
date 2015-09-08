@@ -149,6 +149,9 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         void Print();
 
+        /// <summary>
+        /// Clone the class.
+        /// </summary>
         IChronic Clone();
     }
 }

@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.MasterKush">
-    <Position X="6.25" Y="2.75" Width="1.5" />
+    <Position X="6.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Chronic\MasterKush.cs</FileName>
@@ -38,7 +38,7 @@
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAKCAzBQCECAJAAEwEAhIAABIgABAAABgAA4IFgAk=</HashCode>
+      <HashCode>AAgAKCAzBQCECAJAAEwEAhIAABIgABAAABgAA4IFgBk=</HashCode>
       <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -67,7 +67,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Shop" Collapsed="true">
-    <Position X="8.75" Y="4" Width="1.5" />
+    <Position X="8.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Classes\Items\Storage\Shop.cs</FileName>
@@ -83,45 +83,59 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
-    <Position X="15.5" Y="2.5" Width="1.5" />
+    <Position X="24" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAKAAjBAAACAJAAEwEAgYAAQAgABAAABgAA4IFgBg=</HashCode>
+      <HashCode>AAgAKAAjBAAACAJAAEwEAgYAAAAgABAAABgAA4IFgBg=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IItem">
-    <Position X="12.25" Y="6" Width="1.5" />
+    <Position X="20.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAQAgAAAAABA=</HashCode>
       <FileName>Interfaces\Items\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IContainer">
-    <Position X="10.5" Y="6" Width="1.5" />
+    <Position X="18.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAAACAAAAAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Interfaces\Items\IContainer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IShop">
-    <Position X="8.75" Y="6" Width="1.5" />
+    <Position X="17" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IShop.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IFilter">
-    <Position X="13.75" Y="4" Width="1.5" />
+    <Position X="20.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IFilter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.ICannaOil">
-    <Position X="8.75" Y="4.75" Width="1.5" />
+    <Position X="17" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Oils\ICannaOil.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GanjaLibrary.Interfaces.Oils.ISolvent">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Oils\ISolvent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GanjaLibrary.Interfaces.Oils.ISolventMix">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAABAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Oils\ISolventMix.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">
@@ -155,7 +169,7 @@
   <Enum Name="GanjaLibrary.Enums.ItemType">
     <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABQAABAAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABQAABAAACAAAAAAAAAgAAAABAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Enums\Items\ItemType.cs</FileName>
     </TypeIdentifier>
   </Enum>

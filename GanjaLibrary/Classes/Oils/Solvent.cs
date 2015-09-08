@@ -1,10 +1,6 @@
 ﻿using GanjaLibrary.Interfaces.Oils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GanjaLibrary.Interfaces;
+using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Oils
 {
@@ -15,7 +11,6 @@ namespace GanjaLibrary.Classes.Oils
         public Solvent(IChronic chronic)
         {
             Chronic = chronic.Clone();
-
         }
     }
 }

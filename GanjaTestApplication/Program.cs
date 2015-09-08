@@ -88,10 +88,9 @@ namespace GanjaTestApplication
 
             PrintLine();
             ISolventMix mix = new SolventMix(WashTest, Butane);
+            MasonJar.Add((IItem)mix);
             mix.Wash();
             mix.Wash();
-
-            //WashTest.Wash(Butane, MasonJar);
             WashTest.Print();
             PrintLine();
             WashTest.Print();

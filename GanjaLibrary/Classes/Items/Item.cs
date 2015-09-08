@@ -1,14 +1,9 @@
 ﻿using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Enums;
 using System;
-using GanjaLibrary;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization;
 
 namespace GanjaLibrary.Classes
 {
-    [Serializable]
     public abstract class Item : IItem
     {
         public string Description { get; set; }

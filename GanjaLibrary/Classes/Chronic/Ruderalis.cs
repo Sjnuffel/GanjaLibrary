@@ -8,7 +8,6 @@ namespace GanjaLibrary.Classes
     {
         public Ruderalis() : base("Ruderalis", Water.Low, Light.Yolo, Food.None)
         {
-            // Overwriting base variables.
             CBD = 0.30;
             THC = 0.05;
 

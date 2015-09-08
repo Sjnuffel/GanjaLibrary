@@ -8,7 +8,6 @@ namespace GanjaLibrary.Classes
     {
         public Sativa() : base("Sativa", Water.Low, Light.Spring, Food.None)
         {
-            // Overwriting the base variables.
             Name = "Sativa";
             CBD = 0.05;
             THC = 0.25;

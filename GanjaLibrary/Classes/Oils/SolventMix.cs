@@ -116,32 +116,38 @@ namespace GanjaLibrary.Classes.Oils
 
         public IChronic Grow(Water water, Light light, Food food)
         {
-            throw new InvalidOperationException("Cannot Grow a Solventmix in this state. Finish the process it is in first");
+            throw new InvalidOperationException(
+                "Cannot Grow a Solventmix in this state. Finish the process it is in first");
         }
 
         public IChronic Harvest()
         {
-            throw new InvalidOperationException("Cannot Harvest a Solventmix in this state. Finish the process it is in first");
+            throw new InvalidOperationException(
+                "Cannot Harvest a Solventmix in this state. Finish the process it is in first");
         }
 
         public IChronic Dry()
         {
-            throw new InvalidOperationException("Cannot Dry a Solventmix in this state. Finish the process it is in first");
+            throw new InvalidOperationException(
+                "Cannot Dry a Solventmix in this state. Finish the process it is in first");
         }
 
         public IChronic Cure(IContainer container)
         {
-            throw new InvalidOperationException("Cannot Cure a Solventmix in this state. Finish the process it is in first");
+            throw new InvalidOperationException(
+                "Cannot Cure a Solventmix in this state. Finish the process it is in first");
         }
 
         public IChronic Finish()
         {
-            throw new InvalidOperationException("Cannot Finish a Solventmix in this state. Finish the process it is in first");
+            throw new InvalidOperationException(
+                "Cannot Finish a Solventmix in this state. Finish the process it is in first");
         }
 
         public IChronic Weck()
         {
-            throw new InvalidOperationException("Cannot Weck a Solventmix in this state. Finish the process it is in first");
+            throw new InvalidOperationException(
+                "Cannot Weck a Solventmix in this state. Finish the process it is in first");
         }
 
         public void Print()
@@ -152,6 +158,11 @@ namespace GanjaLibrary.Classes.Oils
         public void SetStage(Stage stage)
         {
             Chronic.SetStage(stage);
+        }
+
+        IChemical IChemical.Clone()
+        {
+            throw new NotImplementedException();
         }
     }
 }

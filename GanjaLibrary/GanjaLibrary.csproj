@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Classes\Chronic\Chronic.cs" />
     <Compile Include="Classes\Chronic\ChronicFunctions\ChronicProcessingFunctions.cs" />
+    <Compile Include="Classes\Chronic\ChronicFunctions\ChronicVariables.cs" />
     <Compile Include="Classes\Items\Chemicals\Acetone.cs" />
     <Compile Include="Classes\Items\Chemicals\Benzene.cs" />
     <Compile Include="Classes\Items\Chemicals\Butane.cs" />
