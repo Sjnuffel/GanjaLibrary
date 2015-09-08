@@ -7,11 +7,8 @@
 using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Enums;
 using System;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using System.Runtime.Serialization;
 
-namespace GanjaLibrary.Classes.Items
+namespace GanjaLibrary.Classes
 {
     public class Chemical : Item, IChemical
     {
@@ -33,9 +30,16 @@ namespace GanjaLibrary.Classes.Items
             Type = ItemType.Chemical;
         }
 
+        protected Chemical(Chemical other) : base(other) { }
+
         public override object Clone()
         {
-            throw new NotImplementedException();
+            return new Chemical(this);
+        }
+
+        IChemical IChemical.Clone()
+        {
+            return (IChemical)Clone();
         }
     }
 }

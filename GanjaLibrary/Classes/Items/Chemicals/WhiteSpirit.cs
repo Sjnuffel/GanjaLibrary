@@ -36,5 +36,12 @@ namespace GanjaLibrary.Classes.Items
 
             Flammable = true;
         }
+
+        protected WhiteSpirit(WhiteSpirit other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new WhiteSpirit(this);
+        }
     }
 }

@@ -22,5 +22,10 @@ namespace GanjaLibrary.Interfaces.Items
         /// If the alcohol is denatured (poisonous) or not.
         /// </summary>
         bool Denatured { get;  }
+
+        //// <summary>
+        //// Clone the class.
+        //// </summary>
+        IChemical Clone();
     }
 }

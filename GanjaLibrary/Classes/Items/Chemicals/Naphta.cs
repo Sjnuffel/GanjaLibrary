@@ -31,5 +31,12 @@ namespace GanjaLibrary.Classes.Items
             Flammable = true;
             Denatured = true;
         }
+
+        protected Naphta(Naphta other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new Naphta(this);
+        }
     }
 }

@@ -36,6 +36,13 @@ namespace GanjaLibrary.Classes.Items
 
             Flammable = true;
         }
+
+        protected GrainAlcohol(GrainAlcohol other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new GrainAlcohol(this);
+        }
     }
 
 }

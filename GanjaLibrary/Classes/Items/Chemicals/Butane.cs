@@ -37,5 +37,12 @@ namespace GanjaLibrary.Classes.Items
             Contents = 500;
             Flammable = true;
         }
+
+        protected Butane(Butane other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new Butane(this);
+        }
     }
 }

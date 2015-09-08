@@ -39,5 +39,12 @@ namespace GanjaLibrary.Classes.Items
 
             Flammable = true;
         }
+
+        protected Ether(Ether other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new Ether(this);
+        }
     }
 }

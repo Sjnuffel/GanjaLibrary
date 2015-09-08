@@ -38,5 +38,12 @@ namespace GanjaLibrary.Classes.Items
             Flammable = true;
             Denatured = true;
         }
+
+        protected Ethanol(Ethanol other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new Ethanol(this);
+        }
     }
 }

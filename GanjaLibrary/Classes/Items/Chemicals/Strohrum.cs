@@ -24,5 +24,12 @@ namespace GanjaLibrary.Classes.Items
 
             Flammable = true;
         }
+
+        protected Strohrum(Strohrum other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new Strohrum(this);
+        }
     }
 }

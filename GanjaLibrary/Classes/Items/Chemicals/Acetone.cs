@@ -32,5 +32,12 @@ namespace GanjaLibrary.Classes.Items
             Contents = 500;
             Flammable = true;
         }
+
+        protected Acetone(Acetone other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new Acetone(this);
+        }
     }
 }

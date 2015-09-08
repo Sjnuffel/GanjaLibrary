@@ -38,5 +38,12 @@ namespace GanjaLibrary.Classes.Items
 
             Flammable = true;
         }
+
+        protected Isopropanol(Isopropanol other) :base(other) { }
+
+        public override object Clone()
+        {
+            return new Isopropanol(this);
+        }
     }
 }
