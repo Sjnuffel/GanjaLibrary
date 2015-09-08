@@ -5,7 +5,6 @@ using System.Collections.Generic;
 namespace GanjaLibrary.Classes
 {
     // Master Kush is an example of an almost 100% Indica plant.
-    [Serializable]
     public class MasterKush : Indica
     {
         public MasterKush() : base()
@@ -39,6 +38,13 @@ namespace GanjaLibrary.Classes
 
             Light = LightNeed[Stage.Seed];
             Water = WaterNeed[Stage.Seed];
+        }
+
+        protected MasterKush(MasterKush other) : base(other) { }
+
+        public override object Clone()
+        {
+            return new MasterKush(this);
         }
     }
 }

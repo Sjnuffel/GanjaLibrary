@@ -2,11 +2,14 @@
 using GanjaLibrary.Enums;
 using System;
 using GanjaLibrary;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace GanjaLibrary.Classes
 {
     [Serializable]
-    public class Item : IItem
+    public abstract class Item : IItem
     {
         public string Description { get; set; }
         public string Name { get; set; }
@@ -32,12 +35,25 @@ namespace GanjaLibrary.Classes
             Type = ItemType.BaseItem;
         }
 
-        public Item(string name, string description, double weight, double value) :this()
+        public Item(string name, string description, double weight, double value) : this()
         {
             Name = name;
             Description = description;
             Weight = weight;
             Value = value;
         }
+
+        protected Item(IItem other)
+        {
+            Description = other.Description;
+            Name = other.Name;
+            Weight = other.Weight;
+            Value = other.Value;
+            MaxStackableQuantity = other.MaxStackableQuantity;
+            Id = other.Id;
+            Type = other.Type;
+        }
+
+        public abstract object Clone();
     }
 }

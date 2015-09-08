@@ -6,6 +6,9 @@ using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Classes.Items;
 using GanjaLibrary.Classes.Items.Storage;
 using GanjaLibrary.Classes.Items.Filters;
+using GanjaLibrary;
+using GanjaLibrary.Interfaces.Oils;
+using GanjaLibrary.Classes.Oils;
 
 namespace GanjaTestApplication
 {
@@ -84,10 +87,13 @@ namespace GanjaTestApplication
             }
 
             PrintLine();
-            WashTest.Wash(Butane, MasonJar);
+            ISolventMix mix = new SolventMix(WashTest, Butane);
+            mix.Wash();
+            mix.Wash();
+
+            //WashTest.Wash(Butane, MasonJar);
             WashTest.Print();
             PrintLine();
-            WashTest.Wash(Butane, MasonJar);
             WashTest.Print();
             Console.WriteLine();
             Console.ReadLine();

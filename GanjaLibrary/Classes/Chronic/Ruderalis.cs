@@ -4,8 +4,7 @@ using System.Collections.Generic;
 
 namespace GanjaLibrary.Classes
 {
-    [Serializable]
-    public class Ruderalis : Chronic
+    public abstract class Ruderalis : Chronic
     {
         public Ruderalis() : base("Ruderalis", Water.Low, Light.Yolo, Food.None)
         {

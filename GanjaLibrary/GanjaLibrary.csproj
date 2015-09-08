@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Chronic\Chronic.cs" />
+    <Compile Include="Classes\Chronic\ChronicFunctions\ChronicProcessingFunctions.cs" />
     <Compile Include="Classes\Items\Chemicals\Acetone.cs" />
     <Compile Include="Classes\Items\Chemicals\Benzene.cs" />
     <Compile Include="Classes\Items\Chemicals\Butane.cs" />
@@ -53,12 +54,17 @@
     <Compile Include="Classes\Items\Chemicals\Strohrum.cs" />
     <Compile Include="Classes\Items\Chemicals\WhiteSpirit.cs" />
     <Compile Include="Classes\Items\ClothingLegs\CargoPants.cs" />
-    <Compile Include="Classes\Items\Filters\Filter.cs" />
+    <Compile Include="Classes\Items\Filters\WaterFilter.cs" />
     <Compile Include="Classes\Items\Filters\WaterFilters\CoffeeFilter.cs" />
     <Compile Include="Classes\Items\Item.cs" />
+    <Compile Include="Classes\Oils\CannaOil.cs" />
+    <Compile Include="Interfaces\Oils\ICannaOil.cs" />
+    <Compile Include="Interfaces\Oils\ISolvent.cs" />
+    <Compile Include="Classes\Oils\SolventMixVariables.cs" />
     <Compile Include="Classes\Items\Storage\Shop.cs" />
     <Compile Include="Classes\Items\ClothingLegs\Trousers.cs" />
     <Compile Include="Classes\Items\Storage\SmallMasonJar.cs" />
+    <Compile Include="Classes\Oils\Solvent.cs" />
     <Compile Include="Enums\Chronic\Food.cs" />
     <Compile Include="Classes\Chronic\Indica.cs" />
     <Compile Include="GameSettings.Designer.cs">
@@ -77,10 +83,12 @@
     <Compile Include="Interfaces\Items\IItem.cs" />
     <Compile Include="Interfaces\Items\IShop.cs" />
     <Compile Include="Enums\Items\ItemType.cs" />
+    <Compile Include="Interfaces\Oils\ISolventMix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\Chronic\Water.cs" />
     <Compile Include="Classes\Chronic\Ruderalis.cs" />
     <Compile Include="Classes\Chronic\SilverHaze.cs" />
+    <Compile Include="Classes\Oils\SolventMix.cs" />
     <Compile Include="Statics\Globals.cs" />
   </ItemGroup>
   <ItemGroup>

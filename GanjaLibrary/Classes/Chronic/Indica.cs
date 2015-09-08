@@ -4,8 +4,7 @@ using System.Collections.Generic;
 
 namespace GanjaLibrary.Classes
 {
-    [Serializable]
-    public class Indica : Chronic
+    public abstract class Indica : Chronic
     {
         public Indica() : base("Indica", Water.Low, Light.Spring, Food.None)
         {
@@ -35,6 +34,10 @@ namespace GanjaLibrary.Classes
 
             Light = LightNeed[Stage.Seed];
             Water = WaterNeed[Stage.Seed];
+
+
         }
+
+        protected Indica(Indica other) : base(other) { }
     }
 }

@@ -30,7 +30,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Age of the plant in days.
         /// </summary>
-        int Age { get; set; }
+        int Age { get; }
 
         /// <summary>
         /// Time the plant should be ready for harvest in days.
@@ -50,12 +50,12 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Actual quality of the plant during growth.
         /// </summary>
-        double Quality { get; }
+        double Quality { get; set; }
 
         /// <summary>
         /// The non-useful plant bits that are generated.
         /// </summary>
-        double Trimmings { get; set; }
+        double Trimmings { get; }
 
         /// <summary>
         /// Day to Day health of the plant (%).
@@ -75,7 +75,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Yield of the plant in grams, during growth.
         /// </summary>
-        double Yield { get; }
+        double Yield { get; set; }
 
         /// <summary>
         /// Light need of a plant in specific season.
@@ -95,7 +95,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Stage the plant is in.
         /// </summary>
-        Stage Stage { get; set; }
+        Stage Stage { get;  }
 
         /// <summary>
         /// Name of the plant.
@@ -142,14 +142,13 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         IChronic Weck();
 
-        /// <summary>
-        /// Extracting the oils from the plant.
-        /// </summary>
-        IChronic Wash(IChemical chemical, IContainer container);
+        void SetStage(Stage stage);
 
         /// <summary>
         /// Print.
         /// </summary>
         void Print();
+
+        IChronic Clone();
     }
 }

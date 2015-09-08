@@ -5,7 +5,6 @@ using System.Collections.Generic;
 namespace GanjaLibrary.Classes
 {
     // Silver Haze is an example of a near 100% Sativa plant.
-    [Serializable]
     public class SilverHaze : Sativa
     {
         public SilverHaze() : base()
@@ -38,6 +37,13 @@ namespace GanjaLibrary.Classes
 
             Light = LightNeed[Stage.Seed];
             Water = WaterNeed[Stage.Seed];
+        }
+
+        protected SilverHaze(SilverHaze other) : base(other) { }
+
+        public override object Clone()
+        {
+            return new SilverHaze(this);
         }
     }
 }

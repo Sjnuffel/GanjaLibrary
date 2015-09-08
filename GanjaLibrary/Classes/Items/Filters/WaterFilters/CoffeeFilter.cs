@@ -9,7 +9,7 @@ using System;
 
 namespace GanjaLibrary.Classes.Items.Filters
 {
-    public class CoffeeFilter : Filter
+    public class CoffeeFilter : WaterFilter
     {
         public CoffeeFilter() :base()
         {
@@ -20,7 +20,6 @@ namespace GanjaLibrary.Classes.Items.Filters
             Value = 2.50;
 
             MaxStackableQuantity = 10;
-            WaterFilter = true;
         }
     }
 }

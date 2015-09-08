@@ -24,21 +24,21 @@
   <Class Name="GanjaLibrary.Classes.MasterKush">
     <Position X="6.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Chronic\MasterKush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.SilverHaze">
     <Position X="6.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Chronic\SilverHaze.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAgAKCAxBQCECAJAAEwEAhIAAJIgYhAAABgAA5IFgAk=</HashCode>
+      <HashCode>AAgAKCAzBQCECAJAAEwEAhIAABIgABAAABgAA4IFgAk=</HashCode>
       <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -54,7 +54,7 @@
   <Class Name="GanjaLibrary.Classes.Items.Trousers" Collapsed="true">
     <Position X="6.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQABA=</HashCode>
       <FileName>Classes\Items\ClothingLegs\Trousers.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -77,15 +77,15 @@
   <Class Name="GanjaLibrary.Classes.Items.Storage.SmallMasonJar" Collapsed="true">
     <Position X="6.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQABA=</HashCode>
       <FileName>Classes\Items\Storage\SmallMasonJar.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
-    <Position X="1" Y="0.5" Width="1.5" />
+    <Position X="15.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAKAAhBAAACAJAAEwEAgYAAAAgQBAAABgAA4IFgAg=</HashCode>
+      <HashCode>AAgAKAAjBAAACAJAAEwEAgYAAQAgABAAABgAA4IFgBg=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -110,18 +110,18 @@
       <FileName>Interfaces\Items\IShop.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="GanjaLibrary.Interfaces.Items.IChemical">
-    <Position X="12.25" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAABAAAI=</HashCode>
-      <FileName>Interfaces\Items\IChemical.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IFilter">
     <Position X="13.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GanjaLibrary.ICannaOil">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Oils\ICannaOil.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">
@@ -155,7 +155,7 @@
   <Enum Name="GanjaLibrary.Enums.ItemType">
     <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAABAAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABQAABAAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enums\Items\ItemType.cs</FileName>
     </TypeIdentifier>
   </Enum>

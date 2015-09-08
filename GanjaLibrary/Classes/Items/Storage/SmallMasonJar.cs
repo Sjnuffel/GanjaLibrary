@@ -60,5 +60,10 @@ namespace GanjaLibrary.Classes.Items.Storage
             else
                 return 0;
         }
+
+        public override object Clone()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

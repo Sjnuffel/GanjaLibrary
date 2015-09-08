@@ -6,6 +6,10 @@
 
 using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Enums;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Runtime.Serialization;
 
 namespace GanjaLibrary.Classes.Items
 {
@@ -27,6 +31,11 @@ namespace GanjaLibrary.Classes.Items
             Denatured = false;
 
             Type = ItemType.Chemical;
+        }
+
+        public override object Clone()
+        {
+            throw new NotImplementedException();
         }
     }
 }

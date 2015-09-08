@@ -22,6 +22,7 @@ namespace GanjaLibrary.Enums
         /// <summary>
         /// Filter type.
         /// </summary>
-        Filter
+        Filter,
+        SolventMix
     }
 }

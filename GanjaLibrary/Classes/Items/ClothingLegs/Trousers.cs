@@ -1,5 +1,6 @@
 ﻿using GanjaLibrary.Interfaces.Items;
 using System.Collections.Generic;
+using System;
 
 namespace GanjaLibrary.Classes.Items
 {
@@ -57,6 +58,11 @@ namespace GanjaLibrary.Classes.Items
             }
 
             return false;
+        }
+
+        public override object Clone()
+        {
+            throw new NotImplementedException();
         }
     }
 }
