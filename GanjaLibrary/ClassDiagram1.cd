@@ -60,14 +60,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.CargoPants" Collapsed="true">
-    <Position X="6.5" Y="7.75" Width="1.5" />
+    <Position X="8.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Items\ClothingLegs\CargoPants.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Shop" Collapsed="true">
-    <Position X="8.25" Y="6.75" Width="1.5" />
+    <Position X="8.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Classes\Items\Storage\Shop.cs</FileName>
@@ -75,36 +75,169 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Storage.SmallMasonJar" Collapsed="true">
-    <Position X="6.5" Y="8.75" Width="1.5" />
+    <Position X="6.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQABA=</HashCode>
       <FileName>Classes\Items\Storage\SmallMasonJar.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Acetone" Collapsed="true">
+    <Position X="3.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\Acetone.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Benzene" Collapsed="true">
+    <Position X="5.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\Benzene.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Butane" Collapsed="true">
+    <Position X="3.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\Butane.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Ethanol" Collapsed="true">
+    <Position X="3.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\Ethanol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Ether" Collapsed="true">
+    <Position X="5.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\Ether.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.GrainAlcohol" Collapsed="true">
+    <Position X="3.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\GrainAlcohol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Isopropanol" Collapsed="true">
+    <Position X="5.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\Isopropanol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Naphta" Collapsed="true">
+    <Position X="5.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\Naphta.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Strohrum" Collapsed="true">
+    <Position X="5.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\Strohrum.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.WhiteSpirit" Collapsed="true">
+    <Position X="3.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Chemicals\WhiteSpirit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Chemical" Collapsed="true">
+    <Position X="4.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAABAABI=</HashCode>
+      <FileName>Classes\Items\Chemicals\Chemical.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Oils.SolventMix" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCKABjBACiCAJAAFwEQgYAADIoQBAAATwgA4JFgBo=</HashCode>
+      <FileName>Classes\Oils\SolventMixVariables.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Oils.CannaOil" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Oils\CannaOil.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Oils.Solvent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Oils\Solvent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Filters.WaterFilter" Collapsed="true">
+    <Position X="6.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Classes\Items\Filters\WaterFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Items.Filters.CoffeeFilter" Collapsed="true">
+    <Position X="8.5" Y="8.25" Width="1.5" />
+    <InheritanceLine Type="GanjaLibrary.Classes.Items.Filters.WaterFilter" FixedFromPoint="true">
+      <Path>
+        <Point X="8" Y="8.562" />
+        <Point X="8.5" Y="8.562" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Items\Filters\WaterFilters\CoffeeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
-    <Position X="24" Y="0.5" Width="1.5" />
+    <Position X="22.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAKAAjBAAACAJAAEwEAgYAAAAgABAAABgAA4IFgBg=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IItem">
-    <Position X="20.5" Y="2" Width="1.5" />
+    <Position X="20.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAQAgAAAAABA=</HashCode>
       <FileName>Interfaces\Items\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IContainer">
-    <Position X="18.75" Y="2" Width="1.5" />
+    <Position X="18.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAAACAAAAAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Interfaces\Items\IContainer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IShop">
-    <Position X="17" Y="2" Width="1.5" />
+    <Position X="17" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Items\IShop.cs</FileName>
@@ -118,23 +251,23 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.ICannaOil">
-    <Position X="17" Y="3.5" Width="1.5" />
+    <Position X="17" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Oils\ICannaOil.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Oils.ISolvent">
-    <Position X="18.75" Y="0.5" Width="1.5" />
+    <Position X="17" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\Oils\ISolvent.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Oils.ISolventMix">
-    <Position X="22.25" Y="0.5" Width="1.5" />
+    <Position X="18.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAABAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAEAAA=</HashCode>
       <FileName>Interfaces\Oils\ISolventMix.cs</FileName>
     </TypeIdentifier>
   </Interface>
