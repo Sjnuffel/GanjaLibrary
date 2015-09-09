@@ -17,19 +17,14 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.Low);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
-            }
 
             for (int i = 0; i < 30; i++)
-            {
                 GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
-            }
+
             Assert.IsTrue(GanjaTest.Stage == Stage.Flowering);
             Assert.IsTrue(GanjaTest.Health > 90);
         }
@@ -39,19 +34,14 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 25; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Stage == Stage.Flowering);
             Assert.IsTrue(GanjaTest.Health > 90);
         }
@@ -61,19 +51,14 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
 
             for (int i = 0; i < 10; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
         }
 
@@ -82,9 +67,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
 
             Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
         }
@@ -94,15 +77,13 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
+            
 
             // For test to succeed it needed extra days in Vegatative state.
             for (int i = 0; i < 30; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
         }
 
@@ -111,15 +92,12 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             // For test to succeed it needed extra days in Vegatative state.
             for (int i = 0; i < 30; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
         }
 
@@ -128,20 +106,15 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             // For test to succeed it needed extra days in Vegatative state.
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 70; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
         }
 
@@ -150,20 +123,15 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             // For test to succeed it needed extra days in Vegatative state.
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 70; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Stage == Stage.Dead);
         }
 
@@ -172,19 +140,14 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
 
             for (int i = 0; i < 10; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Height >= 0);
         }
 
@@ -193,19 +156,14 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
 
             for (int i = 0; i < 10; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Age == 13);
         }
 
@@ -214,19 +172,14 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
 
             for (int i = 0; i < 10; i++)
-            {
                 GanjaTest.Grow(Water.None, Light.None, Food.None);
-            }
+
             Assert.IsTrue(GanjaTest.Health <= -25);
         }
 
@@ -235,19 +188,13 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
 
             IChronic HarvestTest = GanjaTest.Harvest();
             Assert.IsTrue(HarvestTest.Stage == Stage.Drying);
@@ -258,26 +205,20 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
+            
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
 
             IChronic DryTest = GanjaTest.Harvest();
 
             for (int i = 0; i < DryTest.DryingAge; i++)
-            {
                 DryTest.Dry();
-            }
+            
             Assert.IsTrue(DryTest.Stage == Stage.Drying);
         }
 
@@ -288,32 +229,23 @@ namespace GanjaLibrary.Classes.Tests
             IContainer MasonJar = new SmallMasonJar();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
 
             IChronic CureTest = GanjaTest.Harvest();
 
             for (int i = 0; i < CureTest.DryingAge; i++)
-            {
                 CureTest.Dry();
-            }
 
             CureTest.Weck();
             for (int i = 0; i < 14; i++)
-            {
                 CureTest.Cure(MasonJar);
-            }
+
             Assert.IsTrue(CureTest.Stage == Stage.Curing);
         }
 
@@ -324,32 +256,22 @@ namespace GanjaLibrary.Classes.Tests
             IContainer MasonJar = new SmallMasonJar();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
 
             IChronic CureTest = GanjaTest.Harvest();
 
             for (int i = 0; i < CureTest.DryingAge; i++)
-            {
                 CureTest.Dry();
-            }
 
             CureTest.Weck();
             for (int i = 0; i < 14; i++)
-            {
                 CureTest.Cure(MasonJar);
-            }
 
             CureTest.Finish();
             Assert.IsTrue(CureTest.Stage == Stage.Finished);
@@ -363,32 +285,23 @@ namespace GanjaLibrary.Classes.Tests
             IContainer MasonJar = new SmallMasonJar();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
+            
 
             IChronic InventoryTest = GanjaTest.Harvest();
 
             for (int i = 0; i < InventoryTest.DryingAge; i++)
-            {
                 InventoryTest.Dry();
-            }
 
             InventoryTest.Weck();
             for (int i = 0; i < 14; i++)
-            {
                 InventoryTest.Cure(MasonJar);
-            }
 
             InventoryTest.Finish();
             FirstTrousers.Add((IItem)InventoryTest);
@@ -403,32 +316,22 @@ namespace GanjaLibrary.Classes.Tests
             IContainer MasonJar = new SmallMasonJar();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
 
             IChronic InventoryTest = GanjaTest.Harvest();
 
             for (int i = 0; i < InventoryTest.DryingAge; i++)
-            {
                 InventoryTest.Dry();
-            }
 
             InventoryTest.Weck();
             for (int i = 0; i < 14; i++)
-            {
                 InventoryTest.Cure(MasonJar);
-            }
 
             InventoryTest.Finish();
             FirstTrousers.Add((IItem)InventoryTest);
@@ -444,32 +347,22 @@ namespace GanjaLibrary.Classes.Tests
             IContainer MasonJar = new SmallMasonJar();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
 
             IChronic SellTest = GanjaTest.Harvest();
 
             for (int i = 0; i < SellTest.DryingAge; i++)
-            {
                 SellTest.Dry();
-            }
 
             SellTest.Weck();
             for (int i = 0; i < 14; i++)
-            {
                 SellTest.Cure(MasonJar);
-            }
 
             SellTest.Finish();
             FirstTrousers.Add((IItem)SellTest);
@@ -489,25 +382,17 @@ namespace GanjaLibrary.Classes.Tests
             IChemical GrainAlcohol = new GrainAlcohol();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
-            }
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-            {
                 GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-            }
 
             for (int i = 0; i < 20; i++)
-            {
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-            }
 
             IChronic WashTest = GanjaTest.Harvest();
             for (int i = 0; i < WashTest.DryingAge; i++)
-            {
                 WashTest.Dry();
-            }
 
             ISolventMix mix = new SolventMix(WashTest, GrainAlcohol);
             MasonJar.Add((IItem)mix);

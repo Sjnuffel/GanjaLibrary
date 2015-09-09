@@ -2,272 +2,142 @@
 using GanjaLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GanjaLibrary.Classes.Oils
 {
     partial class SolventMix
     {
-        public int SeedingAge
-        {
-            get
-            {
-                return Chronic.SeedingAge;
-            }
+        public int SeedingAge {
+            get { return Chronic.SeedingAge; }
         }
 
-        public int MaxHealth
-        {
-            get
-            {
-                return Chronic.MaxHealth;
-            }
+        public int MaxHealth {
+            get { return Chronic.MaxHealth; }
         }
 
-        public int DryingAge
-        {
-            get
-            {
-                return Chronic.DryingAge;
-            }
+        public int DryingAge {
+            get { return Chronic.DryingAge; }
         }
 
-        public int Age
-        {
-            get
-            {
-                return Chronic.Age;
-            }
+        public int Age {
+            get { return Chronic.Age; }
         }
 
-        public int FloweringAge
-        {
-            get
-            {
-                return Chronic.FloweringAge;
-            }
+        public int FloweringAge {
+            get { return Chronic.FloweringAge; }
         }
 
-        public double Height
-        {
-            get
-            {
-                return Chronic.Height;
-            }
+        public double Height {
+            get { return Chronic.Height; }
 
-            set
-            {
-                Chronic.Height = value;
-            }
+            set { Chronic.Height = value; }
         }
 
-        public double MaxYield
-        {
-            get
-            {
-                return Chronic.MaxYield;
-            }
+        public double MaxYield {
+            get { return Chronic.MaxYield; }
         }
 
-        public double Quality
-        {
-            get
-            {
-                return Chronic.Quality;
-            }
+        public double Quality {
+            get { return Chronic.Quality; }
 
-            set
-            {
-                Chronic.Quality = value;
-            }
+            set { Chronic.Quality = value; }
         }
 
-        public double Trimmings
-        {
-            get
-            {
-                return Chronic.Trimmings;
-            }
+        public double Trimmings {
+            get { return Chronic.Trimmings; }
         }
 
-        public double Health
-        {
-            get
-            {
-                return Chronic.Health;
-            }
+        public double Health {
+            get { return Chronic.Health; }
         }
 
-        public double THC
-        {
-            get
-            {
-                return Chronic.THC;
-            }
+        public double THC {
+            get { return Chronic.THC; }
         }
 
-        public double CBD
-        {
-            get
-            {
-                return Chronic.CBD;
-            }
+        public double CBD {
+            get { return Chronic.CBD; }
         }
 
-        public double Yield
-        {
-            get
-            {
-                return Chronic.Yield;
-            }
+        public double Yield {
+            get { return Chronic.Yield; }
 
-            set
-            {
-                Chronic.Yield = value;
-            }
+            set { Chronic.Yield = value; }
         }
 
-        public Light Light
-        {
-            get
-            {
-                return Chronic.Light;
-            }
+        public Light Light {
+            get { return Chronic.Light; }
         }
 
-        public Water Water
-        {
-            get
-            {
-                return Chronic.Water;
-            }
+        public Water Water {
+            get { return Chronic.Water; }
         }
 
-        public Food Food
-        {
-            get
-            {
-                return Chronic.Food;
-            }
+        public Food Food {
+            get { return Chronic.Food; }
         }
 
-        public Stage Stage
-        {
-            get
-            {
-                return Chronic.Stage;
-            }
+        public Stage Stage {
+            get { return Chronic.Stage; }
         }
 
-        public string Name
-        {
-            get
-            {
-                return Chronic.Name;
-            }
+        public string Name {
+            get { return Chronic.Name; }
         }
 
         public Dictionary<Stage, Water> WaterNeed
         {
-            get
-            {
-                return Chronic.WaterNeed;
-            }
+            get { return Chronic.WaterNeed; }
         }
 
         public Dictionary<Stage, Light> LightNeed
         {
-            get
-            {
-                return Chronic.LightNeed;
-            }
+            get { return Chronic.LightNeed; }
         }
 
         public double Flashpoint
         {
-            get
-            {
-                return Chemical.Flashpoint;
-            }
+            get { return Chemical.Flashpoint; }
         }
 
-        public double Contents
-        {
-            get
-            {
-                return Chemical.Contents;
-            }
+        public double Contents {
+            get { return Chemical.Contents; }
 
-            set
-            {
-                Chemical.Contents = value;
-            }
+            set { Chemical.Contents = value; }
         }
 
-        public bool Flammable
-        {
-            get
-            {
-                return Chemical.Flammable;
-            }
+        public bool Flammable {
+            get { return Chemical.Flammable; }
         }
 
-        public bool Denatured
-        {
-            get
-            {
-                return Chemical.Denatured;
-            }
+        public bool Denatured {
+            get { return Chemical.Denatured; }
         }
 
-        public Guid Id
-        {
-            get
-            {
-                return Chemical.Id;
-            }
+        public Guid Id {
+            get { return Chemical.Id; }
         }
 
-        public string Description
-        {
-            get
-            {
-                return Chemical.Description;
-            }
+        public string Description {
+            get { return Chemical.Description; }
         }
 
-        public double Weight
-        {
-            get
-            {
-                return Chemical.Weight;
-            }
+        public double Weight {
+            get { return Chemical.Weight; }
         }
 
-        public double Value
-        {
-            get
-            {
-                return Chemical.Value;
-            }
+        public double Value {
+            get { return Chemical.Value; }
         }
 
         public int MaxStackableQuantity
         {
-            get
-            {
-                return Chemical.MaxStackableQuantity;
-            }
+            get { return Chemical.MaxStackableQuantity; }
         }
 
         public ItemType Type
         {
-            get
-            {
-                return ItemType.SolventMix;
-            }
+            get { return ItemType.SolventMix; }
         }
 
         public IChronic Clone()

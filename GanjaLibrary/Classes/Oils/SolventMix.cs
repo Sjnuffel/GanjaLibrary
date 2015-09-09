@@ -102,16 +102,11 @@ namespace GanjaLibrary.Classes.Oils
             IChronic tmpChronic = Chronic.Clone();
             tmpChronic.SetStage(Stage.Filtering);
 
-            ISolvent tmpSolvent = new Solvent(Chronic);
+            ISolvent tmpSolvent = new Solvent(Chronic, Chemical);
 
             retVal = new Tuple<IChronic, ISolvent>(tmpChronic, tmpSolvent);
 
             return retVal;
-        }
-
-        public double Heat()
-        {
-            return 0;
         }
 
         public IChronic Grow(Water water, Light light, Food food)

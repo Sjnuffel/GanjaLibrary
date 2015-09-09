@@ -6,11 +6,10 @@
 
 using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Enums;
-using System;
 
 namespace GanjaLibrary.Classes
 {
-    public class Chemical : Item, IChemical
+    public abstract class Chemical : Item, IChemical
     {
         public double Flashpoint { get; internal set; }
         public double Contents { get; set; }
@@ -32,10 +31,7 @@ namespace GanjaLibrary.Classes
 
         protected Chemical(Chemical other) : base(other) { }
 
-        public override object Clone()
-        {
-            return new Chemical(this);
-        }
+        public abstract override object Clone();
 
         IChemical IChemical.Clone()
         {
