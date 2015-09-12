@@ -59,6 +59,7 @@
     <Compile Include="Classes\Items\Filters\WaterFilters\CoffeeFilter.cs" />
     <Compile Include="Classes\Items\Item.cs" />
     <Compile Include="Classes\Oils\CannaOil.cs" />
+    <Compile Include="Classes\Oils\SolventMixInvalidOperations.cs" />
     <Compile Include="Interfaces\Oils\ICannaOil.cs" />
     <Compile Include="Interfaces\Oils\ISolvent.cs" />
     <Compile Include="Classes\Oils\SolventMixVariables.cs" />

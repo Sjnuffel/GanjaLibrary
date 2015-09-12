@@ -102,7 +102,7 @@ namespace GanjaLibrary.Classes
             {
                 container.Add(this);
                 Age++;
-                // Adjust THC/CBD with the optimalAge and variance in mind
+                // Adjust THC/CBD with the optimalAge and variance in mind.
                 AdjustTHC(14, 1);
                 AdjustCBD(14, 1);
             }

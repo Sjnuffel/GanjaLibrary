@@ -142,6 +142,10 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         IChronic Weck();
 
+        /// <summary>
+        /// Set the stage Chronic is in.
+        /// </summary>
+        /// <param name="stage"></param>
         void SetStage(Stage stage);
 
         /// <summary>

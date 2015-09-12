@@ -83,7 +83,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Acetone" Collapsed="true">
-    <Position X="3.5" Y="11.75" Width="1.5" />
+    <Position X="1.25" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Acetone.cs</FileName>
@@ -91,7 +91,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Benzene" Collapsed="true">
-    <Position X="5.75" Y="13.25" Width="1.5" />
+    <Position X="3.5" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Benzene.cs</FileName>
@@ -99,7 +99,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Butane" Collapsed="true">
-    <Position X="3.5" Y="14" Width="1.5" />
+    <Position X="1.25" Y="14.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Butane.cs</FileName>
@@ -107,7 +107,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Ethanol" Collapsed="true">
-    <Position X="3.5" Y="14.75" Width="1.5" />
+    <Position X="1.25" Y="15.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Ethanol.cs</FileName>
@@ -115,7 +115,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Ether" Collapsed="true">
-    <Position X="5.75" Y="11.75" Width="1.5" />
+    <Position X="3.5" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Ether.cs</FileName>
@@ -123,7 +123,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.GrainAlcohol" Collapsed="true">
-    <Position X="3.5" Y="12.5" Width="1.5" />
+    <Position X="1.25" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\GrainAlcohol.cs</FileName>
@@ -131,7 +131,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Isopropanol" Collapsed="true">
-    <Position X="5.75" Y="14" Width="1.5" />
+    <Position X="3.5" Y="14.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Isopropanol.cs</FileName>
@@ -139,7 +139,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Naphta" Collapsed="true">
-    <Position X="5.75" Y="14.75" Width="1.5" />
+    <Position X="3.5" Y="15.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Naphta.cs</FileName>
@@ -147,7 +147,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Strohrum" Collapsed="true">
-    <Position X="5.75" Y="12.5" Width="1.5" />
+    <Position X="3.5" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Strohrum.cs</FileName>
@@ -155,7 +155,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.WhiteSpirit" Collapsed="true">
-    <Position X="3.5" Y="13.25" Width="1.5" />
+    <Position X="1.25" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\WhiteSpirit.cs</FileName>
@@ -163,7 +163,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Chemical" Collapsed="true">
-    <Position X="4.5" Y="10.5" Width="1.5" />
+    <Position X="2.25" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAABAABI=</HashCode>
       <FileName>Classes\Items\Chemicals\Chemical.cs</FileName>

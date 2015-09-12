@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GanjaLibrary.Interfaces.Items;
+using System;
 
 namespace GanjaLibrary.Interfaces.Oils
 {
@@ -12,7 +13,7 @@ namespace GanjaLibrary.Interfaces.Oils
         /// <summary>
         /// Filter a Tuple of IChronic and ISolvent representing SolventMix
         /// </summary>
-        Tuple<IChronic, ISolvent> Filter();
+        Tuple<IChronic, ISolvent> Filter(IFilter filter);
 
         /// <summary>
         /// Print function for ISolventmix
