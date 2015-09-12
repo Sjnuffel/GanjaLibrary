@@ -95,7 +95,8 @@ namespace GanjaLibrary.Classes.Oils
             return this;
         }
 
-        public Tuple<IChronic, ISolvent> Filter()
+        // Apply filter to SolventMix and return Waste (as Chronic) and Solvent (Chemical with THC extracted)
+        public Tuple<IChronic, ISolvent> Filter(IFilter filter)
         {
             Tuple<IChronic, ISolvent> retVal = null;
 
@@ -109,42 +110,7 @@ namespace GanjaLibrary.Classes.Oils
             return retVal;
         }
 
-        public IChronic Grow(Water water, Light light, Food food)
-        {
-            throw new InvalidOperationException(
-                "Cannot Grow a Solventmix in this state. Finish the process it is in first");
-        }
-
-        public IChronic Harvest()
-        {
-            throw new InvalidOperationException(
-                "Cannot Harvest a Solventmix in this state. Finish the process it is in first");
-        }
-
-        public IChronic Dry()
-        {
-            throw new InvalidOperationException(
-                "Cannot Dry a Solventmix in this state. Finish the process it is in first");
-        }
-
-        public IChronic Cure(IContainer container)
-        {
-            throw new InvalidOperationException(
-                "Cannot Cure a Solventmix in this state. Finish the process it is in first");
-        }
-
-        public IChronic Finish()
-        {
-            throw new InvalidOperationException(
-                "Cannot Finish a Solventmix in this state. Finish the process it is in first");
-        }
-
-        public IChronic Weck()
-        {
-            throw new InvalidOperationException(
-                "Cannot Weck a Solventmix in this state. Finish the process it is in first");
-        }
-
+        // Refer to print from Chronic class
         public void Print()
         {
             Chronic.Print();
