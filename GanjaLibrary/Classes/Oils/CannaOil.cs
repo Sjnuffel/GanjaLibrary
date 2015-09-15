@@ -2,22 +2,25 @@
 using System;
 using GanjaLibrary.Enums;
 using GanjaLibrary.Interfaces.Oils;
+using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Oils
 {
-    partial class CannaOil : ICannaOil, IChronic, ISolvent
+    partial class CannaOil : IItem, ICannaOil, IChronic, ISolvent
     {
         private IChronic Chronic { get; set; }
+        private ISolvent Solvent { get; set; }
+        private IChemical Chemical { get; set; }
 
         public event EventHandler Died;
 
-        // Refer to IChronic's clone function
+        // Refer to IChronics clone method
         public IChronic Clone()
         {
             return Chronic.Clone();
         }
 
-        // Refer to IChronic's print function
+        // Refer to IChronic's print method
         public void Print()
         {
             Chronic.Print();
@@ -28,5 +31,11 @@ namespace GanjaLibrary.Classes.Oils
         {
             Chronic.SetStage(stage);
         }
+
+        public ICannaOil CalculatePrice()
+        {
+            return null;
+        }
+
     }
 }
