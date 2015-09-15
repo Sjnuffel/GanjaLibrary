@@ -67,7 +67,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Shop" Collapsed="true">
-    <Position X="8.5" Y="3.75" Width="1.5" />
+    <Position X="8.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAAACAAAQAAAFAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Classes\Items\Storage\Shop.cs</FileName>
@@ -171,23 +171,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Oils.SolventMix" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="4.75" Width="1.5" />
+    <Position X="1" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgCKABjBACiCAJAAFwEQgYAADIoQBAAATwgA4JFgBo=</HashCode>
-      <FileName>Classes\Oils\SolventMixVariables.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="GanjaLibrary.Classes.Oils.CannaOil" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Oils\CannaOil.cs</FileName>
+      <FileName>Classes\Oils\SolventMix.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Oils.Solvent" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="4.75" Width="1.5" />
+    <Position X="8.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Oils\Solvent.cs</FileName>
@@ -214,6 +206,14 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Items\Filters\WaterFilters\CoffeeFilter.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="GanjaLibrary.Classes.Oils.CannaOil" Collapsed="true">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAKAAjBACACAJAgEwEAgYAAAAgABAAABgAA4IFgBg=</HashCode>
+      <FileName>Classes\Oils\CannaOil.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="22.25" Y="0.5" Width="1.5" />
@@ -253,7 +253,7 @@
   <Interface Name="GanjaLibrary.ICannaOil">
     <Position X="17" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Interfaces\Oils\ICannaOil.cs</FileName>
     </TypeIdentifier>
   </Interface>
