@@ -34,10 +34,10 @@ namespace GanjaLibrary.Classes.Oils
 
         public ISolventMix Wash()
         {
-            // Calculate the solvent first so it doesn't change initial calculation.
+            // Calculate the solvent first so it doesn't change initial calculation
             if (_washCount == 0)
             {
-                // Calculate solvent ratio for this batch of weed.
+                // Calculate solvent ratio for this batch of weed
                 _solventRatio = Yield + Trimmings;
                 _solventRatio *= 3;
             }
@@ -46,10 +46,10 @@ namespace GanjaLibrary.Classes.Oils
             {
                 if (_washCount == 0)
                 {
-                    // Remove the solvent from the chemical bottle.
+                    // Remove the solvent from the chemical bottle
                     Contents -= _solventRatio;
                     
-                    // Extract either THC or CBD from the yield.
+                    // Extract either THC or CBD from the yield
                     if (THC >= CBD)
                     {
                         Yield += Trimmings;
@@ -77,13 +77,13 @@ namespace GanjaLibrary.Classes.Oils
                 if (_washCount == 1)
                 {
                     Contents -= _solventRatio;
-                    // Add remainder to the yield.
+                    // Add remainder to the yield
                     Yield += _washRemains;
                     _washCount++;
                     return this;
                 }
 
-                // Washing any more will dissolve the green bits, thus reducing the oil quality.
+                // Washing any more will dissolve the green bits, thus reducing the oil quality
                 if (_washCount > 1)
                 {
                     Contents -= _solventRatio;
@@ -103,6 +103,13 @@ namespace GanjaLibrary.Classes.Oils
             IChronic tmpChronic = Chronic.Clone();
             tmpChronic.SetStage(Stage.Filtering);
 
+            // Use the effectiveness of the filter to improve the yield/quality
+            if (filter.Effectiveness == 1)
+            {
+                tmpChronic.Yield *= 1.01;
+            }
+
+            // The Solvent consists of the (THC/CBD, yield, etc.) values of Chronic, with the Chemical.Contents
             ISolvent tmpSolvent = new Solvent(Chronic, Chemical);
 
             retVal = new Tuple<IChronic, ISolvent>(tmpChronic, tmpSolvent);
@@ -123,7 +130,12 @@ namespace GanjaLibrary.Classes.Oils
 
         IChemical IChemical.Clone()
         {
-            throw new NotImplementedException();
+            return Chemical.Clone();
+        }
+
+        public IChronic Clone()
+        {
+            return Chronic.Clone();
         }
     }
 }

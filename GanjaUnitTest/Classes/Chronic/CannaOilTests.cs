@@ -13,9 +13,41 @@ namespace GanjaLibrary.Classes.Tests
     public class CannaOilTests
     {
         [TestMethod]
-        public void CreateSolventMixTest()
+        public void CreateSilverHazeSolventMixTest()
         {
             IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallMasonJar();
+            IChemical Butane = new Benzene();
+            IContainer Trousers = new CargoPants();
+            Trousers.Add((IItem)MasonJar);
+            Trousers.Add(Butane);
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            IChronic WashTest = GanjaTest.Harvest();
+            for (int i = 0; i < WashTest.DryingAge; i++)
+                WashTest.Dry();
+
+            ISolventMix mix = new SolventMix(WashTest, Butane);
+            MasonJar.Add((IItem)mix);
+            mix.Wash();
+            mix.Wash();
+
+            Assert.IsInstanceOfType(mix, typeof(IChemical));
+            Assert.IsInstanceOfType(mix, typeof(IChronic));
+        }
+
+        [TestMethod]
+        public void CreateMasterKushSolventMixTest()
+        {
+            IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
             IChemical Butane = new Benzene();
             IContainer Trousers = new CargoPants();

@@ -64,8 +64,6 @@ namespace GanjaLibrary.Classes
             Light = Light.None;
             Type = ItemType.Plant;
 
-
-
             // Create a dict for changing water need per stage.
             WaterNeed = new Dictionary<Stage, Water>()
             {
