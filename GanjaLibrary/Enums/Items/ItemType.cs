@@ -23,8 +23,17 @@ namespace GanjaLibrary.Enums
         /// Filter type.
         /// </summary>
         Filter,
+        /// <summary>
+        /// SolventMix type (=Weedleaves + Chemical)
+        /// </summary>
         SolventMix,
+        /// <summary>
+        /// Solvent type (=THC + Chemical)
+        /// </summary>
         Solvent,
+        /// <summary>
+        /// Cannabis oil type.
+        /// </summary>
         CannaOil
     }
 }

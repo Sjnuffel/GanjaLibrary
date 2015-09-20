@@ -61,7 +61,9 @@
     <Compile Include="Classes\Oils\CannaOil.cs" />
     <Compile Include="Classes\Oils\CannaOilInvalidOperations.cs" />
     <Compile Include="Classes\Oils\CannaOilVariables.cs" />
+    <Compile Include="Classes\Oils\SolventInvalidOperations.cs" />
     <Compile Include="Classes\Oils\SolventMixInvalidOperations.cs" />
+    <Compile Include="Classes\Oils\SolventVariables.cs" />
     <Compile Include="Interfaces\Oils\ICannaOil.cs" />
     <Compile Include="Interfaces\Oils\ISolvent.cs" />
     <Compile Include="Classes\Oils\SolventMixVariables.cs" />

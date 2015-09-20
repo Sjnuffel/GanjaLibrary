@@ -17,6 +17,7 @@ namespace GanjaLibrary.Classes.Oils
         private double _solventRatio;
         private double _washRemains;
 
+        // SolventMix is a mix of Weed-leaves and chemical(s).
         public SolventMix(IChronic chronic, IChemical chemical)
         {
             _washCount = 0;
@@ -104,7 +105,7 @@ namespace GanjaLibrary.Classes.Oils
             tmpChronic.SetStage(Stage.Filtering);
 
             // Use the effectiveness of the filter to improve the yield/quality
-            if (filter.Effectiveness == 1)
+            if (filter.Effectiveness >= 1 || filter.Effectiveness < 10)
             {
                 tmpChronic.Yield *= 1.01;
             }
@@ -123,16 +124,19 @@ namespace GanjaLibrary.Classes.Oils
             Chronic.Print();
         }
 
+        // Refer to SetStage method from Chronic.
         public void SetStage(Stage stage)
         {
             Chronic.SetStage(stage);
         }
 
+        // Refer to Chemical Clone method.
         IChemical IChemical.Clone()
         {
             return Chemical.Clone();
         }
 
+        // Refer to Chronic clone
         public IChronic Clone()
         {
             return Chronic.Clone();

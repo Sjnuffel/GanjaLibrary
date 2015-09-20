@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GanjaLibrary
+﻿namespace GanjaLibrary
 {
     public interface ICannaOil
     {
@@ -11,5 +6,10 @@ namespace GanjaLibrary
         /// Calculate the value of the oil
         /// </summary>
         ICannaOil CalculatePrice();
+
+        /// <summary>
+        /// Print function for ISolventmix
+        /// </summary>
+        void Print();
     }
 }

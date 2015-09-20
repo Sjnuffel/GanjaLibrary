@@ -1,9 +1,6 @@
 ﻿using GanjaLibrary.Enums;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GanjaLibrary.Classes
 {
@@ -57,6 +54,7 @@ namespace GanjaLibrary.Classes
             Health = 0;
             Height = 0;
             Trimmings = 0;
+            Value = 0;
 
             Water = Water.None;
             Stage = Stage.Seed;

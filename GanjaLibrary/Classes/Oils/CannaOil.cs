@@ -12,6 +12,11 @@ namespace GanjaLibrary.Classes.Oils
         private ISolvent Solvent { get; set; }
         private IChemical Chemical { get; set; }
 
+        public CannaOil()
+        {
+            MaxStackableQuantity = 1;
+        }
+
         public event EventHandler Died;
 
         // Refer to IChronics clone method
