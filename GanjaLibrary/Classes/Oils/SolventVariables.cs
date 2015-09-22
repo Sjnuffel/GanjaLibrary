@@ -48,8 +48,8 @@ namespace GanjaLibrary.Classes.Oils
         // Remaining variables
         public Guid Id { get { return Chemical.Id; } }
 
-        public string Description { get { return Chemical.Description; } }
-        public string Name { get { return Chronic.Name; } }
+        public string Description { get; set; }
+        public string Name { get; set; }
 
         public ItemType Type { get { return ItemType.SolventMix; } }
     }

@@ -15,7 +15,7 @@ namespace GanjaLibrary.Classes
         public double Contents { get; set; }
 
         public bool Flammable { get; internal set; }
-        public bool Denatured { get; internal set;  }
+        public bool Denatured { get; internal set; }
 
         // Inherit from Item and input name, description, weight and value in constructor.
         public Chemical() :base(string.Empty, string.Empty, 1, 0)

@@ -17,6 +17,9 @@ namespace GanjaLibrary.Classes.Oils
             Age = 0;
             Chronic = chronic.Clone();
             Chemical = chemical.Clone();
+
+            Name = string.Format("{0} - {1} Solventmix", Chronic.Name, Chemical.Name);
+            Description = string.Format("A solventmix consisting of {0} and {1}", Chronic.Name, Chemical.Name);
         }
 
         public event EventHandler Died;

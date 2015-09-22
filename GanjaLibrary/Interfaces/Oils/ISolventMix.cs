@@ -6,7 +6,7 @@ namespace GanjaLibrary.Interfaces.Oils
     public interface ISolventMix
     {
         /// <summary>
-        /// Wash out the leaves/weedremains from the SolventMix
+        /// Wash out the THC/CBD with the Chemical from the Weed in the SolventMix
         /// </summary>
         ISolventMix Wash();
 
