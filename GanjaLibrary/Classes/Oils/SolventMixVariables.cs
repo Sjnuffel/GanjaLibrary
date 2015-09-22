@@ -10,9 +10,10 @@ namespace GanjaLibrary.Classes.Oils
         public int SeedingAge { get { return Chronic.SeedingAge; } }
         public int MaxHealth { get { return Chronic.MaxHealth; } }
         public int DryingAge { get { return Chronic.DryingAge; } }
-        public int Age { get { return Chronic.Age; } }
         public int FloweringAge { get { return Chronic.FloweringAge; } }
         public int MaxStackableQuantity { get { return Chemical.MaxStackableQuantity; } }
+
+        public int Age { get; set; }
 
         // double variables
         public double MaxYield { get { return Chronic.MaxYield; } }

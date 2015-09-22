@@ -6,7 +6,7 @@ using System;
 
 namespace GanjaLibrary.Classes.Oils
 {
-    public partial class Solvent : ISolvent, IChronic
+    public partial class Solvent : ISolvent, IChronic, IChemical
     {
         private IChronic Chronic { get; set; }
         private IChemical Chemical { get; set; }
@@ -35,10 +35,6 @@ namespace GanjaLibrary.Classes.Oils
 
                 return this;
             }
-            
-            // Remember this was poison?
-            if (Chemical.Contents != 0 && Chemical.Denatured == true)
-                Chronic.Quality *= 0.8;
 
             // If chemical is all gone, return CannaOil.
             if (Chemical.Contents == 0)
@@ -69,6 +65,12 @@ namespace GanjaLibrary.Classes.Oils
         public void SetStage(Stage stage)
         {
             Chronic.SetStage(stage);
+        }
+
+        // Refer to Clone from Chemical class.
+        IChemical IChemical.Clone()
+        {
+            return Chemical.Clone();
         }
     }
 }

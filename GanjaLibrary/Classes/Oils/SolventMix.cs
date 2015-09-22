@@ -113,6 +113,14 @@ namespace GanjaLibrary.Classes.Oils
             // The Solvent consists of the (THC/CBD, yield, etc.) values of Chronic, with the Chemical.Contents
             ISolvent tmpSolvent = new Solvent(Chronic, Chemical);
 
+            // If not set to 0 first, it will clone the value of Chemical.Contents.
+            // What we want to have is the Solvent.Contents (which is the _solventratio)
+            Chemical.Contents = 0;
+
+            // Now we can add the calculated solventratio to the Solvent.Contents.
+            // Later we can then remove the chemical with the Heat() method.
+            Chemical.Contents += _solventRatio;
+
             retVal = new Tuple<IChronic, ISolvent>(tmpChronic, tmpSolvent);
 
             return retVal;

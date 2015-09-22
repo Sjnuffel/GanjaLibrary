@@ -24,7 +24,7 @@ namespace GanjaLibrary.Classes.Oils
         public double Weight { get { return Chemical.Weight; } }
         public double Flashpoint { get { return Chemical.Flashpoint; } }
 
-        public double Contents { get { return Chemical.Contents; } set { Chemical.Contents = value; } }
+        public double Contents { get; set; }
         public double Height { get { return Chronic.Height; } set { Chronic.Height = value; } }
         public double Yield { get { return Chronic.Yield; } set { Chronic.Yield = value; } }
         public double Quality { get { return Chronic.Quality; } set { Chronic.Quality = value; } }
