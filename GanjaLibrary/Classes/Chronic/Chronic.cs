@@ -29,9 +29,6 @@ namespace GanjaLibrary.Classes
             }
         }
         
-        IChronic IChronic.Clone()
-        {
-            return (IChronic)Clone();
-        }
+        
     }
 }

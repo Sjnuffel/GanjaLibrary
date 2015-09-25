@@ -112,6 +112,9 @@ namespace GanjaLibrary.Classes.Oils
 
             // The Solvent consists of the (THC/CBD, yield, etc.) values of Chronic, with the Chemical.Contents
             ISolvent tmpSolvent = new Solvent(Chronic, Chemical);
+            
+            // Change the state to Filtering.
+            this.SetStage(Stage.Filtering);
 
             // If not set to 0 first, it will clone the value of Chemical.Contents.
             // What we want to have is the Solvent.Contents (which is the _solventratio)

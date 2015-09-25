@@ -17,6 +17,8 @@ namespace GanjaLibrary.Classes.Oils
             Age = 0;
             Chronic = chronic.Clone();
             Chemical = chemical.Clone();
+            // Chemical.Contents would not transfer to Solvent.Contents, so forcing it this way
+            this.Contents = Chemical.Contents;
 
             Name = string.Format("{0} - {1} Solventmix", Chronic.Name, Chemical.Name);
             Description = string.Format("A solventmix consisting of {0} and {1}", Chronic.Name, Chemical.Name);
@@ -30,7 +32,11 @@ namespace GanjaLibrary.Classes.Oils
             // While there is chemical in the bottle, heat it away.
             while (Chemical.Contents != 0)
             {
-                Chemical.Contents -= 50;
+                // Change it to Heating Stage, if it isn't yet.
+                if (Chronic.Stage == Stage.Filtering)
+                    Chronic.SetStage(Stage.Heating);
+
+                this.Contents -= 50;
                 this.Age++;
 
                 return this;

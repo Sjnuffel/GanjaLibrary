@@ -38,6 +38,7 @@ namespace GanjaLibrary.Classes
             Value = value;
         }
 
+        // Clone information from the overloaded item
         protected Item(IItem other)
         {
             Description = other.Description;
@@ -49,6 +50,7 @@ namespace GanjaLibrary.Classes
             Type = other.Type;
         }
 
+        // Clone an item
         public abstract object Clone();
     }
 }

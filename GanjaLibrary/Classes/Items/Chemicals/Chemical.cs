@@ -29,8 +29,16 @@ namespace GanjaLibrary.Classes
             Type = ItemType.Chemical;
         }
 
-        protected Chemical(Chemical other) : base(other) { }
+        // The variables to copy.
+        protected Chemical(Chemical other) : base(other)
+        {
+            Flashpoint = other.Flashpoint;
+            Contents = other.Contents;
 
+            Flammable = other.Flammable;
+            Denatured = other.Denatured;
+        }
+        
         public abstract override object Clone();
 
         IChemical IChemical.Clone()

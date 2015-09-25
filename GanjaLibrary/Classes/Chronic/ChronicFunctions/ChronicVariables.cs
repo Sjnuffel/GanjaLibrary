@@ -1,4 +1,5 @@
 ﻿using GanjaLibrary.Enums;
+using GanjaLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -95,6 +96,7 @@ namespace GanjaLibrary.Classes
             Food = food;
         }
 
+        // The variables to copy.
         protected Chronic(Chronic other) : base(other)
         {
             Age = other.Age;
@@ -117,6 +119,11 @@ namespace GanjaLibrary.Classes
             Food = other.Food;
             Light = other.Light;
             Type = other.Type;
+        }
+
+        IChronic IChronic.Clone()
+        {
+            return (IChronic)Clone();
         }
         #endregion
     }
