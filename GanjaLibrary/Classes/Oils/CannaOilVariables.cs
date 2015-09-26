@@ -37,12 +37,12 @@ namespace GanjaLibrary.Classes.Oils
         public Dictionary<Stage, Light> LightNeed { get { return Chronic.LightNeed; } }
 
         // String
-        public string Name { get { return Chronic.Name + "-based Oil"; } }
-        public string Description { get { return "Precious THC Oil"; } }
+        public string Name { get; set; }
+        public string Description { get; set; }
 
         // Remaining stuff
         public Guid Id { get { return Chemical.Id; } }
         
-        public ItemType Type { get { return ItemType.CannaOil; } }
+        public ItemType Type { get; set; }
     }
 }

@@ -43,7 +43,7 @@ namespace GanjaUnitTest.Classes.Items
         {
             IContainer ShopTest = new Shop();
             IChemical Benzene = new Butane();
-            ShopTest.Add((IItem)Benzene);
+            ShopTest.Add(Benzene);
 
             Assert.IsTrue(ShopTest.ItemAmount == 1);
         }

@@ -74,8 +74,15 @@ namespace GanjaTestApplication
             PrintLine();
             mix.Filter(CoffeeFilter);
             ISolvent solvent = new Solvent((IChronic)mix, (IChemical)mix);
+            for (int i = 0; i < 12; i++)
+                solvent.Heat();
+
             solvent.Heat();
-            PrintLine();
+            solvent.Heat();
+            solvent.Heat();
+            solvent.Heat();
+            solvent.Heat();
+
             solvent.Print();
 
             Console.WriteLine();

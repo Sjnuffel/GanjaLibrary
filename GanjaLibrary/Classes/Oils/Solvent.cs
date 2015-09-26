@@ -18,10 +18,12 @@ namespace GanjaLibrary.Classes.Oils
             Chronic = chronic.Clone();
             Chemical = chemical.Clone();
             // Chemical.Contents would not transfer to Solvent.Contents, so forcing it this way
-            this.Contents = Chemical.Contents;
+            Contents = Chemical.Contents;
 
             Name = string.Format("{0} - {1} Solventmix", Chronic.Name, Chemical.Name);
             Description = string.Format("A solventmix consisting of {0} and {1}", Chronic.Name, Chemical.Name);
+
+            Type = ItemType.Solvent;
         }
 
         public event EventHandler Died;
@@ -30,26 +32,35 @@ namespace GanjaLibrary.Classes.Oils
         public ISolvent Heat()
         {
             // While there is chemical in the bottle, heat it away.
-            while (Chemical.Contents != 0)
+            while (Contents > 0)
             {
                 // Change it to Heating Stage, if it isn't yet.
                 if (Chronic.Stage == Stage.Filtering)
                     Chronic.SetStage(Stage.Heating);
 
-                this.Contents -= 50;
-                this.Age++;
+                Contents -= 50;
+                Age++;
 
                 return this;
             }
 
             // If chemical is all gone, return CannaOil.
-            if (Chemical.Contents == 0)
+            if (Contents <= 0)
             {
+                // Make sure Contents never go negative, set it to 0 if it does.
+                if (Contents < 0)
+                    Contents = 0;
+
                 // Since all the chemical has dissipated, reduce the yield to reflect the true THC contents
-                this.Yield *= 0.25;
-                this.Value *= Chronic.Quality;
-                
-                return new CannaOil() as ISolvent;
+                if (Contents == 0)
+                {
+                    Yield *= 0.25;
+                    Value = Yield * Quality;
+
+                    return new CannaOil(Chronic);
+                }
+
+                return this;
             }
 
             else return this;

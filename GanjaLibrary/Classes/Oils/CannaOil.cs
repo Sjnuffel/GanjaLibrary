@@ -12,9 +12,14 @@ namespace GanjaLibrary.Classes.Oils
         private ISolvent Solvent { get; set; }
         private IChemical Chemical { get; set; }
 
-        public CannaOil()
+        public CannaOil(IChronic chronic)
         {
-            MaxStackableQuantity = 1;
+            Chronic = chronic.Clone();
+
+            Name = string.Format("Pure {0} Honey Oil", Chronic.Name);
+            Description = string.Format("Honey oil made with {0}.", Chronic.Name);
+
+            Type = ItemType.CannaOil;
         }
 
         public event EventHandler Died;

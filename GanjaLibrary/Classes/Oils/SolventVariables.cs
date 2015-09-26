@@ -51,6 +51,6 @@ namespace GanjaLibrary.Classes.Oils
         public string Description { get; set; }
         public string Name { get; set; }
 
-        public ItemType Type { get { return ItemType.SolventMix; } }
+        public ItemType Type { get; set; }
     }
 }

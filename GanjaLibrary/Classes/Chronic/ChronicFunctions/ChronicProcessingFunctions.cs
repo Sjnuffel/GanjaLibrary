@@ -32,6 +32,7 @@ namespace GanjaLibrary.Classes
 
                 var isAdvanced = AdvanceStage(light);
             }
+
             return this;
         }
 
