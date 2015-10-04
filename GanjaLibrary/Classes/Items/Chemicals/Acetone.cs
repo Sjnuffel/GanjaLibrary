@@ -18,7 +18,7 @@ using GanjaLibrary.Interfaces.Items;
 
 namespace GanjaLibrary.Classes.Items
 {
-    public class Acetone : Chemical, IItem
+    public class Acetone : Chemical
     {
         public Acetone() : base()
         {

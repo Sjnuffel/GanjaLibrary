@@ -1,7 +1,7 @@
 ﻿
 namespace GanjaLibrary.Interfaces.Items
 {
-    public interface IChemical : IItem
+    public interface IChemical: IItem
     {
         /// <summary>
         /// Boiling point of a chemical, in degrees Celsius.
@@ -27,5 +27,7 @@ namespace GanjaLibrary.Interfaces.Items
         //// Clone the class.
         //// </summary>
         IChemical Clone();
+
+        void Print();
     }
 }

@@ -18,7 +18,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Benzene = new Benzene();
+            IChemical Benzene = new Benzene(750);
             IContainer Trousers = new CargoPants();
             Trousers.Add((IItem)MasonJar);
             Trousers.Add(Benzene);
@@ -32,7 +32,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 30; i++)
                 GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
 
-            IChronic WashTest = GanjaTest.Harvest();
+            IChronic WashTest = GanjaTest.Harvest().Harvest;
             for (int i = 0; i < WashTest.DryingAge; i++)
                 WashTest.Dry();
 
@@ -51,7 +51,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Benzene = new Benzene();
+            IChemical Benzene = new Benzene(750);
             IFilter CoffeeFilter = new CoffeeFilter();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -63,7 +63,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 30; i++)
                 GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
 
-            IChronic WashTest = GanjaTest.Harvest();
+            IChronic WashTest = GanjaTest.Harvest().Harvest;
             for (int i = 0; i < WashTest.DryingAge; i++)
                 WashTest.Dry();
 
@@ -84,7 +84,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Benzene = new Benzene();
+            IChemical Benzene = new Benzene(750);
             IFilter CoffeeFilter = new CoffeeFilter();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -96,7 +96,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 30; i++)
                 GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
 
-            IChronic WashTest = GanjaTest.Harvest();
+            IChronic WashTest = GanjaTest.Harvest().Harvest;
             for (int i = 0; i < WashTest.DryingAge; i++)
                 WashTest.Dry();
 
@@ -118,7 +118,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Benzene = new Benzene();
+            IChemical Benzene = new Benzene(750);
             IContainer Trousers = new CargoPants();
             Trousers.Add((IItem)MasonJar);
             Trousers.Add(Benzene);
@@ -132,7 +132,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 30; i++)
                 GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
 
-            IChronic WashTest = GanjaTest.Harvest();
+            IChronic WashTest = GanjaTest.Harvest().Harvest;
             for (int i = 0; i < WashTest.DryingAge; i++)
                 WashTest.Dry();
 
@@ -142,7 +142,6 @@ namespace GanjaLibrary.Classes.Tests
             mix.Wash();
 
             Assert.IsInstanceOfType(mix, typeof(IChemical));
-            Assert.IsInstanceOfType(mix, typeof(IChronic));
             Assert.IsInstanceOfType(mix, typeof(ISolventMix));
         }
 
@@ -151,7 +150,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Butane = new Benzene();
+            IChemical Butane = new Benzene(750);
             IFilter CoffeeFilter = new CoffeeFilter();
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -163,7 +162,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 30; i++)
                 GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
 
-            IChronic WashTest = GanjaTest.Harvest();
+            IChronic WashTest = GanjaTest.Harvest().Harvest;
             for (int i = 0; i < WashTest.DryingAge; i++)
                 WashTest.Dry();
 

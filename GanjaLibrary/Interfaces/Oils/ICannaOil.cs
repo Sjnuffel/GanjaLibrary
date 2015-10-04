@@ -1,15 +1,24 @@
-﻿namespace GanjaLibrary
+﻿using GanjaLibrary.Interfaces.Items;
+
+namespace GanjaLibrary
 {
-    public interface ICannaOil
+    public interface ICannaOil: IItem
     {
-        /// <summary>
-        /// Calculate the value of the oil
-        /// </summary>
-        ICannaOil CalculatePrice();
+        double Yield { get; }
+        double Quality { get; }
 
         /// <summary>
         /// Print function for ISolventmix
         /// </summary>
         void Print();
+
+        ICannaOil Clone();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="toAdd"></param>
+        /// <returns></returns>
+        ICannaOil Add(ICannaOil toAdd);
     }
 }

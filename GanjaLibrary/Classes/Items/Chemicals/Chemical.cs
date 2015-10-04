@@ -6,6 +6,7 @@
 
 using GanjaLibrary.Interfaces.Items;
 using GanjaLibrary.Enums;
+using System;
 
 namespace GanjaLibrary.Classes
 {
@@ -17,8 +18,12 @@ namespace GanjaLibrary.Classes
         public bool Flammable { get; internal set; }
         public bool Denatured { get; internal set; }
 
+        public double THC { get; protected set; }
+
+        public double CBD { get; protected set; }
+
         // Inherit from Item and input name, description, weight and value in constructor.
-        public Chemical() :base(string.Empty, string.Empty, 1, 0)
+        public Chemical() :base("Chemical", "Standard Chemical", 1, 0)
         {
             Flashpoint = 100;
             Contents = 1000;
@@ -44,6 +49,21 @@ namespace GanjaLibrary.Classes
         IChemical IChemical.Clone()
         {
             return (IChemical)Clone();
+        }
+
+        public void SetTHC(double amount)
+        {
+            THC = amount;
+        }
+
+        public void SetCBD(double amount)
+        {
+            CBD = amount;
+        }
+
+        public void Print()
+        {
+            throw new NotImplementedException();
         }
     }
 }

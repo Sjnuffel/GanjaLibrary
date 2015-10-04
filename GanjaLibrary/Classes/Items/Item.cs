@@ -6,11 +6,13 @@ namespace GanjaLibrary.Classes
 {
     public abstract class Item : IItem
     {
+        protected double _value = 0;
+
         public string Description { get; set; }
         public string Name { get; set; }
 
         public double Weight { get; set; }
-        public double Value { get; set; }
+        public virtual double Value { get { return _value; } internal set { _value = value; } }
 
         public int MaxStackableQuantity { get; set; }
 

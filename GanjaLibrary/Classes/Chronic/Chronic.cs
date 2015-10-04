@@ -4,7 +4,7 @@ using System;
 
 namespace GanjaLibrary.Classes
 {
-    public abstract partial class Chronic : Item, IChronic
+    public abstract partial class Chronic
     {
         public event EventHandler Died;
 
@@ -19,7 +19,6 @@ namespace GanjaLibrary.Classes
             Console.WriteLine(string.Format("Food: {0} \t\t\tHealth: {1}", Food, Health));
             Console.WriteLine(string.Format("CBD: {0}%  \t\t\tTHC: {1}%", CBD * 100, THC * 100));
             Console.WriteLine(string.Format("Height: {0} \t\tQuality: {1}", Height, Quality));
-            Console.WriteLine(string.Format("Yield: {0} \t\tCompost: {1}", Yield, Trimmings));
 
             if (Globals.Debug)
             {
@@ -28,7 +27,5 @@ namespace GanjaLibrary.Classes
                 Console.WriteLine(string.Format("Height: {0}", Height));
             }
         }
-        
-        
     }
 }

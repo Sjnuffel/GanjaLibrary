@@ -50,6 +50,10 @@ namespace GanjaLibrary.Enums
         /// <summary>
         /// Heating off the remaining solvent.
         /// </summary>
-        Heating
+        Heating,
+        /// <summary>
+        /// Harvesting off the remaining solvent.
+        /// </summary>
+        Harvesting
     }
 }

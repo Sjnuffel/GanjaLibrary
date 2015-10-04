@@ -5,7 +5,19 @@ using System.Collections.Generic;
 
 namespace GanjaLibrary.Interfaces
 {
-    public interface IChronic
+    public struct HarvestResult
+    {
+        public IChronic Harvest;
+        public IChronic Trimmings;
+
+        public HarvestResult(IChronic harvest, IChronic trimmings)
+        {
+            Harvest = harvest;
+            Trimmings = trimmings;
+        }
+    }
+
+    public interface IChronic: IItem
     {
         /// <summary>
         /// Event for death.
@@ -40,7 +52,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Height category of the plant
         /// </summary>
-        double Height { get; set; }
+        double Height { get; }
 
         /// <summary>
         /// Max yield a plant can get in grams.
@@ -50,13 +62,8 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Actual quality of the plant during growth.
         /// </summary>
-        double Quality { get; set; }
-
-        /// <summary>
-        /// The non-useful plant bits that are generated.
-        /// </summary>
-        double Trimmings { get; }
-
+        double Quality { get; }
+        
         /// <summary>
         /// Day to Day health of the plant (%).
         /// </summary>
@@ -75,7 +82,7 @@ namespace GanjaLibrary.Interfaces
         /// <summary>
         /// Yield of the plant in grams, during growth.
         /// </summary>
-        double Yield { get; set; }
+        double Yield { get; }
 
         /// <summary>
         /// Light need of a plant in specific season.
@@ -98,11 +105,6 @@ namespace GanjaLibrary.Interfaces
         Stage Stage { get;  }
 
         /// <summary>
-        /// Name of the plant.
-        /// </summary>
-        string Name { get; }
-
-        /// <summary>
         /// Dictionary containing water requirements.
         /// </summary>
         Dictionary<Stage, Water> WaterNeed { get; }
@@ -112,20 +114,25 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         Dictionary<Stage, Light> LightNeed { get; }
 
+        double ImproveTHC(double percentage);
+
         /// <summary>
         /// Grow the plant.
         /// </summary>
         IChronic Grow(Water water, Light light, Food food );
+        double ImproveCBD(double percentage);
 
         /// <summary>
         /// Harvest the plant.
         /// </summary>
-        IChronic Harvest();
+        HarvestResult Harvest();
 
         /// <summary>
         /// Dry the plant.
         /// </summary>
         IChronic Dry();
+
+        void ImproveQuality(double percentage);
 
         /// <summary>
         /// Actual curing process.
@@ -143,6 +150,12 @@ namespace GanjaLibrary.Interfaces
         IChronic Weck();
 
         /// <summary>
+        /// Increase or decrease the yield of a plant by a certain percentage
+        /// </summary>
+        /// <param name="percentage">The percentage to increase (or decrease) the yield by</param>
+        void ImproveYield(double percentage);
+
+        /// <summary>
         /// Set the stage Chronic is in.
         /// </summary>
         /// <param name="stage"></param>
@@ -157,5 +170,12 @@ namespace GanjaLibrary.Interfaces
         /// Clone the class.
         /// </summary>
         IChronic Clone();
+
+        /// <summary>
+        /// Add two 
+        /// </summary>
+        /// <param name="toAdd"></param>
+        /// <returns></returns>
+        IChronic Add(ref IChronic toAdd);
     }
 }

@@ -8,6 +8,7 @@ using GanjaLibrary.Classes.Items.Storage;
 using GanjaLibrary.Classes.Items.Filters;
 using GanjaLibrary.Interfaces.Oils;
 using GanjaLibrary.Classes.Oils;
+using GanjaLibrary;
 
 namespace GanjaTestApplication
 {
@@ -24,7 +25,7 @@ namespace GanjaTestApplication
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Butane = new Benzene();
+            IChemical Butane = new Benzene(900);
             IContainer Trousers = new CargoPants();
             IFilter CoffeeFilter = new CoffeeFilter();
             Trousers.Add((IItem)MasonJar);
@@ -54,36 +55,63 @@ namespace GanjaTestApplication
                 Console.WriteLine();
             }
 
-            IChronic WashTest = GanjaTest.Harvest();
-            for (int i = 0; i < WashTest.DryingAge; i++)
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
             {
                 PrintLine();
-                WashTest.Dry();
-                WashTest.Print();
+                harvest.Dry();
+                harvest.Print();
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+            {
+                PrintLine();
+                trimmings.Dry();
+                trimmings.Print();
                 Console.WriteLine();
             }
 
+            Console.ReadLine();
+
             PrintLine();
-            ISolventMix mix = new SolventMix(WashTest, Butane);
-            MasonJar.Add((IItem)mix);
-            mix.Wash();
-            mix.Print();
+            harvest.Add(ref trimmings);
+
+            ISolventMix firstSolventMix = new SolventMix(harvest, Butane);
+            MasonJar.Add((IItem)firstSolventMix);
+
+            firstSolventMix.Wash();
+
+            var firstFilteredBatch = firstSolventMix.Filter(new CoffeeFilter());
+            firstSolventMix.Print();
+            var firstFilteredRemainingChronic = firstFilteredBatch.Chronic;
+            firstFilteredRemainingChronic.Print();
+            var firstFilteredSolvent = firstFilteredBatch.Solvent;
+            firstFilteredSolvent.Print();
+
             PrintLine();
-            mix.Wash();
-            mix.Print();
+            
+            ISolventMix secondSolventMix = new SolventMix(firstFilteredRemainingChronic, new Benzene(900));
+            secondSolventMix.Wash(2);
             PrintLine();
-            mix.Filter(CoffeeFilter);
-            ISolvent solvent = new Solvent((IChronic)mix, (IChemical)mix);
+
+            var secondFilteredSolvent = secondSolventMix.Filter(new CoffeeFilter()).Solvent;
             for (int i = 0; i < 12; i++)
-                solvent.Heat();
+            {
+                firstFilteredSolvent.Heat();
+                secondFilteredSolvent.Heat();
+            }
+            ICannaOil cannaOil = new CannaOil(firstFilteredSolvent, GanjaTest.Name);
+            ICannaOil cannaOilv2 = new CannaOil(secondFilteredSolvent, GanjaTest.Name);
 
-            solvent.Heat();
-            solvent.Heat();
-            solvent.Heat();
-            solvent.Heat();
-            solvent.Heat();
+            cannaOil.Add(cannaOilv2);
 
-            solvent.Print();
+            firstFilteredSolvent.Print();
+            secondFilteredSolvent.Print();
 
             Console.WriteLine();
             Console.ReadLine();

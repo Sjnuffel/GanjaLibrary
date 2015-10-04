@@ -26,7 +26,7 @@ namespace GanjaLibrary.Classes.Items
 {
     public class Benzene : Chemical, IItem
     {
-        public Benzene() :base()
+        public Benzene(double amount) :base()
         {
             Name = "Benzene";
             Description = "Can be used to remove stains from clothing.";
@@ -35,7 +35,7 @@ namespace GanjaLibrary.Classes.Items
             Value = 25;
 
             Flashpoint = -11.1;
-            Contents = 1000;
+            Contents = amount;
             Flammable = true;
         }
 

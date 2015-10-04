@@ -20,7 +20,6 @@ namespace GanjaLibrary.Classes
                 if (Stage != Stage.Seed)
                 {
                     AdjustHeight(water, light, food, Stage);
-                    AdjustCompost(water, light, food, Stage);
                 }
 
                 if (Stage == Stage.Flowering)
@@ -37,9 +36,10 @@ namespace GanjaLibrary.Classes
         }
 
         // What to do when harvesting the plant.
-        public IChronic Harvest()
+        public HarvestResult Harvest()
         {
             IChronic harvest = null;
+            IChronic trimmings = null;
 
             if (Stage == Stage.Flowering)
             {
@@ -61,23 +61,35 @@ namespace GanjaLibrary.Classes
                 // Also since we cut the plant, set height to 10 cm.                
                 Health = 0;
                 Age = 0;
-                Height = 10;
+                Height = 0;
 
+                trimmings = (IChronic)Clone();
+                trimmings.SetStage(Stage.Harvesting);
+                // Trimmings has lower THC % compared to the real harvest.
+                trimmings.ImproveTHC(0.2);
+                // Trimmings has lower CBD % compared to the real harvest.
+                trimmings.ImproveCBD(0.2);
+                // Trimmings yield is higher, with a far lower THC percentage.
+                trimmings.ImproveYield(3);
+
+                // Actually harvest the buds, without yield modifier.
                 harvest = (IChronic)Clone();
+                // Different stage and height for the harvest.
+                harvest.SetStage(Stage.Harvesting);
 
                 // After cloning reduce the yield and trimmings.
                 Yield = 0;
-                Trimmings = 0;
 
                 // Cutting does not kill, set to clone stage.
-                Stage = Stage.Clone;
-
-                // Different stage and height for the clone.
-                harvest.SetStage(Stage.Drying);
-                harvest.Height -= 10;
+                SetStage(Stage.Clone);
+                // The plant that has been cut no longer has a THC or Yield.
+                THC = 0;
+                CBD = 0;
+                // The regrowable clone wasn't destroyed, so add some height.
+                Height = 10;
             }
 
-            return harvest;
+            return new HarvestResult(harvest, trimmings);
         }
 
         public void SetStage(Stage stage)
@@ -87,8 +99,9 @@ namespace GanjaLibrary.Classes
 
         public IChronic Dry()
         {
-            if (Stage == Stage.Drying)
+            if (Stage == Stage.Harvesting || Stage == Stage.Drying)
             {
+                SetStage(Stage.Drying);
                 Age++;
                 AdjustTHC(DryingAge, 2);
                 AdjustCBD(DryingAge, 2);
@@ -136,32 +149,6 @@ namespace GanjaLibrary.Classes
                 Stage = Stage.Curing;
             }
 
-            return this;
-        }
-
-        public IChronic Filter(IContainer originContainer, IContainer destContainer, IItem filter)
-        {
-            // Filter the plant remains from the solvent.
-            // Depending on the type of solvent and the contents (ie. denatured alcohol) have different effects.
-            // Requires filters, two containers for transfer/sifting.
-            if (Stage == Stage.Washing)
-            {
-
-            }
-
-            else
-                Console.WriteLine("There is nothing to filter.");
-
-            return this;
-        }
-
-        public IChronic Heat()
-        {
-            /* 
-            Heat away the chemical solvent. Some chemicals can vaporize in open air without heat.
-            Might even be a better idea in the first place...
-            Requires: ventilation/open air and time or a heat source like a gasburner or stove.
-            */
             return this;
         }
 
@@ -222,34 +209,6 @@ namespace GanjaLibrary.Classes
             if (Height < 0)
                 Height = 0;
 
-        }
-
-        // Adjust plant compost amount. Compost in this sense means bits of the plant you'll have to cut off.
-        private void AdjustCompost(Water water, Light light, Food food, Stage stage)
-        {
-            if (stage == Stage.Vegetative || stage == Stage.Flowering || stage == Stage.Seed || stage == Stage.Clone)
-            {
-                if (water == Water)
-                    Trimmings += 1.5;
-                else
-                    Trimmings -= 1.5;
-
-                if (light == Light)
-                    Trimmings += 1.5;
-                else
-                    Trimmings -= 1.5;
-
-                if (food == Food)
-                    Trimmings += 1.5;
-                else
-                    Trimmings -= 1.5;
-
-                if (stage == Stage.Dead)
-                    Trimmings -= 2;
-
-                if (Trimmings < 0)
-                    Trimmings = 0;
-            }
         }
 
         // Quality improvement algorithm.
@@ -366,15 +325,13 @@ namespace GanjaLibrary.Classes
                 THC += 0.000015;
             if (Health > 50 && Health <= 100)
                 THC += 0.000020;
-            if (Health > 0)
+            if (Health > 100)
                 THC += 0.000025;
 
-            if (Age < (optimalAge - variance))
-                THC -= 0.000015;
+            if (Age == optimalAge)
+                THC += 0.000030;
             if (Age >= (optimalAge - variance) && Age >= (optimalAge + variance))
                 THC += 0.000015;
-            if (Age > optimalAge + variance)
-                THC -= 0.000015;
         }
 
         // Adjust CBD % of the plant.
@@ -400,5 +357,27 @@ namespace GanjaLibrary.Classes
         }
 
         #endregion
+
+        public void ImproveYield(double percentage)
+        {
+            Yield *= percentage;
+        }
+
+        public double ImproveTHC(double percentage)
+        {
+            THC *= percentage;
+            return THC;
+        }
+
+        public double ImproveCBD(double percentage)
+        {
+            CBD *= percentage;
+            return CBD;
+        }
+
+        public void ImproveQuality(double percentage)
+        {
+            Quality *= percentage;
+        }
     }
 }

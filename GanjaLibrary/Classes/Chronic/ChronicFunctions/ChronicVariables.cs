@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace GanjaLibrary.Classes
 {
-    partial class Chronic
+    partial class Chronic : Item, IChronic
     {
         #region Properties
         // Growing related variables.
@@ -17,12 +17,11 @@ namespace GanjaLibrary.Classes
 
         public double CBD { get; internal set; }
         public double THC { get; internal set; }
-        public double Yield { get; set; }
+        public double Yield { get; protected set; }
         public double MaxYield { get; private set; }
         public double Quality { get; set; }
         public double Health { get; internal set; }
         public double Height { get; set; }
-        public double Trimmings { get; internal set; }
 
         // Growing related variables.
         public Water Water { get; internal set; }
@@ -54,7 +53,6 @@ namespace GanjaLibrary.Classes
             Quality = 10;
             Health = 0;
             Height = 0;
-            Trimmings = 0;
             Value = 0;
 
             Water = Water.None;
@@ -112,7 +110,6 @@ namespace GanjaLibrary.Classes
             Quality = other.Quality;
             Health = other.Health;
             Height = other.Height;
-            Trimmings = other.Trimmings;
 
             Water = other.Water;
             Stage = other.Stage;
@@ -124,6 +121,21 @@ namespace GanjaLibrary.Classes
         IChronic IChronic.Clone()
         {
             return (IChronic)Clone();
+        }
+
+        public IChronic Add(ref IChronic toAdd)
+        {
+            THC = ((THC * Yield) + (toAdd.THC * toAdd.Yield)) / (Yield + toAdd.Yield);
+            CBD = ((CBD * Yield) + (toAdd.CBD * toAdd.Yield)) / (Yield + toAdd.Yield);
+
+            Yield += toAdd.Yield;
+
+            toAdd.ImproveYield(0);
+            toAdd.ImproveTHC(0);
+            toAdd.ImproveCBD(0);
+            toAdd.SetStage(Stage.Dead);
+
+            return this;
         }
         #endregion
     }

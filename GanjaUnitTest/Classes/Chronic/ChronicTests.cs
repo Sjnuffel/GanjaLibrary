@@ -196,7 +196,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 20; i++)
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
-            IChronic HarvestTest = GanjaTest.Harvest();
+            var HarvestTest = GanjaTest.Harvest().Harvest;
             Assert.IsTrue(HarvestTest.Stage == Stage.Drying);
         }
 
@@ -214,12 +214,12 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 20; i++)
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
-            IChronic DryTest = GanjaTest.Harvest();
+            var DryTestResult = GanjaTest.Harvest().Harvest;
 
-            for (int i = 0; i < DryTest.DryingAge; i++)
-                DryTest.Dry();
+            for (int i = 0; i < DryTestResult.DryingAge; i++)
+                DryTestResult.Dry();
             
-            Assert.IsTrue(DryTest.Stage == Stage.Drying);
+            Assert.IsTrue(DryTestResult.Stage == Stage.Drying);
         }
 
         [TestMethod()]
@@ -237,16 +237,16 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 20; i++)
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
-            IChronic CureTest = GanjaTest.Harvest();
+            var CureTestResult = GanjaTest.Harvest().Harvest;
 
-            for (int i = 0; i < CureTest.DryingAge; i++)
-                CureTest.Dry();
+            for (int i = 0; i < CureTestResult.DryingAge; i++)
+                CureTestResult.Dry();
 
-            CureTest.Weck();
+            CureTestResult.Weck();
             for (int i = 0; i < 14; i++)
-                CureTest.Cure(MasonJar);
+                CureTestResult.Cure(MasonJar);
 
-            Assert.IsTrue(CureTest.Stage == Stage.Curing);
+            Assert.IsTrue(CureTestResult.Stage == Stage.Curing);
         }
 
         [TestMethod()]
@@ -264,17 +264,17 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 20; i++)
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
-            IChronic CureTest = GanjaTest.Harvest();
+            var CureTestResult = GanjaTest.Harvest().Harvest;
 
-            for (int i = 0; i < CureTest.DryingAge; i++)
-                CureTest.Dry();
+            for (int i = 0; i < CureTestResult.DryingAge; i++)
+                CureTestResult.Dry();
 
-            CureTest.Weck();
+            CureTestResult.Weck();
             for (int i = 0; i < 14; i++)
-                CureTest.Cure(MasonJar);
+                CureTestResult.Cure(MasonJar);
 
-            CureTest.Finish();
-            Assert.IsTrue(CureTest.Stage == Stage.Finished);
+            CureTestResult.Finish();
+            Assert.IsTrue(CureTestResult.Stage == Stage.Finished);
         }
 
         [TestMethod()]
@@ -294,17 +294,17 @@ namespace GanjaLibrary.Classes.Tests
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
             
 
-            IChronic InventoryTest = GanjaTest.Harvest();
+            var InventoryTestResult = GanjaTest.Harvest().Harvest;
 
-            for (int i = 0; i < InventoryTest.DryingAge; i++)
-                InventoryTest.Dry();
+            for (int i = 0; i < InventoryTestResult.DryingAge; i++)
+                InventoryTestResult.Dry();
 
-            InventoryTest.Weck();
+            InventoryTestResult.Weck();
             for (int i = 0; i < 14; i++)
-                InventoryTest.Cure(MasonJar);
+                InventoryTestResult.Cure(MasonJar);
 
-            InventoryTest.Finish();
-            FirstTrousers.Add((IItem)InventoryTest);
+            InventoryTestResult.Finish();
+            FirstTrousers.Add(InventoryTestResult);
             Assert.IsTrue(FirstTrousers.ItemAmount == 1);
         }
 
@@ -324,7 +324,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 20; i++)
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
-            IChronic InventoryTest = GanjaTest.Harvest();
+            var InventoryTest = GanjaTest.Harvest().Harvest;
 
             for (int i = 0; i < InventoryTest.DryingAge; i++)
                 InventoryTest.Dry();
@@ -334,8 +334,8 @@ namespace GanjaLibrary.Classes.Tests
                 InventoryTest.Cure(MasonJar);
 
             InventoryTest.Finish();
-            FirstTrousers.Add((IItem)InventoryTest);
-            FirstTrousers.Remove((IItem)InventoryTest);
+            FirstTrousers.Add(InventoryTest);
+            FirstTrousers.Remove(InventoryTest);
             Assert.IsTrue(FirstTrousers.ItemAmount == 0);
         }
 
@@ -355,7 +355,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 20; i++)
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
-            IChronic SellTest = GanjaTest.Harvest();
+            IChronic SellTest = GanjaTest.Harvest().Harvest;
 
             for (int i = 0; i < SellTest.DryingAge; i++)
                 SellTest.Dry();
@@ -390,7 +390,7 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < 20; i++)
                 GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
-            IChronic WashTest = GanjaTest.Harvest();
+            IChronic WashTest = GanjaTest.Harvest().Harvest;
             for (int i = 0; i < WashTest.DryingAge; i++)
                 WashTest.Dry();
 
