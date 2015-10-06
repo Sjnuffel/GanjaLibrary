@@ -25,7 +25,7 @@ namespace GanjaTestApplication
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Butane = new Benzene(900);
+            IChemical Butane = new Benzene(1000);
             IContainer Trousers = new CargoPants();
             IFilter CoffeeFilter = new CoffeeFilter();
             Trousers.Add((IItem)MasonJar);
@@ -66,7 +66,6 @@ namespace GanjaTestApplication
                 harvest.Print();
                 Console.WriteLine();
             }
-            Console.ReadLine();
 
             for (int i = 0; i < trimmings.DryingAge; i++)
             {
@@ -75,8 +74,6 @@ namespace GanjaTestApplication
                 trimmings.Print();
                 Console.WriteLine();
             }
-
-            Console.ReadLine();
 
             PrintLine();
             harvest.Add(ref trimmings);
@@ -105,6 +102,7 @@ namespace GanjaTestApplication
                 firstFilteredSolvent.Heat();
                 secondFilteredSolvent.Heat();
             }
+
             ICannaOil cannaOil = new CannaOil(firstFilteredSolvent, GanjaTest.Name);
             ICannaOil cannaOilv2 = new CannaOil(secondFilteredSolvent, GanjaTest.Name);
 

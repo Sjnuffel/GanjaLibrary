@@ -50,9 +50,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Classes\Oils\CannaOilTests.cs" />
-    <Compile Include="Classes\Chronic\ChronicTests.cs" />
-    <Compile Include="Classes\Items\ItemTests.cs" />
+    <Compile Include="Classes\Oils\CannaOilCreationTests.cs" />
+    <Compile Include="Classes\Chronic\ChronicCultivationTests.cs" />
+    <Compile Include="Classes\Items\StorageAndItemTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

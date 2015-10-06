@@ -14,6 +14,7 @@ namespace GanjaLibrary.Classes
         public double Weight { get; set; }
         public virtual double Value { get { return _value; } internal set { _value = value; } }
 
+        public int Amount { get; set; }
         public int MaxStackableQuantity { get; set; }
 
         public Guid Id { get; set; }
@@ -27,6 +28,7 @@ namespace GanjaLibrary.Classes
 
             Weight = 0;
             Value = 0;
+            Amount = 1;
             MaxStackableQuantity = 1;
 
             Type = ItemType.BaseItem;

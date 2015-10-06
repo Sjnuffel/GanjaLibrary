@@ -26,7 +26,7 @@ namespace GanjaLibrary.Classes.Oils
             THC = 0;
             CBD = 0;
             Yield = 0;
-            Quality = 0;
+            Quality = chronic.Quality;
             Name = chronic.Name + chemical.Name;
             Description = chemical.Description;
         }

@@ -1,5 +1,4 @@
-﻿using GanjaLibrary.Interfaces;
-using System;
+﻿using System;
 using GanjaLibrary.Enums;
 using GanjaLibrary.Interfaces.Oils;
 using GanjaLibrary.Interfaces.Items;
@@ -8,7 +7,7 @@ namespace GanjaLibrary.Classes.Oils
 {
     public class CannaOil : Item, ICannaOil
     {
-        public override double Value { get { return Quality * Yield; } internal set { throw new NotSupportedException("Value of CannaOil is calculated. Unable to set."); } }
+        public override double Value { get { return Quality * Yield; } }
 
         private ISolvent Solvent { get; set; }
 
@@ -19,6 +18,7 @@ namespace GanjaLibrary.Classes.Oils
         public CannaOil(ISolvent solvent, string name): base(string.Format("Pure {0} Honey Oil", name), string.Format("Honey oil made with {0}.", name), (solvent as IItem).Weight, (solvent as IItem).Value)
         {
             Solvent = solvent;
+            Quality = solvent.Quality;
             Type = ItemType.CannaOil;
             Yield = solvent.Yield * 0.25;
         }
@@ -33,8 +33,8 @@ namespace GanjaLibrary.Classes.Oils
 
         public ICannaOil Add(ICannaOil toAdd)
         {
-            Quality = (Quality * Yield) + (toAdd.Quality * Yield) / (Yield + toAdd.Yield);
-            Yield = Yield + toAdd.Yield;
+            Quality = (Quality + toAdd.Quality) / 2;
+            Yield = (Yield + toAdd.Yield) / 10;
 
             return this;
         }
