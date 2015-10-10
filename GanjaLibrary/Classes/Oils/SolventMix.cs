@@ -29,8 +29,10 @@ namespace GanjaLibrary.Classes.Oils
 
         public event EventHandler Died;
 
+        // Wash the THC/CBD from the plant remains.
         public ISolventMix Wash(int washCount = 1)
         {
+            // Check if there's enough chemical available to wash.
             if (Chemical.Contents <= (Chronic.Yield * 3)) throw new NotEnoughSolventException(Chemical);
 
             SetStage(Stage.Washing);

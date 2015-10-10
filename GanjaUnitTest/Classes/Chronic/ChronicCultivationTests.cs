@@ -10,7 +10,7 @@ namespace GanjaLibrary.Classes.Tests
     public class ChronicCultivationTests
     {
         [TestMethod()]
-        public void ChronicCultivation_GrowPerfectSilverHaze_HealthySilverHaze()
+        public void ChronicCultivation_SilverHazePerfectGrowth_HealthySilverHaze()
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -27,7 +27,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_GrowPerfectMasterKush_HealthyMasterKush()
+        public void ChronicCultivation_MasterKushPerfectGrowth_HealthyMasterKush()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -44,7 +44,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_KillMasterKushSeed_DeadMasterKushSeed()
+        public void ChronicCultivation_MasterKushKillSeed_DeadMasterKushSeed()
         {
             IChronic GanjaTest = new MasterKush();
             // For test to succeed it needed extra days in Seeding stage.
@@ -55,7 +55,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_KillSilverHazeSeed_DeadSilverHazeSeed()
+        public void ChronicCultivation_SilverHazeKillSeed_DeadSilverHazeSeed()
         {
             IChronic GanjaTest = new SilverHaze();
             // For test to succeed it needed extra days in Seeding stage.
@@ -66,7 +66,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_KillMasterKushVegatative_DeadMasterKushVegatative()
+        public void ChronicCultivation_MasterKushKillVegatative_DeadMasterKushVegatative()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -80,7 +80,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_KillSilverHazeVegatative_DeadSilverHazeVegatative()
+        public void ChronicCultivation_SilverHazeKillVegatative_DeadSilverHazeVegatative()
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -94,7 +94,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_KillMasterKushFlowering_DeadMasterKushFlowering()
+        public void ChronicCultivation_MasterKushKillFlowering_DeadMasterKushFlowering()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -111,7 +111,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_KillSilverHazeFlowering_DeadSilverHazeFlowering()
+        public void ChronicCultivation_SilverHazeKillFlowering_DeadSilverHazeFlowering()
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -128,7 +128,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_NegativeMasterKushHeightWhenDead_HeightIsZero()
+        public void ChronicCultivation_MasterKushNegativeHeightWhenDead_HeightIsZero()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -144,7 +144,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_NegativeSilverHazeHeightWhenDead_HeightIsZero()
+        public void ChronicCultivation_SilverHazeNegativeHeightWhenDead_HeightIsZero()
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -160,7 +160,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_FreezeAgeWhenDead_AgeIsThirteen()
+        public void ChronicCultivation_MasterKushFreezeAgeWhenDead_AgeIsThirteen()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < 20; i++)
@@ -176,7 +176,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_HealthIncreaseWhenDead_HealthLessOrEqualThan25()
+        public void ChronicCultivation_MasterKushHealthIncreaseWhenDead_HealthLessOrEqualThan25()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < 20; i++)
@@ -192,7 +192,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_HarvestMasterKush_MasterKushHarvestingStage()
+        public void ChronicCultivation_MasterKushHarvest_MasterKushHarvestingStage()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -209,7 +209,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_HarvestSilverHaze_SilverHazeHarvestingstage()
+        public void ChronicCultivation_SilverHazeHarvest_SilverHazeHarvestingstage()
         {
             IChronic GanjaTest = new SilverHaze();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -226,7 +226,63 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_DryMasterKush_MasterKushDryingStage()
+        public void ChronicCultivation_SilverHazetoAddTest_TrimmingsDeadStageYieldZero()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.Low);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+            {
+                harvest.Dry();
+                trimmings.Dry();
+            }
+
+            harvest.Add(ref trimmings);
+            Assert.IsTrue(trimmings.Stage == Stage.Dead);
+            Assert.IsTrue(trimmings.Yield == 0);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_MasterKushtoAddTest_TrimmingsDeadStageYieldZero()
+        {
+            IChronic GanjaTest = new MasterKush();
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.Low);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+            {
+                harvest.Dry();
+                trimmings.Dry();
+            }
+
+            harvest.Add(ref trimmings);
+            Assert.IsTrue(trimmings.Stage == Stage.Dead);
+            Assert.IsTrue(trimmings.Yield == 0);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_MasterKushDry_MasterKushDryingStage()
         {
             IChronic GanjaTest = new MasterKush();
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
@@ -247,7 +303,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_CureMasterKush_MasterKushCuringStage()
+        public void ChronicCultivation_MasterKushCure_MasterKushCuringStage()
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
@@ -274,7 +330,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_CureSilverHaze_SilverHazeCuringStage()
+        public void ChronicCultivation_SilverHazeCure_SilverHazeCuringStage()
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
@@ -301,7 +357,7 @@ namespace GanjaLibrary.Classes.Tests
         }
       
         [TestMethod()]
-        public void ChronicCultivation_FinishMasterKushForSale_MasterKushFinishedStage()
+        public void ChronicCultivation_MasterKushFinishForSale_MasterKushFinishedStage()
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
@@ -329,7 +385,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_FinishSilverHazeForSale_SilverHazeFinishedStage()
+        public void ChronicCultivation_SilverHazeFinishForSale_SilverHazeFinishedStage()
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();

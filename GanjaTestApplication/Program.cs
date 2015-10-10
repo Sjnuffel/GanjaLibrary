@@ -92,7 +92,7 @@ namespace GanjaTestApplication
 
             PrintLine();
             
-            ISolventMix secondSolventMix = new SolventMix(firstFilteredRemainingChronic, new Benzene(900));
+            ISolventMix secondSolventMix = new SolventMix(firstFilteredRemainingChronic, new Benzene(1000));
             secondSolventMix.Wash(2);
             PrintLine();
 

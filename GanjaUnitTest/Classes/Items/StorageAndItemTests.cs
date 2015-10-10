@@ -12,7 +12,7 @@ namespace GanjaUnitTest.Classes.Items
     public class StorageAndItemTests
     {
         [TestMethod()]
-        public void StorageAndItem_AddButaneToShop_ItemAmountIncrease()
+        public void StorageAndItem_ButaneAddToShop_ItemAmountIncrease()
         {
             IContainer ShopTest = new Shop();
             IChemical Butane = new Butane();
@@ -22,7 +22,7 @@ namespace GanjaUnitTest.Classes.Items
         }
 
         [TestMethod()]
-        public void StorageAndItem_AddSmallJarToShop_ItemAmountIncrease()
+        public void StorageAndItem_SmallJarAddToShop_ItemAmountIncrease()
         {
             IContainer ShopTest = new Shop();
             IItem MasonJar = new SmallMasonJar();
@@ -32,7 +32,7 @@ namespace GanjaUnitTest.Classes.Items
         }
 
         [TestMethod()]
-        public void StorageAndItem_AddCargoPantsToShop_ItemAmountIncrease()
+        public void StorageAndItem_CargoPantsAddToShop_ItemAmountIncrease()
         {
             IContainer ShopTest = new Shop();
             IContainer CargoPants = new CargoPants();
@@ -42,7 +42,7 @@ namespace GanjaUnitTest.Classes.Items
         }
 
         [TestMethod()]
-        public void StorageAndItem_AddBenzeneToInventory_ItemAmountIncrease()
+        public void StorageAndItem_BenzeneAddToInventory_ItemAmountIncrease()
         {
             IContainer ShopTest = new Shop();
             IChemical Benzene = new Butane();
@@ -84,7 +84,7 @@ namespace GanjaUnitTest.Classes.Items
         }
 
         [TestMethod()]
-        public void StorageAndItem_GrowAddAndRemoveFromStorage_ItemAmountDecrease()
+        public void StorageAndItem_RemoveFromStorage_ItemAmountDecrease()
         {
             IContainer FirstTrousers = new Trousers();
             IChronic GanjaTest = new MasterKush();
@@ -150,7 +150,7 @@ namespace GanjaUnitTest.Classes.Items
         }
 
         [TestMethod()]
-        public void StorageAndItem_MaxSlotsInventoryNotOverriden_ItemAmountIsTwo()
+        public void StorageAndItem_MaxSlotsInventoryNotOverridden_ItemAmountIsTwo()
         {
             IContainer FirstTrousers = new Trousers();
             IChronic GanjaTest = new MasterKush();

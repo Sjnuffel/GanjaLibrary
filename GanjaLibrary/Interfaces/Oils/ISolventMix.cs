@@ -33,6 +33,10 @@ namespace GanjaLibrary.Interfaces.Oils
         /// </summary>
         void Print();
 
+        /// <summary>
+        /// Clone the SolventMix
+        /// </summary>
+        /// <returns></returns>
         ISolventMix Clone();
     }
 }

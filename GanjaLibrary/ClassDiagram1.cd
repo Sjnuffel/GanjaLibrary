@@ -38,7 +38,7 @@
   <Class Name="GanjaLibrary.Classes.Chronic">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAKCAzBQCECAJAAEwEAhIAABIgABAAABgAA4IFgBk=</HashCode>
+      <HashCode>AAoACCAzBCAEKAJAAEwEAhIAgAIgABAAABgAA4IFgBk=</HashCode>
       <FileName>Classes\Chronic\Chronic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -46,7 +46,7 @@
   <Class Name="GanjaLibrary.Classes.Item">
     <Position X="4.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAQAgAAAAABA=</HashCode>
+      <HashCode>ABACAAAAAAAgAAAAAAAAAASAACAAAAAAAQAgAAAAABA=</HashCode>
       <FileName>Classes\Items\Item.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -88,7 +88,6 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Classes\Items\Chemicals\Acetone.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GanjaLibrary.Classes.Items.Benzene" Collapsed="true">
     <Position X="3.5" Y="13.75" Width="1.5" />
@@ -165,7 +164,7 @@
   <Class Name="GanjaLibrary.Classes.Chemical" Collapsed="true">
     <Position X="2.25" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAABAABI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAABBEAAAAAAAAAAAAAiAAAABEgBI=</HashCode>
       <FileName>Classes\Items\Chemicals\Chemical.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -173,7 +172,7 @@
   <Class Name="GanjaLibrary.Classes.Oils.SolventMix" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="1" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgCKABjBACiCAJAAFwEQgYAADIoQBAAATwgA4JFgBo=</HashCode>
+      <HashCode>AAgACABCBACACAJAABwEggIAABIgQAAAACgAAwJFgBM=</HashCode>
       <FileName>Classes\Oils\SolventMix.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -181,7 +180,7 @@
   <Class Name="GanjaLibrary.Classes.Oils.Solvent" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="8.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAACAAABAAEBEAAAAAAAAAAAAAgAAAQJEgBA=</HashCode>
       <FileName>Classes\Oils\Solvent.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -210,7 +209,7 @@
   <Class Name="GanjaLibrary.Classes.Oils.CannaOil" Collapsed="true">
     <Position X="1" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgCKABjBACgCAJAAEwEggYAACAgABIAARggA4IFgBg=</HashCode>
+      <HashCode>AAIAAAAAAAAAAABAAAAAgAAAAAAAAAAAAAAgAQIEABA=</HashCode>
       <FileName>Classes\Oils\CannaOil.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -218,14 +217,14 @@
   <Interface Name="GanjaLibrary.Interfaces.IChronic">
     <Position X="22.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAKAAjBAAACAJAAEwEAgYAAAAgABAAABgAA4IFgBg=</HashCode>
+      <HashCode>AAoACAAjBCAAKAJAAEwEAgIAgAAgABAAABgAA4IFgBk=</HashCode>
       <FileName>Interfaces\IChronic.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Items.IItem">
     <Position X="20.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAgAAAAAAAAAAQAACAAAAAAAQAgAAAAABA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAASAACAAAAAAAQAgAAAAABA=</HashCode>
       <FileName>Interfaces\Items\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -253,28 +252,28 @@
   <Interface Name="GanjaLibrary.ICannaOil">
     <Position X="17" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAQAEABA=</HashCode>
       <FileName>Interfaces\Oils\ICannaOil.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Oils.ISolvent">
     <Position X="17" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAACAAABAAABEAAAAAAAAAAAAAgAAAQAEgBA=</HashCode>
       <FileName>Interfaces\Oils\ISolvent.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="GanjaLibrary.Interfaces.Oils.ISolventMix">
     <Position X="18.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAEABA=</HashCode>
       <FileName>Interfaces\Oils\ISolventMix.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GanjaLibrary.Enums.Stage">
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAEAAAAAEQAAgAAAAAAAQAAIAAgCAIAABA=</HashCode>
+      <HashCode>IAAAAAAAAQAEAAAAAEQAAgAAAAAAAQAAIAAgCAIAABA=</HashCode>
       <FileName>Enums\Chronic\Stage.cs</FileName>
     </TypeIdentifier>
   </Enum>

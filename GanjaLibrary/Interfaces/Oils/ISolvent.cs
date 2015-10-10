@@ -9,11 +9,34 @@ namespace GanjaLibrary.Interfaces.Oils
         /// </summary>
         ISolvent Heat();
 
+        /// <summary>
+        /// Actual yield of useful product (ie.: Honey Oil)
+        /// </summary>
         double Yield { get; }
-        double Quality { get; }
-        double THC { get; }
-        double CBD { get; }
 
+        /// <summary>
+        /// Quality of the solvent (helps determine the value)
+        /// </summary>
+        double Quality { get; }
+
+        /// <summary>
+        /// Amount of THC in the solvent (as a %)
+        /// </summary>
+        double THC { get; }
+
+        /// <summary>
+        /// Amount of CBD in the solvent (as a %)
+        /// </summary>
+        double CBD { get; }
+        
+        /// <summary>
+        /// The remaining chemical contents in the solvent (in ml.).
+        /// </summary>
+        double Contents { get; }
+
+        /// <summary>
+        /// Clone the Solvent.
+        /// </summary>
         ISolvent Clone();
 
         /// <summary>
@@ -21,6 +44,11 @@ namespace GanjaLibrary.Interfaces.Oils
         /// </summary>
         /// <param name="amount">Amount of THC to set.</param>
         void SetTHC(double amount);
+
+        /// <summary>
+        /// Set the CBD of a Chemical
+        /// </summary>
+        /// <param name="amount">Amount of THC to set.</param>
         void SetCBD(double amount);
 
         /// <summary>
