@@ -15,7 +15,7 @@ namespace GanjaLibrary.Classes.Tests
     public class CannaOilCreationTests
     {
         [TestMethod]
-        public void CannaOilCreation_SilverHazeCreateSolventMix()
+        public void CannaOilCreation_SilverHazeCreateSolventMix_IsTypeOfSolventMix()
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
@@ -52,7 +52,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod]
-        public void CannaOilCreation_SilverHazeFilterFromSolventMixTest()
+        public void CannaOilCreation_SilverHazeFilterFromSolventMix_IsTypeOfSolventAndChronic()
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
@@ -95,10 +95,11 @@ namespace GanjaLibrary.Classes.Tests
             Assert.IsInstanceOfType(firstFilteredSolvent, typeof(ISolvent));
             Assert.IsTrue(firstFilteredSolvent.THC != 0);
             Assert.IsInstanceOfType(firstFilteredRemainingChronic, typeof(IChronic));
+            Assert.IsTrue(firstFilteredRemainingChronic.Stage == Stage.Filtering);
         }
 
         [TestMethod]
-        public void CannaOilCreation_SilverHazeHeatSolventTest()
+        public void CannaOilCreation_SilverHazeHeatSolvent_ContentsAreZero()
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
@@ -158,7 +159,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod]
-        public void CannaOilCreation_MasterKushHeatSolventTest()
+        public void CannaOilCreation_MasterKushHeatSolvent_ContentsAreZero()
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
@@ -220,7 +221,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod]
-        public void CannaOilCreation_MasterKushCreateSolventMixTest()
+        public void CannaOilCreation_MasterKushCreateSolventMix_IsTypeOfSolventMix()
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
@@ -257,7 +258,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod]
-        public void CannaOilCreation_MasterKushFilterFromSolventMixTest()
+        public void CannaOilCreation_MasterKushFilterFromSolventMix_IsInstanceOfChronicAndSolvent()
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
@@ -308,7 +309,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Butane = new Benzene(900);
+            IChemical Butane = new Benzene(1500);
             IContainer Trousers = new CargoPants();
             IFilter CoffeeFilter = new CoffeeFilter();
             Trousers.Add((IItem)MasonJar);
@@ -318,10 +319,10 @@ namespace GanjaLibrary.Classes.Tests
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
 
-            for (int i = 0; i < 30; i++)
-                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+            for (int i = 0; i < 25; i++)
+                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
             var fullHarvest = GanjaTest.Harvest();
             var clone = GanjaTest;
@@ -347,7 +348,7 @@ namespace GanjaLibrary.Classes.Tests
             var firstFilteredSolvent = firstFilteredBatch.Solvent;
             firstFilteredSolvent.Print();
 
-            ISolventMix secondSolventMix = new SolventMix(firstFilteredRemainingChronic, new Benzene(900));
+            ISolventMix secondSolventMix = new SolventMix(firstFilteredRemainingChronic, new Benzene(1500));
             secondSolventMix.Wash(2);
 
             var secondFilteredSolvent = secondSolventMix.Filter(new CoffeeFilter()).Solvent;
@@ -442,10 +443,10 @@ namespace GanjaLibrary.Classes.Tests
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
 
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
-                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
 
-            for (int i = 0; i < 30; i++)
-                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+            for (int i = 0; i < 25; i++)
+                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
 
             var fullHarvest = GanjaTest.Harvest();
             var clone = GanjaTest;
@@ -614,6 +615,126 @@ namespace GanjaLibrary.Classes.Tests
             MasonJar.Add((IItem)firstSolventMix);
 
             firstSolventMix.Wash();
+        }
+
+        [TestMethod()]
+        public void CannaOilCreation_SilverHazeCannaOilValue_ValueIsNotNull()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallMasonJar();
+            IChemical Butane = new Benzene(900);
+            IContainer Trousers = new CargoPants();
+            IFilter CoffeeFilter = new CoffeeFilter();
+            Trousers.Add((IItem)MasonJar);
+            Trousers.Add(Butane);
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            harvest.Add(ref trimmings);
+
+            ISolventMix firstSolventMix = new SolventMix(harvest, Butane);
+            MasonJar.Add((IItem)firstSolventMix);
+
+            firstSolventMix.Wash();
+
+            var firstFilteredBatch = firstSolventMix.Filter(new CoffeeFilter());
+            var firstFilteredRemainingChronic = firstFilteredBatch.Chronic;
+            var firstFilteredSolvent = firstFilteredBatch.Solvent;
+
+            ISolventMix secondSolventMix = new SolventMix(firstFilteredRemainingChronic, new Benzene(900));
+            secondSolventMix.Wash(2);
+
+            var secondFilteredSolvent = secondSolventMix.Filter(new CoffeeFilter()).Solvent;
+
+            for (int i = 0; i < 12; i++)
+            {
+                firstFilteredSolvent.Heat();
+                secondFilteredSolvent.Heat();
+            }
+
+            ICannaOil cannaOil = new CannaOil(firstFilteredSolvent, GanjaTest.Name);
+            ICannaOil cannaOilv2 = new CannaOil(secondFilteredSolvent, GanjaTest.Name);
+
+            cannaOil.Add(cannaOilv2);
+
+            Assert.IsTrue(cannaOil.Value != 0);
+        }
+
+        [TestMethod()]
+        public void CannaOilCreation_MasterKushCannaOilValue_ValueIsNotNull()
+        {
+            IChronic GanjaTest = new MasterKush();
+            IContainer MasonJar = new SmallMasonJar();
+            IChemical Butane = new Benzene(1500);
+            IContainer Trousers = new CargoPants();
+            IFilter CoffeeFilter = new CoffeeFilter();
+            Trousers.Add((IItem)MasonJar);
+            Trousers.Add(Butane);
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+
+            for (int i = 0; i < 25; i++)
+                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            harvest.Add(ref trimmings);
+
+            ISolventMix firstSolventMix = new SolventMix(harvest, Butane);
+            MasonJar.Add((IItem)firstSolventMix);
+
+            firstSolventMix.Wash();
+
+            var firstFilteredBatch = firstSolventMix.Filter(new CoffeeFilter());
+            var firstFilteredRemainingChronic = firstFilteredBatch.Chronic;
+            var firstFilteredSolvent = firstFilteredBatch.Solvent;
+
+            ISolventMix secondSolventMix = new SolventMix(firstFilteredRemainingChronic, new Benzene(1500));
+            secondSolventMix.Wash(2);
+
+            var secondFilteredSolvent = secondSolventMix.Filter(new CoffeeFilter()).Solvent;
+
+            for (int i = 0; i < 12; i++)
+            {
+                firstFilteredSolvent.Heat();
+                secondFilteredSolvent.Heat();
+            }
+
+            ICannaOil cannaOil = new CannaOil(firstFilteredSolvent, GanjaTest.Name);
+            ICannaOil cannaOilv2 = new CannaOil(secondFilteredSolvent, GanjaTest.Name);
+
+            cannaOil.Add(cannaOilv2);
+
+            Assert.IsTrue(cannaOil.Value != 0);
         }
     }
 }

@@ -412,6 +412,122 @@ namespace GanjaLibrary.Classes.Tests
             Assert.IsTrue(CureTestResult.Stage == Stage.Finished);
         }
 
-        
+        [TestMethod()]
+        public void ChronicCultivation_SilverHazeHarvestValue_IsNotNull()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            harvest.Finish();
+
+            Assert.IsTrue(harvest.Value != 0);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_MasterKushHarvestValue_IsNotNull()
+        {
+            IChronic GanjaTest = new MasterKush();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+
+            for (int i = 0; i < 25; i++)
+                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            harvest.Finish();
+
+            Assert.IsTrue(harvest.Value != 0);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_MasterKushHarvestHeight_IsEqualToYield()
+        {
+            IChronic GanjaTest = new MasterKush();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+
+            for (int i = 0; i < 25; i++)
+                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            Assert.IsTrue(harvest.Height == 0);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_SilverHazeHarvestHeight_IsEqualToYield()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            Assert.IsTrue(harvest.Height == 0);
+        }
+
+
     }
 }
