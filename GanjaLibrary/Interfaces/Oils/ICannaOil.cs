@@ -30,5 +30,23 @@ namespace GanjaLibrary
         /// <param name="toAdd"></param>
         /// <returns></returns>
         ICannaOil Add(ICannaOil toAdd);
+
+        /// <summary>
+        /// Increase or decrease the yield of the CannaOil by a certain percentage
+        /// </summary>
+        /// <param name="percentage">The percentage to increase (or decrease) the yield by</param>
+        void ImproveYield(double percentage);
+
+        /// <summary>
+        /// Increase or decrease the quality of the CannaOil by a certain percentage
+        /// </summary>
+        /// <param name="percentage">The percentage to increase (or decrease) the yield by</param>
+        void ImproveQuality(double percentage);
+
+        /// <summary>
+        /// Increase or decrease the Weight of the CannaOil by a certain percentage
+        /// </summary>
+        /// <param name="percentage">The percentage to increase (or decrease) the yield by</param>
+        void ImproveWeight(double percentage);
     }
 }

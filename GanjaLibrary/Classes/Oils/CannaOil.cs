@@ -21,6 +21,7 @@ namespace GanjaLibrary.Classes.Oils
             Quality = solvent.Quality;
             Type = ItemType.CannaOil;
             Yield = solvent.Yield * 0.25;
+            Weight = Yield;
         }
 
         public event EventHandler Died;
@@ -31,10 +32,17 @@ namespace GanjaLibrary.Classes.Oils
             Solvent.Print();
         }
 
+        // Add two CannaOil's together into one.
         public ICannaOil Add(ICannaOil toAdd)
         {
             Quality = (Quality + toAdd.Quality) / 2;
             Yield = (Yield + toAdd.Yield) / 10;
+            Weight = Yield;
+
+            // Set toAdd's values to zero, since it's added to the main one.
+            toAdd.ImproveYield(0);
+            toAdd.ImproveQuality(0);
+            toAdd.ImproveWeight(0);
 
             return this;
         }
@@ -45,6 +53,7 @@ namespace GanjaLibrary.Classes.Oils
             Solvent = other.Solvent;
             Quality = other.Quality;
             Yield = other.Yield;
+            Weight = other.Weight;
         }
 
         public override object Clone()
@@ -55,6 +64,21 @@ namespace GanjaLibrary.Classes.Oils
         ICannaOil ICannaOil.Clone()
         {
             return (ICannaOil)Clone();
+        }
+
+        public void ImproveYield(double percentage)
+        {
+            Yield *= percentage;
+        }
+
+        public void ImproveWeight(double percentage)
+        {
+            Weight *= percentage;
+        }
+
+        public void ImproveQuality(double percentage)
+        {
+            Quality *= percentage;
         }
     }
 }

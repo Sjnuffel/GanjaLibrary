@@ -56,8 +56,11 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Benzene = new Benzene(900);
+            IChemical Butane = new Benzene(1500);
+            IContainer Trousers = new CargoPants();
             IFilter CoffeeFilter = new CoffeeFilter();
+            Trousers.Add((IItem)MasonJar);
+            Trousers.Add(Butane);
 
             for (int i = 0; i < GanjaTest.SeedingAge; i++)
                 GanjaTest.Grow(Water.Low, Light.None, Food.None);
@@ -65,23 +68,33 @@ namespace GanjaLibrary.Classes.Tests
             for (int i = 0; i < GanjaTest.FloweringAge; i++)
                 GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
 
-            for (int i = 0; i < 25; i++)
+            for (int i = 0; i < 30; i++)
                 GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
 
-            IChronic WashTest = GanjaTest.Harvest().Harvest;
-            for (int i = 0; i < WashTest.DryingAge; i++)
-                WashTest.Dry();
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
 
-            ISolventMix mix = new SolventMix(WashTest, Benzene);
-            MasonJar.Add((IItem)mix);
-            mix.Wash();
-            mix.Wash();
-            mix.Filter(CoffeeFilter);
-            ISolvent solvent = new Solvent((IChronic)mix, (IChemical)mix);
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
 
-            Assert.IsInstanceOfType(solvent, typeof(IChemical));
-            Assert.IsInstanceOfType(solvent, typeof(IChronic));
-            Assert.IsInstanceOfType(solvent, typeof(ISolvent));
+            harvest.Add(ref trimmings);
+
+            ISolventMix firstSolventMix = new SolventMix(harvest, Butane);
+            MasonJar.Add((IItem)firstSolventMix);
+
+            firstSolventMix.Wash();
+
+            var firstFilteredBatch = firstSolventMix.Filter(new CoffeeFilter());
+            var firstFilteredRemainingChronic = firstFilteredBatch.Chronic;
+            var firstFilteredSolvent = firstFilteredBatch.Solvent;
+
+            Assert.IsInstanceOfType(firstFilteredSolvent, typeof(ISolvent));
+            Assert.IsTrue(firstFilteredSolvent.THC != 0);
+            Assert.IsInstanceOfType(firstFilteredRemainingChronic, typeof(IChronic));
         }
 
         [TestMethod]
@@ -248,7 +261,7 @@ namespace GanjaLibrary.Classes.Tests
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical Butane = new Benzene(900);
+            IChemical Butane = new Benzene(1500);
             IContainer Trousers = new CargoPants();
             IFilter CoffeeFilter = new CoffeeFilter();
             Trousers.Add((IItem)MasonJar);
@@ -276,7 +289,18 @@ namespace GanjaLibrary.Classes.Tests
             harvest.Add(ref trimmings);
 
             ISolventMix firstSolventMix = new SolventMix(harvest, Butane);
+            MasonJar.Add((IItem)firstSolventMix);
 
+            firstSolventMix.Wash();
+
+            var firstFilteredBatch = firstSolventMix.Filter(new CoffeeFilter());
+            var firstFilteredRemainingChronic = firstFilteredBatch.Chronic;
+            var firstFilteredSolvent = firstFilteredBatch.Solvent;
+
+            Assert.IsInstanceOfType(firstFilteredSolvent, typeof(ISolvent));
+            Assert.IsTrue(firstFilteredSolvent.THC != 0);
+            Assert.IsInstanceOfType(firstFilteredRemainingChronic, typeof(IChronic));
+            Assert.IsTrue(firstFilteredRemainingChronic.Stage == Stage.Filtering);
         }
 
         [TestMethod]
@@ -406,37 +430,9 @@ namespace GanjaLibrary.Classes.Tests
         [TestMethod()]
         public void CannaOilCreation_MasterKushWash_MasterKushInWashingStage()
         {
-            IContainer FirstTrousers = new Trousers();
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();
-            IChemical GrainAlcohol = new GrainAlcohol();
-
-            for (int i = 0; i < GanjaTest.SeedingAge; i++)
-                GanjaTest.Grow(Water.Low, Light.None, Food.None);
-
-            for (int i = 0; i < GanjaTest.FloweringAge; i++)
-                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
-
-            for (int i = 0; i < 20; i++)
-                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
-
-            IChronic WashTest = GanjaTest.Harvest().Harvest;
-            for (int i = 0; i < WashTest.DryingAge; i++)
-                WashTest.Dry();
-
-            ISolventMix mix = new SolventMix(WashTest, GrainAlcohol);
-            MasonJar.Add((IItem)mix);
-            mix.Wash();
-
-            Assert.IsTrue((mix as IChronic).Stage == Stage.Washing);
-        }
-
-        [TestMethod()]
-        public void CannaOilCreation_SilverHazeWashOnce_SilverHazeInWashingStage()
-        {
-            IChronic GanjaTest = new SilverHaze();
-            IContainer MasonJar = new SmallMasonJar();
-            IChemical Butane = new Benzene(900);
+            IChemical Butane = new Benzene(1500);
             IContainer Trousers = new CargoPants();
             IFilter CoffeeFilter = new CoffeeFilter();
             Trousers.Add((IItem)MasonJar);
@@ -468,10 +464,61 @@ namespace GanjaLibrary.Classes.Tests
 
             firstSolventMix.Wash();
 
+            var firstFilteredBatch = firstSolventMix.Filter(new CoffeeFilter());
+            firstSolventMix.Print();
+            var firstFilteredRemainingChronic = firstFilteredBatch.Chronic;
+            firstFilteredRemainingChronic.Print();
+            var firstFilteredSolvent = firstFilteredBatch.Solvent;
+
+            Assert.IsInstanceOfType(firstSolventMix, typeof(ISolventMix));
         }
 
         [TestMethod()]
-        public void CannaOilCreation_SilverHazeFullyWashedCannaOil_IsTypeofCannaOil()
+        public void CannaOilCreation_SilverHazeWashOnce_SilverHazeInWashingStage()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallMasonJar();
+            IChemical Butane = new Benzene(1500);
+            IContainer Trousers = new CargoPants();
+            IFilter CoffeeFilter = new CoffeeFilter();
+            Trousers.Add((IItem)MasonJar);
+            Trousers.Add(Butane);
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            harvest.Add(ref trimmings);
+
+            ISolventMix firstSolventMix = new SolventMix(harvest, Butane);
+            MasonJar.Add((IItem)firstSolventMix);
+
+            firstSolventMix.Wash();
+
+            var firstFilteredBatch = firstSolventMix.Filter(new CoffeeFilter());
+            var firstFilteredRemainingChronic = firstFilteredBatch.Chronic;
+            var firstFilteredSolvent = firstFilteredBatch.Solvent;
+
+            Assert.IsInstanceOfType(firstSolventMix, typeof(ISolventMix));
+        }
+
+        [TestMethod()]
+        public void CannaOilCreation_SilverHazeCreateCannaOil_IsTypeofCannaOil()
         {
             IChronic GanjaTest = new SilverHaze();
             IContainer MasonJar = new SmallMasonJar();

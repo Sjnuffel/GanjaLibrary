@@ -123,6 +123,7 @@ namespace GanjaLibrary.Classes
             return (IChronic)Clone();
         }
 
+        // Add two Chronic type's together into one.
         public IChronic Add(ref IChronic toAdd)
         {
             THC = ((THC * Yield) + (toAdd.THC * toAdd.Yield)) / (Yield + toAdd.Yield);

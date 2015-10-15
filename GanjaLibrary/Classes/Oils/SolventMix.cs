@@ -33,10 +33,11 @@ namespace GanjaLibrary.Classes.Oils
         public ISolventMix Wash(int washCount = 1)
         {
             // Check if there's enough chemical available to wash.
-            if (Chemical.Contents <= (Chronic.Yield * 3)) throw new NotEnoughSolventException(Chemical);
+            if (Chemical.Contents <= (Chronic.Yield * 2.5)) throw new NotEnoughSolventException(Chemical);
 
             SetStage(Stage.Washing);
 
+            // When washing for the first time, extract 80% of the THC.
             if (washCount == 1)
             {
                 Solvent.SetTHC(_extractedOils * Chronic.THC);
@@ -46,6 +47,7 @@ namespace GanjaLibrary.Classes.Oils
                 Chronic.ImproveCBD(0.2);
             }
 
+            // When washing for the second time, extract remaining 20% of the THC.
             if (washCount == 2)
             {
                 Solvent.SetTHC(Chronic.THC);
@@ -87,6 +89,7 @@ namespace GanjaLibrary.Classes.Oils
             return Chemical.Clone();
         }
 
+        // The components of SolventMix that are called to be cloned.
         protected SolventMix(SolventMix other): base(other)
         {
             Chronic = other.Chronic;
@@ -104,6 +107,7 @@ namespace GanjaLibrary.Classes.Oils
             return (this as ISolventMix).Clone();
         }
 
+        // Method to increase or Decrease the yield by a percentage.
         public void ImproveYield(double percentage)
         {
             Chronic.ImproveYield(percentage);

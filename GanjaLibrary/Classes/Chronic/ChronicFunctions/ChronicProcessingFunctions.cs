@@ -358,23 +358,27 @@ namespace GanjaLibrary.Classes
 
         #endregion
 
+        // Method to increase or decrease the yield by a percentage.
         public void ImproveYield(double percentage)
         {
             Yield *= percentage;
         }
 
+        // Method to increase or decrease the THC by a percentage.
         public double ImproveTHC(double percentage)
         {
             THC *= percentage;
             return THC;
         }
 
+        // Method to increase or decrease the CBD by a percentage.
         public double ImproveCBD(double percentage)
         {
             CBD *= percentage;
             return CBD;
         }
 
+        // Method to increase or decrease the Quality by a percentage.
         public void ImproveQuality(double percentage)
         {
             Quality *= percentage;
