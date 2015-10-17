@@ -528,6 +528,196 @@ namespace GanjaLibrary.Classes.Tests
             Assert.IsTrue(harvest.Height == 0);
         }
 
+        [TestMethod()]
+        public void ChronicCultivation_MasterKushTrimmingsFinish_InFinishedStage()
+        {
+            IChronic GanjaTest = new MasterKush();
+            IContainer MasonJar = new SmallMasonJar();
 
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+
+            for (int i = 0; i < 25; i++)
+                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            trimmings.Weck();
+
+            for (int i = 0; i < 14; i++)
+                trimmings.Cure(MasonJar);
+
+            trimmings.Finish();
+
+            Assert.IsTrue(trimmings.Stage == Stage.Finished);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_MasterKushTrimmingsDrying_InDryingStage()
+        {
+            IChronic GanjaTest = new MasterKush();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+
+            for (int i = 0; i < 25; i++)
+                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            Assert.IsTrue(trimmings.Stage == Stage.Drying);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_MasterKushTrimmingsCuring_InCuringStage()
+        {
+            IChronic GanjaTest = new MasterKush();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Low, Light.Spring, Food.None);
+
+            for (int i = 0; i < 25; i++)
+                GanjaTest.Grow(Water.Medium, Light.Summer, Food.None);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            trimmings.Weck();
+
+            for (int i = 0; i < 14; i++)
+                trimmings.Cure(MasonJar);
+
+            Assert.IsTrue(trimmings.Stage == Stage.Curing);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_SilverHazeTrimmingsFinish_InFinishedStage()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            trimmings.Weck();
+
+            for (int i = 0; i < 14; i++)
+                trimmings.Cure(MasonJar);
+
+            trimmings.Finish();
+
+            Assert.IsTrue(trimmings.Stage == Stage.Finished);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_SilverHazeTrimmingsCuring_InCuringStage()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            trimmings.Weck();
+
+            for (int i = 0; i < 14; i++)
+                trimmings.Cure(MasonJar);
+
+            Assert.IsTrue(trimmings.Stage == Stage.Curing);
+        }
+
+        [TestMethod()]
+        public void ChronicCultivation_SilverHazeTrimmingsDrying_InDryingStage()
+        {
+            IChronic GanjaTest = new SilverHaze();
+            IContainer MasonJar = new SmallMasonJar();
+
+            for (int i = 0; i < GanjaTest.SeedingAge; i++)
+                GanjaTest.Grow(Water.Low, Light.None, Food.None);
+
+            for (int i = 0; i < GanjaTest.FloweringAge; i++)
+                GanjaTest.Grow(Water.Medium, Light.Spring, Food.Low);
+
+            for (int i = 0; i < 30; i++)
+                GanjaTest.Grow(Water.High, Light.Summer, Food.Low);
+
+            var fullHarvest = GanjaTest.Harvest();
+            var clone = GanjaTest;
+            var harvest = fullHarvest.Harvest;
+            var trimmings = fullHarvest.Trimmings;
+            for (int i = 0; i < harvest.DryingAge; i++)
+                harvest.Dry();
+
+            for (int i = 0; i < trimmings.DryingAge; i++)
+                trimmings.Dry();
+
+            Assert.IsTrue(trimmings.Stage == Stage.Drying);
+        }
     }
 }
