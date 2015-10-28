@@ -97,6 +97,11 @@ namespace GanjaLibrary.Classes
             Stage = stage;
         }
 
+        public void SetWeight(double amount)
+        {
+            Weight = amount;
+        }
+
         public IChronic Dry()
         {
             if (Stage == Stage.Harvesting || Stage == Stage.Drying)

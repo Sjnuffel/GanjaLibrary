@@ -473,7 +473,7 @@ namespace GanjaLibrary.Classes.Tests
         }
 
         [TestMethod()]
-        public void ChronicCultivation_MasterKushHarvestHeight_IsEqualToYield()
+        public void ChronicCultivation_MasterKushHarvestHeight_IsZero()
         {
             IChronic GanjaTest = new MasterKush();
             IContainer MasonJar = new SmallMasonJar();

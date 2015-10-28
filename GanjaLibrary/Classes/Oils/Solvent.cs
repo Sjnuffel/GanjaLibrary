@@ -41,12 +41,16 @@ namespace GanjaLibrary.Classes.Oils
             {
                 Age++;
                 Contents -= 100;
+                Weight *= 0.9;
                 return this;
             }
 
             // Make sure Contents never go negative, set it to 0 if it does.
             if (Contents < 0)
+            {
                 Contents = 0;
+                Weight = Yield;
+            }
 
             return this;
         }
@@ -90,6 +94,40 @@ namespace GanjaLibrary.Classes.Oils
         ISolvent ISolvent.Clone()
         {
             return (ISolvent)Clone();
+        }
+
+        public void ImproveYield(double percentage)
+        {
+            Yield *= percentage;
+        }
+
+        public void ImproveQuality(double percentage)
+        {
+            Quality *= percentage;
+        }
+
+        public void ImproveWeight(double percentage)
+        {
+            Weight *= percentage;
+        }
+
+        public void SetWeight(double amount)
+        {
+            Weight = amount;
+        }
+
+        public ISolvent Add(ISolvent toAdd)
+        {
+            Quality = (Quality + toAdd.Quality) / 2;
+            Yield = (Yield + toAdd.Yield) / 2;
+            Weight += toAdd.Weight;
+
+            // Set toAdd's values to zero, since it's added to the main solvent.
+            toAdd.ImproveYield(0);
+            toAdd.ImproveQuality(0);
+            toAdd.ImproveWeight(0);
+
+            return this;
         }
     }
 }

@@ -110,17 +110,29 @@ namespace GanjaLibrary.Interfaces
         Dictionary<Stage, Water> WaterNeed { get; }
 
         /// <summary>
+        /// Set the weight by a value.
+        /// </summary>
+        void SetWeight(double amount);
+
+        /// <summary>
         /// Dictionary containing plants light requirements.
         /// </summary>
         Dictionary<Stage, Light> LightNeed { get; }
 
+        /// <summary>
+        /// Improve the THC by a percentage.
+        /// </summary>
         double ImproveTHC(double percentage);
+
+        /// <summary>
+        /// Improve the CBD by a percentage
+        /// </summary>
+        double ImproveCBD(double percentage);
 
         /// <summary>
         /// Grow the plant.
         /// </summary>
         IChronic Grow(Water water, Light light, Food food );
-        double ImproveCBD(double percentage);
 
         /// <summary>
         /// Harvest the plant.
@@ -132,6 +144,9 @@ namespace GanjaLibrary.Interfaces
         /// </summary>
         IChronic Dry();
 
+        /// <summary>
+        /// Improve the Quality by a percentage
+        /// </summary>
         void ImproveQuality(double percentage);
 
         /// <summary>

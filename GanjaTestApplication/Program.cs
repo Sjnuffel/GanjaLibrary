@@ -97,16 +97,11 @@ namespace GanjaTestApplication
             PrintLine();
 
             var secondFilteredSolvent = secondSolventMix.Filter(new CoffeeFilter()).Solvent;
+            firstFilteredSolvent.Add(secondFilteredSolvent);
             for (int i = 0; i < 12; i++)
-            {
                 firstFilteredSolvent.Heat();
-                secondFilteredSolvent.Heat();
-            }
-
+    
             ICannaOil cannaOil = new CannaOil(firstFilteredSolvent, GanjaTest.Name);
-            ICannaOil cannaOilv2 = new CannaOil(secondFilteredSolvent, GanjaTest.Name);
-
-            cannaOil.Add(cannaOilv2);
 
             firstFilteredSolvent.Print();
             secondFilteredSolvent.Print();

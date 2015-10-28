@@ -56,7 +56,40 @@ namespace GanjaLibrary.Interfaces.Oils
         /// </summary>
         void Print();
 
-        //ISolvent Clone();
+        /// <summary>
+        /// Be able to set the yield.
+        /// </summary>
         void SetYield(double yield);
+
+        /// <summary>
+        /// Increase or decrease the yield of the Solvent by a certain percentage
+        /// </summary>
+        /// <param name="percentage">The percentage to increase (or decrease) the yield by</param>
+        void ImproveYield(double percentage);
+
+        /// <summary>
+        /// Increase or decrease the quality of the Solvent by a certain percentage
+        /// </summary>
+        /// <param name="percentage">The percentage to increase (or decrease) the yield by</param>
+        void ImproveQuality(double percentage);
+
+        /// <summary>
+        /// Increase or decrease the Weight of the Solvent by a certain percentage
+        /// </summary>
+        /// <param name="percentage">The percentage to increase (or decrease) the yield by</param>
+        void ImproveWeight(double percentage);
+
+        /// <summary>
+        /// Add the amounts of one Solvent to the other (yield/quality etc.)
+        /// </summary>
+        /// <param name="toAdd"></param>
+        /// <returns></returns>
+        ISolvent Add(ISolvent toAdd);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="weight"></param>
+        void SetWeight(double amount);
     }
 }

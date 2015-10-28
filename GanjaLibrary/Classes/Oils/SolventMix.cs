@@ -19,7 +19,6 @@ namespace GanjaLibrary.Classes.Oils
         public SolventMix(IChronic chronic, IChemical chemical):base(chronic.Name + " " + chemical.Name, chronic.Description + " " + chemical.Description, chronic.Weight + chemical.Weight, chronic.Value)
         {
             Type = ItemType.SolventMix;
-            MaxStackableQuantity = chemical.MaxStackableQuantity;
 
             _extractedOils = new Random().NextDouble() * (0.85 - 0.75) + 0.75;
             Chronic = chronic;
@@ -33,8 +32,10 @@ namespace GanjaLibrary.Classes.Oils
         public ISolventMix Wash(int washCount = 1)
         {
             // Check if there's enough chemical available to wash.
-            if (Chemical.Contents <= (Chronic.Yield * 2.5)) throw new NotEnoughSolventException(Chemical);
+            if (Chemical.Contents <= (Chronic.Yield * 2.5))
+                throw new NotEnoughSolventException(Chemical);
 
+            Weight = (Contents + Yield) / 1.5;
             SetStage(Stage.Washing);
 
             // When washing for the first time, extract 80% of the THC.
@@ -67,6 +68,9 @@ namespace GanjaLibrary.Classes.Oils
 
             // Use the effectiveness of the filter to improve the yield/quality\
             Solvent.SetYield(Solvent.Yield * (1 + (filter.Effectiveness / 100)));
+            // Change the weight to reflect the filtered status
+            Chronic.SetWeight(Yield);
+            Solvent.SetWeight((Weight - Yield));
 
             return new FilterResult(Chronic, Solvent);
         }

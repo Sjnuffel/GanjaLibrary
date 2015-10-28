@@ -14,12 +14,12 @@ namespace GanjaLibrary.Classes.Items.Filters
         public CoffeeFilter() :base()
         {
             Name = "Coffee Filter";
-            Description = "A pack of 10 coffee filters, if you still filter your coffee the old fashion way";
+            Description = "One coffee filter";
 
             Weight = 0.5;
             Value = 2.50;
 
-            MaxStackableQuantity = 10;
+            MaxStackableQuantity = 1;
         }
     }
 }
